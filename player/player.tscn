@@ -10,9 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://di4ara1564d4y" path="res://graphics/playersprites/walking/Cap_Red_Walk.png" id="8_2ieo8"]
 [ext_resource type="PackedScene" uid="uid://dnomiqnaun73e" path="res://interactions/interactingcomponent.tscn" id="9_hg6s5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rgyib"]
-size = Vector2(14, 3.5)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_68g1w"]
 atlas = ExtResource("8_2ieo8")
 region = Rect2(60, 0, 30, 26)
@@ -130,7 +127,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3xi0n")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walkdown",
 "speed": 8.0
 }, {
@@ -153,7 +150,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xgxvu")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walkleft",
 "speed": 8.0
 }, {
@@ -176,7 +173,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6ws1b")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walkright",
 "speed": 8.0
 }, {
@@ -199,7 +196,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qvxeb")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walkup",
 "speed": 8.0
 }]
@@ -321,7 +318,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_d0gtc")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walkdown",
 "speed": 8.0
 }, {
@@ -344,7 +341,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ama2g")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walkleft",
 "speed": 8.0
 }, {
@@ -367,7 +364,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wh3n5")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walkright",
 "speed": 8.0
 }, {
@@ -390,7 +387,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_es2j2")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walkup",
 "speed": 8.0
 }]
@@ -512,7 +509,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bd26m")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walkdown",
 "speed": 8.0
 }, {
@@ -535,7 +532,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_20bc7")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walkleft",
 "speed": 8.0
 }, {
@@ -558,7 +555,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pgo6y")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walkright",
 "speed": 8.0
 }, {
@@ -581,7 +578,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vhicv")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walkup",
 "speed": 8.0
 }]
@@ -703,7 +700,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1so5t")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walkdown",
 "speed": 8.0
 }, {
@@ -726,7 +723,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gswnw")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walkleft",
 "speed": 8.0
 }, {
@@ -749,7 +746,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fmu53")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walkright",
 "speed": 8.0
 }, {
@@ -772,7 +769,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7crtr")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walkup",
 "speed": 8.0
 }]
@@ -894,7 +891,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8t03j")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walkdown",
 "speed": 8.0
 }, {
@@ -917,7 +914,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_32hag")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walkleft",
 "speed": 8.0
 }, {
@@ -940,7 +937,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bjvpn")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walkright",
 "speed": 8.0
 }, {
@@ -963,7 +960,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rptt4")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walkup",
 "speed": 8.0
 }]
@@ -1085,7 +1082,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jbx34")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walkdown",
 "speed": 8.0
 }, {
@@ -1108,7 +1105,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b2j0d")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walkleft",
 "speed": 8.0
 }, {
@@ -1131,7 +1128,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2h6tc")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walkright",
 "speed": 5.0
 }, {
@@ -1154,19 +1151,26 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kcq4v")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walkup",
 "speed": 8.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rgyib"]
+size = Vector2(14, 3.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hg6s5"]
+size = Vector2(5.3934927, 8.948082)
+
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1632771296 groups=["Player"]]
-collision_layer = 2
 script = ExtResource("1_rkbax")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=98314499]
-z_index = 10
-position = Vector2(0, 10.75)
-shape = SubResource("RectangleShape2D_rgyib")
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1415548712]
+zoom = Vector2(4, 4)
+process_callback = 0
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
 
 [node name="CompositeSprites" type="Node2D" parent="." unique_id=2120319744]
 script = ExtResource("2_boad6")
@@ -1205,13 +1209,18 @@ sprite_frames = SubResource("SpriteFrames_qavcc")
 animation = &"walkright"
 frame_progress = 0.854335
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1415548712]
-zoom = Vector2(4, 4)
-process_callback = 0
-position_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-
 [node name="InteractingComponent" parent="." unique_id=537446915 instance=ExtResource("9_hg6s5")]
 
-[node name="Timers" type="Node2D" parent="." unique_id=1473143403]
+[node name="DefaultColllision" type="CollisionShape2D" parent="." unique_id=98314499]
+z_index = 10
+position = Vector2(0, 10.75)
+shape = SubResource("RectangleShape2D_rgyib")
+
+[node name="PlatformerCollision" type="CollisionShape2D" parent="." unique_id=1533218506]
+z_index = 10
+position = Vector2(-2.6226834e-07, 8)
+rotation = -3.1415925
+scale = Vector2(1.8540862, -1.1175578)
+shape = SubResource("RectangleShape2D_hg6s5")
+disabled = true
+debug_color = Color(2.8637796e-06, 0.6468061, 0.23558497, 0.41960785)

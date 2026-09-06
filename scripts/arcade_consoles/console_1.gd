@@ -13,7 +13,7 @@ func  _ready() -> void:
 
 func action_on_interact():
 	await get_tree().create_timer(.5).timeout
-	get_tree().change_scene_to_file("res://scenes/arcade_games/platformer.tscn")
+	get_tree().change_scene_to_file("res://scenes/arcade_games/platformer/platformer.tscn")
 
 
 func _process(_delta):

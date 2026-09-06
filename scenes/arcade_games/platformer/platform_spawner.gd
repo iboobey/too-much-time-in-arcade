@@ -1,110 +1,79 @@
 extends Node2D
 
-@onready var player := get_tree().get_first_node_in_group("Player")
-@onready var jump_velocity = player.jump_velocity
-@onready var gravity = player.gravity
+@onready var player := $"../CharacterBody2D"
+@onready var jump_velocity = player.jump_velocity 
+@onready var gravity = player.gravity 
 @onready var fall_gravity = player.fall_gravity
 @onready var speed = player.speed
 var safety_factor = .75
-var last_y := 0.0
-
+var platforms := []
+var last_trigger_y := 0.0
+const trigger_distance := 300.0
+const trigger_offset := 200.0
+var trigger_amount : int = 0
 
 var normal_platform : PackedScene = preload("res://scenes/arcade_games/platformer/normal_platform.tscn")
 
 
 func _ready() -> void:
-	var player_pos_y = player.global_position.y
-	spawn_set(player_pos_y,Color.BLUE)
-	spawn_set(player_pos_y+135,Color.RED)
-	spawn_set(player_pos_y+270,Color.GREEN)
+	spawn_set(trigger_amount,Color.BLUE)
+	spawn_set(trigger_amount,Color.RED)
+	last_trigger_y = player.global_position.y 
 
 func _process(_delta):
-	pass
-	
-
-
-func sort_by_y(platform1,platform2):
-
-	var platform1_y = platform1.global_position.y
-	var platform2_y = platform2.global_position.y
-	return platform1_y < platform2_y
+	var up_distance : float = last_trigger_y - player.global_position.y
+	if up_distance >= trigger_distance:
+		trigger_amount += 1
+		last_trigger_y -= trigger_distance
+		spawn_set(trigger_amount,Color.HOT_PINK)
+		spawn_set(trigger_amount,Color.HOT_PINK)
 
 
 func max_jump_height():
-	return (jump_velocity ** 2) / (2 * gravity)
+	return (jump_velocity * jump_velocity) / (2 * gravity)
+
+func total_jump_time():
+	var time_jump = abs(jump_velocity) / gravity
+	var time_fall = abs(jump_velocity) / sqrt(gravity * fall_gravity)
+	var time_air = time_jump + time_fall
+	return time_air
 
 func max_jump_distance():
-	var velocity_abs = abs(jump_velocity)
-	var time_jump = velocity_abs / gravity
-	var time_fall = velocity_abs / sqrt(gravity * fall_gravity)
-	var time_air = time_jump + time_fall
-	return speed * time_air
+	var max_speed = total_jump_time() * speed  
+	return max_speed
 
 
-func spawn_set(player_y,coloor):
 
-	var random_y = randf_range(-(abs(player_y)),-(abs(player_y + max_jump_height())))
-	var random_x = randf_range(-50,50)
-	var min_y = 60
-	var min_x = 45
-	var platform_amount = randi_range(2,3)
-	var random_x_list := []
-	var random_y_list := []
-	var platforms := []
-	
-	
-	
-	
-	
-	
-	for i in platform_amount   : #random lists
-		random_x_list.append(randf_range(-50,50))
-		random_y_list.append(randf_range(-50,50))
+func spawn_set(trigger_amount_,coloor):
 
-	random_y_list.sort()
+	var platform_amount = 20 
 	
-	for i in range(1,random_y_list.size()) : #y adjust
-		var low = random_y_list[i-1]
-		var high = random_y_list[i]
-		var distance_between_y = high - low
+	
+	var last_y = 0 + trigger_amount_ * (trigger_distance + trigger_offset)
+	var last_x = randf_range(-50,50)
+	
+	for i in platform_amount:
 		
-		if distance_between_y < min_y :
-			random_y_list[i] += min_y
-	
-	for i in range(1,random_x_list.size()) : # x adjust
-		var right = random_x_list[i-1]
-		var left = random_x_list[i]
-		var distance_between_x =  right - left
-		var operation = randf()
-	
-		if operation < .5 :
-			min_x = - min_x
+		var instance = normal_platform.instantiate()
+		
+		var random_x = wrap(last_x + randf_range(-40,40) * safety_factor,-100,100)
+		var random_y = -(last_y + randf_range(20,max_jump_height() * safety_factor))
+		
+		instance.global_position.x = random_x
+		instance.global_position.y = random_y
+		last_y = random_y * -1
+		last_x = random_x * -1
+		
+		instance.modulate = coloor
+		
+		add_child(instance)
 		
 		
-		if distance_between_x < min_x :
-			random_x_list[i] += min_x
-	
-	for i in platform_amount : #instantiate
-		if i != 1:
-			var instance = normal_platform.instantiate()
-			instance.modulate = coloor
-			instance.position.y += (random_y + random_y_list[i-1]) * safety_factor
-			instance.position.x += random_x + random_x_list[i-1]
-			instance.position.y = -abs(instance.position.y)
-			instance.position.x = -abs(instance.position.x)
-			add_child(instance)
-			platforms.append(instance)
-		else:
-			var instance = normal_platform.instantiate()
-			instance.modulate = coloor
-			instance.position.y += random_y * safety_factor
-			instance.position.x += random_x
-			instance.position.y = -abs(instance.position.y)
-			instance.position.x = -abs(instance.position.x)
-			add_child(instance)
-			platforms.append(instance)
+		platforms.append(instance)
 
 
-func spawn_platform(player_y,coloor):
-	spawn_set(player_y,coloor)
-	
+
+func _on_start_area_area_entered(area: Area2D) -> void:
+	var area_parent = area.get_parent()
+	if area_parent.name == "NormalPlatform:<StaticBody2D#27111982532>" : 
+		area_parent.queue_free()

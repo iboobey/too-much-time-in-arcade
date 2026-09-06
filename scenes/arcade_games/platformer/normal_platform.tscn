@@ -1,11 +1,20 @@
 [gd_scene format=3 uid="uid://dwofxh20ssbho"]
 
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_bmavh"]
+[ext_resource type="Script" uid="uid://dyusvawoiyypr" path="res://scenes/arcade_games/platformer/normal_platform.gd" id="1_xcdib"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_apsbx"]
 size = Vector2(30, 6)
 
-[node name="normal_platform" type="StaticBody2D" unique_id=476293797]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bmavh"]
+size = Vector2(38, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcdib"]
+size = Vector2(62, 15)
+
+[node name="NormalPlatform" type="StaticBody2D" unique_id=476293797]
+script = ExtResource("1_xcdib")
+metadata/_edit_vertical_guides_ = [-31.0, -15.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1808092853]
 scale = Vector2(0.23332891, 0.049578976)
@@ -13,3 +22,22 @@ texture = ExtResource("1_bmavh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=443708628]
 shape = SubResource("RectangleShape2D_apsbx")
+
+[node name="SeparationDetector" type="Area2D" parent="." unique_id=1713104666]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SeparationDetector" unique_id=164025822]
+shape = SubResource("RectangleShape2D_bmavh")
+debug_color = Color(0, 0.64323723, 0.30190864, 0.41960785)
+
+[node name="PushDetector" type="Area2D" parent="." unique_id=306929083]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushDetector" unique_id=888189395]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_xcdib")
+debug_color = Color(0.8602844, 0, 0.034806136, 0.41960785)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1501509393]
+
+[connection signal="area_entered" from="SeparationDetector" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="PushDetector" to="." method="_on_push_detector_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

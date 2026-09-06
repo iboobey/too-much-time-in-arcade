@@ -89,10 +89,10 @@ func walk_animation():
 	short_anim.play(walk_direction)
 
 
-
 func _physics_process(delta):
 	walk_animation()
 	if platformer:
+		$PlatformerCollision.disabled = false
 		platformer_move(delta)
 	else: move(delta)
 	move_and_slide()
