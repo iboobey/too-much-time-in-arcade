@@ -127,7 +127,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3xi0n")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walkdown",
 "speed": 8.0
 }, {
@@ -150,7 +150,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xgxvu")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walkleft",
 "speed": 8.0
 }, {
@@ -173,7 +173,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6ws1b")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walkright",
 "speed": 8.0
 }, {
@@ -196,7 +196,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qvxeb")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walkup",
 "speed": 8.0
 }]
@@ -318,7 +318,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_d0gtc")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walkdown",
 "speed": 8.0
 }, {
@@ -341,7 +341,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ama2g")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walkleft",
 "speed": 8.0
 }, {
@@ -364,7 +364,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wh3n5")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walkright",
 "speed": 8.0
 }, {
@@ -387,7 +387,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_es2j2")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walkup",
 "speed": 8.0
 }]
@@ -509,7 +509,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bd26m")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walkdown",
 "speed": 8.0
 }, {
@@ -532,7 +532,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_20bc7")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walkleft",
 "speed": 8.0
 }, {
@@ -555,7 +555,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pgo6y")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walkright",
 "speed": 8.0
 }, {
@@ -578,7 +578,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vhicv")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walkup",
 "speed": 8.0
 }]
@@ -700,7 +700,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1so5t")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walkdown",
 "speed": 8.0
 }, {
@@ -723,7 +723,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gswnw")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walkleft",
 "speed": 8.0
 }, {
@@ -746,7 +746,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fmu53")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walkright",
 "speed": 8.0
 }, {
@@ -769,7 +769,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7crtr")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walkup",
 "speed": 8.0
 }]
@@ -891,7 +891,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8t03j")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walkdown",
 "speed": 8.0
 }, {
@@ -914,7 +914,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_32hag")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walkleft",
 "speed": 8.0
 }, {
@@ -937,7 +937,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bjvpn")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walkright",
 "speed": 8.0
 }, {
@@ -960,7 +960,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rptt4")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walkup",
 "speed": 8.0
 }]
@@ -1082,7 +1082,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jbx34")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walkdown",
 "speed": 8.0
 }, {
@@ -1105,7 +1105,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b2j0d")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walkleft",
 "speed": 8.0
 }, {
@@ -1128,7 +1128,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2h6tc")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walkright",
 "speed": 5.0
 }, {
@@ -1151,7 +1151,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kcq4v")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walkup",
 "speed": 8.0
 }]
@@ -1162,7 +1162,7 @@ size = Vector2(14, 3.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hg6s5"]
 size = Vector2(5.3934927, 8.948082)
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1632771296 groups=["Player"]]
+[node name="Player" type="CharacterBody2D" unique_id=1632771296 groups=["Player"]]
 script = ExtResource("1_rkbax")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1415548712]

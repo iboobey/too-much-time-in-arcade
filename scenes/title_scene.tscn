@@ -61,6 +61,7 @@ theme_override_constants/outline_size = 14
 theme_override_fonts/font = SubResource("SystemFont_3cm6q")
 theme_override_font_sizes/font_size = 26
 text = "Start Game"
+expand_icon = true
 
 [node name="Quit" type="MarginContainer" parent="HBoxContainer" unique_id=280543350]
 layout_mode = 2

@@ -2,21 +2,42 @@ extends CharacterBody2D
 
 var speed := 3200
 const sprint_scale := 1.4
-const  gravity := 160
-const  fall_gravity := 180
-var jump_velocity := -120
-var can_jump := false
-var platformer := false
+const gravity := 210
+const fall_gravity := 220
+var jump_velocity := -150
 
-@onready var shoe_anim = $CompositeSprites/ShoeRed
-@onready var torso_anim = $CompositeSprites/TorsoGreen
-@onready var short_anim = $CompositeSprites/ShortBlue
-@onready var head_anim = $CompositeSprites/Head
-@onready var hair_anim = $CompositeSprites/HairCurly
-@onready var cap_anim = $CompositeSprites/CapRed
+var can_jump : bool = false
+var platformer : bool = false
+var is_on_ice : bool = false
+
+@onready var platformer_camera_limit_x : int = 150
+
+@export_range(0.01, 1.0, 0.01) var grip: float = 0.25
+@export_range(0.01, 1.0, 0.01) var ice_grip: float = 0.03
+
+
+@onready var platformer_scene : PackedScene = preload("res://scenes/arcade_games/platformer/platformer.tscn")
 
 
 
+@onready var camera: Camera2D = $Camera2D
+
+@onready var shoe_anim := $CompositeSprites/ShoeRed
+@onready var torso_anim := $CompositeSprites/TorsoGreen
+@onready var short_anim := $CompositeSprites/ShortBlue
+@onready var head_anim := $CompositeSprites/Head
+@onready var hair_anim := $CompositeSprites/HairCurly
+@onready var cap_anim := $CompositeSprites/CapRed
+
+
+
+func _ready() -> void:
+	
+	if platformer_scene.emit_signal("ready"):
+		print("yes")
+		$Camera2D.set_limit(SIDE_LEFT,-platformer_camera_limit_x)
+		$Camera2D.set_limit(SIDE_RIGHT,platformer_camera_limit_x)
+		
 func move(delta):
 	var direction = Input.get_vector("left","right","up","down")
 	velocity = direction * speed * delta
@@ -26,9 +47,16 @@ func move(delta):
 
 func platformer_move(delta):
 	var direction = Input.get_axis("left","right")
-	velocity.x = direction * speed * delta
+	var current_grip = ice_grip if is_on_ice else grip
+	var target_speed = direction * speed * delta
+	velocity.x = lerp(velocity.x, target_speed, current_grip)
+	
 	jump()
 	apply_gravity(delta)
+
+
+func _set_on_ice(value:bool) -> void:
+	is_on_ice = value
 
 
 func jump():

@@ -13,7 +13,12 @@ func  _ready() -> void:
 
 func action_on_interact():
 	await get_tree().create_timer(.5).timeout
+	scene_change()
+
+
+func scene_change():
 	get_tree().change_scene_to_file("res://scenes/arcade_games/platformer/platformer.tscn")
+
 
 
 func _process(_delta):
@@ -22,4 +27,3 @@ func _process(_delta):
 		
 	else:
 		interacting_label.hide()
-		

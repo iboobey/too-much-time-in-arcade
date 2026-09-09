@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://ctbik6phs2kl2" path="res://scripts/arcade_games/platformer/platformer.gd" id="1_o44nw"]
 [ext_resource type="PackedScene" uid="uid://mpiuvtpngfod" path="res://player/player.tscn" id="2_i3m25"]
-[ext_resource type="Texture2D" uid="uid://bx0855crgtdu7" path="res://graphics/gamesprites/platformersprites/Normal_Platform.png" id="4_uvftm"]
-[ext_resource type="Texture2D" uid="uid://bkuwegvy6r4s0" path="res://graphics/gamesprites/platformersprites/PlatformerGUI.png" id="5_i3m25"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="3_uvftm"]
+[ext_resource type="Script" uid="uid://bxvmmsq7jmvl5" path="res://scripts/arcade_games/platformer/platform_spawner.gd" id="4_o44nw"]
+[ext_resource type="Texture2D" uid="uid://bunc4kwekrgvh" path="res://graphics/gamesprites/platformersprites/PlatformerGUI.png" id="5_i3m25"]
 [ext_resource type="Theme" uid="uid://bnwynn04fl26l" path="res://scripts/arcade_games/platformer/Platformer.tres" id="6_uvftm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_apsbx"]
@@ -21,22 +22,25 @@ script = ExtResource("1_o44nw")
 metadata/_edit_horizontal_guides_ = [720.0]
 metadata/_edit_vertical_guides_ = [1280.0]
 
-[node name="PlatformSpawner" type="Node2D" parent="." unique_id=1623126217]
+[node name="CharacterBody2D" parent="." unique_id=1632771296 instance=ExtResource("2_i3m25")]
+position = Vector2(0, -17)
+
+[node name="Platforms" type="Node2D" parent="." unique_id=1623126217]
+
+[node name="PlatformSpawner" type="Node2D" parent="." unique_id=1600064456]
+script = ExtResource("4_o44nw")
 
 [node name="StartPlatform" type="StaticBody2D" parent="." unique_id=2097490818]
 scale = Vector2(0.99528927, 1.0111401)
 
 [node name="StartPlatformSprite" type="Sprite2D" parent="StartPlatform" unique_id=1510490898]
-position = Vector2(0, -3.9559302)
-scale = Vector2(-4.273533, 1.2633117)
-texture = ExtResource("4_uvftm")
+scale = Vector2(1, 0.0625)
+texture = ExtResource("3_uvftm")
 
 [node name="StartPlatformCollision" type="CollisionShape2D" parent="StartPlatform" unique_id=1213205921]
 shape = SubResource("RectangleShape2D_apsbx")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="StartPlatform" unique_id=1823033853]
-visible = false
-position = Vector2(-1.0047331, -0.9889827)
 
 [node name="StartArea" type="Area2D" parent="." unique_id=708076133]
 
@@ -208,7 +212,6 @@ offset_right = 1280.0
 offset_bottom = 720.0
 color = Color(0.06437778, 0.0036195307, 0.00361884, 1)
 
-[node name="Player" parent="." unique_id=1632771296 instance=ExtResource("2_i3m25")]
-
 [connection signal="screen_exited" from="StartPlatform/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="area_entered" from="StartArea" to="PlatformSpawner" method="_on_start_area_area_entered"]
 [connection signal="body_entered" from="DeathArea" to="." method="_on_death_area_body_entered"]

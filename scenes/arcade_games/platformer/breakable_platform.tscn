@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://chha0vf43o6b6"]
+
+[ext_resource type="Script" uid="uid://dn82id64ajoth" path="res://scripts/arcade_games/platformer/breakable_platform.gd" id="1_dx7fr"]
+[ext_resource type="Texture2D" uid="uid://cpvi756lxuubq" path="res://graphics/gamesprites/platformersprites/Breakable_Platforms.png" id="2_dx7fr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_apsbx"]
+size = Vector2(30, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bmavh"]
+size = Vector2(38, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcdib"]
+size = Vector2(62, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wlarf"]
+size = Vector2(30, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhg4d"]
+atlas = ExtResource("2_dx7fr")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48ihx"]
+atlas = ExtResource("2_dx7fr")
+region = Rect2(0, 16, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jygp7"]
+atlas = ExtResource("2_dx7fr")
+region = Rect2(0, 32, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_apsbx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhg4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_48ihx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jygp7")
+}],
+"loop": 1,
+"name": &"breaking",
+"speed": 5.0
+}]
+
+[node name="BreakablePlatform" type="StaticBody2D" unique_id=476293797]
+script = ExtResource("1_dx7fr")
+metadata/_edit_vertical_guides_ = [-31.0, -15.0]
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="." unique_id=443708628]
+shape = SubResource("RectangleShape2D_apsbx")
+
+[node name="SeparationDetector" type="Area2D" parent="." unique_id=1713104666]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SeparationDetector" unique_id=164025822]
+shape = SubResource("RectangleShape2D_bmavh")
+debug_color = Color(0, 0.64323723, 0.30190864, 0.41960785)
+
+[node name="PushDetector" type="Area2D" parent="." unique_id=306929083]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushDetector" unique_id=888189395]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_xcdib")
+debug_color = Color(0.8602844, 0, 0.034806136, 0.41960785)
+
+[node name="BreakDetector" type="Area2D" parent="." unique_id=410835502]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="BreakDetector" unique_id=1499952138]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_wlarf")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1501509393]
+rect = Rect2(-15, -9, 30, 12)
+
+[node name="BreakAnimation" type="AnimatedSprite2D" parent="." unique_id=1339027056]
+position = Vector2(0, 4)
+sprite_frames = SubResource("SpriteFrames_apsbx")
+animation = &"breaking"
+
+[connection signal="area_entered" from="SeparationDetector" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="PushDetector" to="." method="_on_push_detector_area_entered"]
+[connection signal="body_entered" from="BreakDetector" to="." method="_on_break_detector_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -1000,8 +1000,7 @@ b = Vector2(-39, -16)
 [node name="Arcade" type="Node2D" unique_id=1528780165]
 script = ExtResource("1_g722h")
 
-[node name="Node2D" parent="." unique_id=261499602 instance=ExtResource("3_u8up3")]
-collision_mask = 3
+[node name="Player" parent="." unique_id=1632771296 instance=ExtResource("3_u8up3")]
 
 [node name="Tilemaps" type="Node2D" parent="." unique_id=255921363]
 

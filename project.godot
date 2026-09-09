@@ -11,14 +11,19 @@ config_version=5
 [application]
 
 config/name="Too Much Time In Arcade"
-run/main_scene="uid://ovnbuimm0oaa"
+run/main_scene="uid://skkn20sotfxd"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*uid://dtqfux22o87l0"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/mode=2
 window/stretch/mode="viewport"
 window/quality/msaa_2d=0
 

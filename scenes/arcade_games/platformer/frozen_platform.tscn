@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://dwofxh20ssbho"]
+[gd_scene format=3 uid="uid://baiw8lflt70gt"]
 
-[ext_resource type="Script" uid="uid://dyusvawoiyypr" path="res://scripts/arcade_games/platformer/normal_platform.gd" id="1_xcdib"]
-[ext_resource type="Texture2D" uid="uid://bx0855crgtdu7" path="res://graphics/gamesprites/platformersprites/Normal_Platform.png" id="2_xcdib"]
+[ext_resource type="Script" uid="uid://bl8yrwm2cdpg8" path="res://scripts/arcade_games/platformer/frozen_platform.gd" id="1_ucmig"]
+[ext_resource type="Texture2D" uid="uid://b4bkq0xsdjl7c" path="res://graphics/gamesprites/platformersprites/Frozen_Platform.png" id="2_ucmig"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_apsbx"]
 size = Vector2(30, 6)
@@ -12,15 +12,18 @@ size = Vector2(38, 6)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xcdib"]
 size = Vector2(62, 15)
 
-[node name="NormalPlatform" type="StaticBody2D" unique_id=476293797]
-script = ExtResource("1_xcdib")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wlarf"]
+size = Vector2(30, 9)
+
+[node name="FrozenPlatform" type="StaticBody2D" unique_id=476293797 groups=["Platforms"]]
+script = ExtResource("1_ucmig")
 metadata/_edit_vertical_guides_ = [-31.0, -15.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1808092853]
 position = Vector2(0, -3)
-texture = ExtResource("2_xcdib")
+texture = ExtResource("2_ucmig")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=443708628]
+[node name="PlayerCollision" type="CollisionShape2D" parent="." unique_id=443708628]
 shape = SubResource("RectangleShape2D_apsbx")
 
 [node name="SeparationDetector" type="Area2D" parent="." unique_id=1713104666]
@@ -37,7 +40,17 @@ shape = SubResource("RectangleShape2D_xcdib")
 debug_color = Color(0.8602844, 0, 0.034806136, 0.41960785)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1501509393]
+rect = Rect2(-15, -9, 30, 12)
+
+[node name="IceArea" type="Area2D" parent="." unique_id=510288843]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IceArea" unique_id=1612578300]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_wlarf")
+debug_color = Color(0, 0.87494737, 0.8622775, 0.41960785)
 
 [connection signal="area_entered" from="SeparationDetector" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="PushDetector" to="." method="_on_push_detector_area_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="body_entered" from="IceArea" to="." method="_on_ice_area_body_entered"]
+[connection signal="body_exited" from="IceArea" to="." method="_on_ice_area_body_exited"]
