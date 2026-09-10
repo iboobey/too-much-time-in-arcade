@@ -2,21 +2,22 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5who70i57f0y"
-path="res://.godot/imported/Console_1_Red.png-c9c500fc5474de31f05570730428c6be.ctex"
+uid="uid://dhua5f003fg00"
+path="res://.godot/imported/Console1_On.png-0efc019dafb96f1df219ef55664b3083.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/consolesprites/Console_1_Red.png"
-dest_files=["res://.godot/imported/Console_1_Red.png-c9c500fc5474de31f05570730428c6be.ctex"]
+source_file="res://graphics/consolesprites/Console1_On.png"
+dest_files=["res://.godot/imported/Console1_On.png-0efc019dafb96f1df219ef55664b3083.ctex"]
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
+compress/high_quality_mode=0
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0

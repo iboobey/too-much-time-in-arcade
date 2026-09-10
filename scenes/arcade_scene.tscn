@@ -1035,8 +1035,7 @@ tile_set = SubResource("TileSet_ut00t")
 
 [node name="ColorRect" type="ColorRect" parent="Tilemaps" unique_id=1771638149]
 z_index = -99
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = -1
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
@@ -1085,7 +1084,6 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_decei")
 
 [node name="Borders" type="StaticBody2D" parent="." unique_id=1747917912]
-collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders" unique_id=1809954826]
 z_index = 4
@@ -1101,5 +1099,5 @@ shape = SubResource("SegmentShape2D_decei")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Borders" unique_id=770749447]
 shape = SubResource("SegmentShape2D_ut00t")
 
-[node name="Node2D2" parent="." unique_id=526672248 instance=ExtResource("4_decei")]
+[node name="Console1" parent="." unique_id=526672248 instance=ExtResource("4_decei")]
 position = Vector2(74, -5)

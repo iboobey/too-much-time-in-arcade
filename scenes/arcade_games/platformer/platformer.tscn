@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://ctbik6phs2kl2" path="res://scripts/arcade_games/platformer/platformer.gd" id="1_o44nw"]
 [ext_resource type="PackedScene" uid="uid://mpiuvtpngfod" path="res://player/player.tscn" id="2_i3m25"]
+[ext_resource type="Script" uid="uid://bxvmmsq7jmvl5" path="res://scripts/arcade_games/platformer/platform_spawner.gd" id="2_uvftm"]
 [ext_resource type="Texture2D" uid="uid://bx0855crgtdu7" path="res://graphics/gamesprites/platformersprites/Normal_Platform.png" id="4_uvftm"]
-[ext_resource type="Texture2D" uid="uid://bkuwegvy6r4s0" path="res://graphics/gamesprites/platformersprites/PlatformerGUI.png" id="5_i3m25"]
-[ext_resource type="Theme" uid="uid://bnwynn04fl26l" path="res://scripts/arcade_games/platformer/Platformer.tres" id="6_uvftm"]
+[ext_resource type="Texture2D" uid="uid://dmuqce0efdjot" path="res://graphics/gamesprites/platformersprites/PlatformerGUI.png" id="5_i3m25"]
+[ext_resource type="Theme" uid="uid://bnwynn04fl26l" path="res://graphics/gamesprites/Platformer.tres" id="6_uvftm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_apsbx"]
 size = Vector2(128, 8)
@@ -22,6 +23,7 @@ metadata/_edit_horizontal_guides_ = [720.0]
 metadata/_edit_vertical_guides_ = [1280.0]
 
 [node name="PlatformSpawner" type="Node2D" parent="." unique_id=1623126217]
+script = ExtResource("2_uvftm")
 
 [node name="StartPlatform" type="StaticBody2D" parent="." unique_id=2097490818]
 scale = Vector2(0.99528927, 1.0111401)
@@ -35,7 +37,6 @@ texture = ExtResource("4_uvftm")
 shape = SubResource("RectangleShape2D_apsbx")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="StartPlatform" unique_id=1823033853]
-visible = false
 position = Vector2(-1.0047331, -0.9889827)
 
 [node name="StartArea" type="Area2D" parent="." unique_id=708076133]
@@ -59,7 +60,7 @@ offset_right = 110.5
 offset_bottom = 360.0
 scale = Vector2(2, 2)
 texture = ExtResource("5_i3m25")
-region_rect = Rect2(16, 16, 60, 80)
+region_rect = Rect2(29, 15, 60, 80)
 patch_margin_left = 20
 patch_margin_top = 20
 patch_margin_right = 20
@@ -83,7 +84,7 @@ layout_mode = 2
 size_flags_vertical = 3
 offset_transform_enabled = true
 texture = ExtResource("5_i3m25")
-region_rect = Rect2(96, 16, 48, 32)
+region_rect = Rect2(109, 15, 48, 32)
 patch_margin_left = 7
 patch_margin_top = 7
 patch_margin_right = 7
@@ -107,7 +108,7 @@ layout_mode = 2
 size_flags_vertical = 3
 offset_transform_enabled = true
 texture = ExtResource("5_i3m25")
-region_rect = Rect2(96, 16, 48, 32)
+region_rect = Rect2(109, 15, 48, 32)
 patch_margin_left = 7
 patch_margin_top = 7
 patch_margin_right = 7
@@ -132,7 +133,7 @@ layout_mode = 2
 size_flags_vertical = 3
 offset_transform_enabled = true
 texture = ExtResource("5_i3m25")
-region_rect = Rect2(96, 16, 48, 32)
+region_rect = Rect2(109, 15, 48, 32)
 patch_margin_left = 7
 patch_margin_top = 7
 patch_margin_right = 7
@@ -148,7 +149,7 @@ layout_mode = 2
 size_flags_vertical = 3
 offset_transform_enabled = true
 texture = ExtResource("5_i3m25")
-region_rect = Rect2(96, 16, 48, 32)
+region_rect = Rect2(109, 15, 48, 32)
 patch_margin_left = 7
 patch_margin_top = 7
 patch_margin_right = 7
@@ -164,7 +165,7 @@ layout_mode = 2
 size_flags_vertical = 3
 offset_transform_enabled = true
 texture = ExtResource("5_i3m25")
-region_rect = Rect2(96, 16, 48, 32)
+region_rect = Rect2(109, 15, 48, 32)
 patch_margin_left = 7
 patch_margin_top = 7
 patch_margin_right = 7
@@ -189,7 +190,7 @@ layout_mode = 2
 size_flags_vertical = 3
 offset_transform_enabled = true
 texture = ExtResource("5_i3m25")
-region_rect = Rect2(96, 16, 48, 32)
+region_rect = Rect2(109, 15, 48, 32)
 patch_margin_left = 7
 patch_margin_top = 7
 patch_margin_right = 7
@@ -209,6 +210,7 @@ offset_bottom = 720.0
 color = Color(0.06437778, 0.0036195307, 0.00361884, 1)
 
 [node name="Player" parent="." unique_id=1632771296 instance=ExtResource("2_i3m25")]
+position = Vector2(0, -17)
 
 [connection signal="screen_exited" from="StartPlatform/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="body_entered" from="DeathArea" to="." method="_on_death_area_body_entered"]

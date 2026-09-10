@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmuqce0efdjot"
-path="res://.godot/imported/PlatformerGUI.png-7aae210b220a5e3c57ce8c8b91cdc51c.ctex"
+uid="uid://nfg2meix1by1"
+path="res://.godot/imported/Console1.png-656cc64f536850abdd5f9c5650f0cb37.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/gamesprites/platformersprites/PlatformerGUI.png"
-dest_files=["res://.godot/imported/PlatformerGUI.png-7aae210b220a5e3c57ce8c8b91cdc51c.ctex"]
+source_file="res://graphics/consolesprites/Console1.png"
+dest_files=["res://.godot/imported/Console1.png-656cc64f536850abdd5f9c5650f0cb37.ctex"]
 
 [params]
 

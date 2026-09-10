@@ -1157,7 +1157,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rgyib"]
-size = Vector2(14, 3.5)
+size = Vector2(14, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hg6s5"]
 size = Vector2(5.3934927, 8.948082)
@@ -1213,7 +1213,7 @@ frame_progress = 0.854335
 
 [node name="DefaultColllision" type="CollisionShape2D" parent="." unique_id=98314499]
 z_index = 10
-position = Vector2(0, 10.75)
+position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_rgyib")
 
 [node name="PlatformerCollision" type="CollisionShape2D" parent="." unique_id=1533218506]

@@ -10,17 +10,11 @@ var can_jump : bool = false
 var platformer : bool = false
 var is_on_ice : bool = false
 
-@onready var platformer_camera_limit_x : int = 150
+
 
 @export_range(0.01, 1.0, 0.01) var grip: float = 0.25
 @export_range(0.01, 1.0, 0.01) var ice_grip: float = 0.03
 
-
-@onready var platformer_scene : PackedScene = preload("res://scenes/arcade_games/platformer/platformer.tscn")
-
-
-
-@onready var camera: Camera2D = $Camera2D
 
 @onready var shoe_anim := $CompositeSprites/ShoeRed
 @onready var torso_anim := $CompositeSprites/TorsoGreen
@@ -32,12 +26,9 @@ var is_on_ice : bool = false
 
 
 func _ready() -> void:
-	
-	if platformer_scene.emit_signal("ready"):
-		print("yes")
-		$Camera2D.set_limit(SIDE_LEFT,-platformer_camera_limit_x)
-		$Camera2D.set_limit(SIDE_RIGHT,platformer_camera_limit_x)
-		
+	pass
+
+
 func move(delta):
 	var direction = Input.get_vector("left","right","up","down")
 	velocity = direction * speed * delta
