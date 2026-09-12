@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bvotelskv5kfa"]
+
+[ext_resource type="PackedScene" uid="uid://dhn7832do114r" path="res://interactions/interactable.tscn" id="1_d0u6o"]
+[ext_resource type="Script" uid="uid://bgxij4nnoa6yb" path="res://scripts/arcade_consoles/console_2.gd" id="1_yy5sv"]
+[ext_resource type="Texture2D" uid="uid://fivp7eaksce3" path="res://graphics/consolesprites/Console2.png" id="2_yy5sv"]
+[ext_resource type="FontFile" uid="uid://b5qt7mlemekrv" path="res://graphics/fonts/PressStart2P-Regular.ttf" id="3_gxjpw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d0u6o"]
+radius = 20.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_snkn6"]
+size = Vector2(20, 34)
+
+[node name="Console2" type="Node2D" unique_id=1518644078]
+script = ExtResource("1_yy5sv")
+
+[node name="Interactable" parent="." unique_id=705641517 instance=ExtResource("1_d0u6o")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=607099338]
+shape = SubResource("CircleShape2D_d0u6o")
+debug_color = Color(0.03360352, 0.65089613, 0, 0.41960785)
+
+[node name="ConsoleSprite" type="Sprite2D" parent="." unique_id=1377025054]
+texture = ExtResource("2_yy5sv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1640408895]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=906648130]
+shape = SubResource("RectangleShape2D_snkn6")
+
+[node name="InteractingLabel" type="Node2D" parent="." unique_id=215583165]
+scale = Vector2(0.6, 0.6)
+
+[node name="InteractingLabel" type="Label" parent="InteractingLabel" unique_id=1522030085]
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.33333
+offset_top = -48.888885
+offset_right = 122.66667
+offset_bottom = -25.888885
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6065412, 0.6065412)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 9
+theme_override_fonts/font = ExtResource("3_gxjpw")
+theme_override_font_sizes/font_size = 14
+text = "[E] To Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true

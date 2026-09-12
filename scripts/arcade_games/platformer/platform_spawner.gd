@@ -62,7 +62,7 @@ func spawn_set(trigger_amount_,):
 	for i in platform_amount:
 		
 		var rng = RandomNumberGenerator.new()
-		var weight_index = ceil(trigger_amount_ / 3)
+		var weight_index = ceil(trigger_amount_ / 3) if not(trigger_amount_ / 3 >= 5) else 4 
 		var index = rng.rand_weighted(weights[weight_index])
 		var platform = platforms[index]
 		var instance = platform.instantiate()

@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://bb0ytnds2n53f" path="res://scripts/arcade_scene.gd" id="1_g722h"]
 [ext_resource type="Texture2D" uid="uid://5rvnnasbutm" path="res://graphics/tilesets/Arcade_Floor_Wall_Tileset.png" id="3_decei"]
 [ext_resource type="PackedScene" uid="uid://mpiuvtpngfod" path="res://player/player.tscn" id="3_u8up3"]
-[ext_resource type="PackedScene" uid="uid://b7p45egiiwirr" path="res://scenes/arcade_consoles/console1.tscn" id="4_decei"]
+[ext_resource type="PackedScene" uid="uid://b7p45egiiwirr" path="res://scenes/arcade_consoles/console_1.tscn" id="4_decei"]
+[ext_resource type="PackedScene" uid="uid://bvotelskv5kfa" path="res://scenes/arcade_consoles/console_2.tscn" id="5_ut00t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fgvqq"]
 texture = ExtResource("3_decei")
@@ -1099,5 +1100,10 @@ shape = SubResource("SegmentShape2D_decei")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Borders" unique_id=770749447]
 shape = SubResource("SegmentShape2D_ut00t")
 
-[node name="Console1" parent="." unique_id=526672248 instance=ExtResource("4_decei")]
+[node name="Consoles" type="Node2D" parent="." unique_id=864066441]
+
+[node name="Console1" parent="Consoles" unique_id=526672248 instance=ExtResource("4_decei")]
 position = Vector2(74, -5)
+
+[node name="Console2" parent="Consoles" unique_id=1518644078 instance=ExtResource("5_ut00t")]
+position = Vector2(119, -5)

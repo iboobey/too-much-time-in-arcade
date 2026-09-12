@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://rkh0siegs05w"]
+
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_p6wn7"]
+[ext_resource type="Script" uid="uid://j3heu313ap60" path="res://scenes/arcade_games/snake/snake_end_screen.gd" id="1_y8qd6"]
+
+[node name="snake_end_screen" type="Control" unique_id=530062789]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_y8qd6")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1900064505]
+position = Vector2(152, 74)
+texture = ExtResource("1_p6wn7")
+
+[node name="Icon2" type="Sprite2D" parent="." unique_id=1911903530]
+position = Vector2(705, 244)
+texture = ExtResource("1_p6wn7")
+
+[node name="Button" type="Button" parent="." unique_id=757882021]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 186.0
+offset_right = 447.0
+offset_bottom = 277.0
+text = "Restart"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cumbgnsxv6p0f"]
+
+[ext_resource type="Texture2D" uid="uid://bnuhan3fafhmr" path="res://graphics/gamesprites/snakesprites/SnakeBody.png" id="1_3ofgq"]
+
+[node name="SnakeBody" type="Node2D" unique_id=1904157319]
+
+[node name="SnakeBody" type="Sprite2D" parent="." unique_id=393812070]
+position = Vector2(15, 15)
+texture = ExtResource("1_3ofgq")

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d1g4q68lah83b"]
+
+[ext_resource type="Texture2D" uid="uid://i4yiq3rhwquy" path="res://graphics/gamesprites/snakesprites/Apples/RedApple.png" id="1_8clfm"]
+[ext_resource type="Script" uid="uid://b2dpvwxrixwd" path="res://scenes/arcade_games/snake/apple.gd" id="1_sloa6"]
+
+[node name="Apple" type="Node2D" unique_id=1034747836]
+script = ExtResource("1_sloa6")
+
+[node name="AppleSprite" type="Sprite2D" parent="." unique_id=2145913948]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_8clfm")

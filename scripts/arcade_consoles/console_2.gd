@@ -14,13 +14,13 @@ func _ready() -> void:
 
 func action_on_interact():
 	
-	$ConsoleSprite.texture = load("res://graphics/consolesprites/Console1_On.png")
+	$ConsoleSprite.texture = load("res://graphics/consolesprites/Console2_On.png")
 	await get_tree().create_timer(.5).timeout
-	get_tree().change_scene_to_file("res://scenes/arcade_games/platformer/platformer.tscn")
+	get_tree().change_scene_to_file("res://scenes/arcade_games/snake/snake.tscn")
 
 
 func _process(_delta):
 	if global_position.distance_to(player.global_position) < 20:
 		interacting_label.show()
-	else:
+	else: 
 		interacting_label.hide()
