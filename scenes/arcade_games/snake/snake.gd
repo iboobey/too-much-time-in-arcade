@@ -5,11 +5,22 @@ extends Node2D
 @onready var move_timer: Timer = $MoveTimer
 @onready var time_keeper_timer: Timer = $TimeKeeperTimer
 
-@onready var apple := preload("res://scenes/arcade_games/snake/apple.tscn")
+@onready var apple: Area2D = %Apple
+@onready var apple_sprite: Sprite2D = %AppleSprite
 
-@onready var score_label: Label = $UI/MarginContainer/VBoxContainer/Score/ScoreLabel
-@onready var max_score_label: Label = $UI/MarginContainer/VBoxContainer/MaxScore/MaxScoreLabel
-@onready var time_label: Label = $UI/MarginContainer/VBoxContainer/Time/TimeLabel
+@onready var you_died_label: Label = $UI/YouDied/YouDiedLabel
+@onready var score_label: Label = $UI/Scores/VBoxContainer/Score/ScoreLabel
+@onready var max_score_label: Label = $UI/Scores/VBoxContainer/MaxScore/MaxScoreLabel
+@onready var time_label: Label = $UI/Scores/VBoxContainer/Time/TimeLabel
+
+
+const RED_APPLE = preload("res://graphics/gamesprites/snakesprites/Apples/RedApple.png")
+const GREEN_APPLE = preload("res://graphics/gamesprites/snakesprites/Apples/GreenApple.png")
+const YELLOW_APPLE = preload("res://graphics/gamesprites/snakesprites/Apples/YellowApple.png")
+const GOLDEN_APPLE = preload("res://graphics/gamesprites/snakesprites/Apples/GoldenApple.png")
+
+var apple_colors : Array = [RED_APPLE, GREEN_APPLE, YELLOW_APPLE, GOLDEN_APPLE]
+
 
 
 var score : int = 0
@@ -33,9 +44,11 @@ var right = Vector2(1,0)
 var direction : Vector2
 var can_move: bool
 
-var apple_pos : Vector2
+
 var apple_pos_list : Array = []
 var apple_list : Array = []
+var apple_regen : bool = true
+
 
 var map_x_offset := 340
 var map_y_offset := 60
@@ -56,17 +69,17 @@ func _process(_delta: float) -> void:
 	
 	if score > Global.snake_score :
 		Global.snake_score = score
-	print(snake_data[1]+Vector2(9,9))
+	
 	update_label()
-	instantiate_apple()
+	
+
 
 
 func new_game():
 	direction = up
 	can_move = true
 	generate_snake()
-	for i in 3:
-		instantiate_apple()
+	move_apple()
 
 
 func generate_snake():
@@ -74,7 +87,7 @@ func generate_snake():
 	snake_data.clear()
 	snake.clear()
 	
-	for i in range(3):
+	for i in 3:
 		add_segment(starting_position + Vector2(0,i))
 
 
@@ -82,7 +95,7 @@ func add_segment(pos):
 	snake_data.append(position)
 	var snake_body = snake_body_scene.instantiate()
 	snake_body.position = pos * cell_size + map_offset
-	add_child(snake_body)
+	call_deferred("add_child",snake_body)
 	snake.append(snake_body)
 
 
@@ -126,12 +139,11 @@ func _on_move_timer_timeout() -> void:
 		snake[i].position = ((snake_data[i] + starting_position) * cell_size) + map_offset  
 	check_border()
 	check_cannibalism()
-	check_apple_eaten()
 
 
 func check_border():
 	if not(snake[0].global_position.x < border_right) or not(snake[0].global_position.x > border_left) or not(snake[0].global_position.y < border_down) or not(snake[0].global_position.y > border_up) : 
-		end_game() 
+		end_game()
 
 
 func check_cannibalism():
@@ -140,42 +152,33 @@ func check_cannibalism():
 			end_game()
 
 
-func instantiate_apple():
-	var instance = apple.instantiate() 
-	var apple_global_pos
+func move_apple():
+	var random_pos : Vector2 = Vector2(randi_range(0,19),randi_range(0,19))
 	
-	apple_pos = Vector2(randi_range(0,cells-1),randi_range(0,cells-1))
-	apple_global_pos = (apple_pos * cell_size) + map_offset
+	var random_color = randi_range(0,3)
+	var color = apple_colors[random_color]
 	
-	for i in len(snake_data):
-		if apple_global_pos == (snake_data[i] + Vector2(9,9)):
-			apple_pos = Vector2(randi_range(0,cells),randi_range(0,cells))
-		else:
-			break
-	print(apple_pos)
+	apple_sprite.texture = color
 	
-	instance.global_position = (apple_pos * cell_size) + map_offset + Vector2(cell_size / 2.0,cell_size / 2.0)
+	while apple_regen:
+		apple_regen = false
+		random_pos = Vector2(randi_range(0,19),randi_range(0,19))
+		for i in snake_data:
+			if random_pos == (i + Vector2(9,9)):
+				apple_regen = true
+		for i in apple_pos_list:
+			if random_pos == i:
+				apple_regen = true
 	
-	apple_list.append(instance)
-	apple_pos_list.append(instance.global_position - Vector2(cell_size / 2.0,cell_size / 2.0))
+	var random_pos_globalized : Vector2 = (random_pos * cell_size) + map_offset + Vector2(15,15)
 	
-	add_child(instance)
+	apple.global_position = random_pos_globalized
 
 
-func check_apple_eaten():
-	for i in len(apple_pos_list):
-		if snake[0].global_position == apple_pos_list[i]:
-			score += 1
-			apple_list[i].queue_free()
-			apple_list.remove_at(i)
-			apple_pos_list.remove_at(i)
-			
-			add_segment(old_data[-1])
-			instantiate_apple()
-
-
-func  end_game():
-	Global.snake_score = score
+func end_game():
+	
+	you_died_label.visible = true
+	await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_file("res://scenes/arcade_games/snake/snake_end_screen.tscn")
 
 
@@ -194,4 +197,10 @@ func update_label():
 	
 	time_label.text = "Time Spent:
 
-" + str(time_passed)
+	" + str(time_passed)
+
+
+func _on_red_apple_area_shape_entered(_area_rid: RID, _area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
+	score += 1
+	add_segment(old_data[-1])
+	move_apple()

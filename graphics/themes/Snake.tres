@@ -1,8 +1,39 @@
 [gd_resource type="Theme" format=3 uid="uid://cuqv2xaljwg2i"]
 
 [ext_resource type="FontFile" uid="uid://b5qt7mlemekrv" path="res://graphics/fonts/PressStart2P-Regular.ttf" id="1_qw1w3"]
+[ext_resource type="Texture2D" uid="uid://bi4k5vrro0sxc" path="res://graphics/gamesprites/snakesprites/SnakeGUI.png" id="2_eestx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2u3q6"]
+texture = ExtResource("2_eestx")
+texture_margin_left = 72.0
+texture_margin_top = 30.0
+texture_margin_right = 70.0
+texture_margin_bottom = 42.0
+region_rect = Rect2(449, 23, 192, 90)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_doodp"]
+texture = ExtResource("2_eestx")
+texture_margin_left = 72.0
+texture_margin_top = 36.0
+texture_margin_right = 55.0
+texture_margin_bottom = 43.0
+region_rect = Rect2(221, 23, 192, 90)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eestx"]
+texture = ExtResource("2_eestx")
+texture_margin_left = 72.0
+texture_margin_top = 30.0
+texture_margin_right = 66.0
+texture_margin_bottom = 36.0
+region_rect = Rect2(449, 137, 192, 84)
 
 [resource]
+Button/constants/outline_size = 12
+Button/font_sizes/font_size = 36
+Button/fonts/font = ExtResource("1_qw1w3")
+Button/styles/hover = SubResource("StyleBoxTexture_2u3q6")
+Button/styles/normal = SubResource("StyleBoxTexture_doodp")
+Button/styles/pressed = SubResource("StyleBoxTexture_eestx")
 Label/constants/outline_size = 12
 Label/font_sizes/font_size = 20
 Label/fonts/font = ExtResource("1_qw1w3")

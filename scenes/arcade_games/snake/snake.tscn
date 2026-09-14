@@ -4,8 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bfyiw2s4kyq0k" path="res://graphics/gamesprites/snakesprites/SnakeBackground.png" id="2_korl2"]
 [ext_resource type="Texture2D" uid="uid://bi4k5vrro0sxc" path="res://graphics/gamesprites/snakesprites/SnakeGUI.png" id="3_8d484"]
 [ext_resource type="Theme" uid="uid://cuqv2xaljwg2i" path="res://graphics/themes/Snake.tres" id="4_erhk5"]
+[ext_resource type="Texture2D" uid="uid://i4yiq3rhwquy" path="res://graphics/gamesprites/snakesprites/Apples/RedApple.png" id="5_2u3q6"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_erhk5"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2u3q6"]
 texture = ExtResource("3_8d484")
 texture_region_size = Vector2i(30, 30)
 0:0/0 = 0
@@ -29,12 +30,16 @@ texture_region_size = Vector2i(30, 30)
 
 [sub_resource type="TileSet" id="TileSet_rx551"]
 tile_size = Vector2i(30, 30)
-sources/3 = SubResource("TileSetAtlasSource_erhk5")
+sources/3 = SubResource("TileSetAtlasSource_2u3q6")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2u3q6"]
+size = Vector2(13.333334, 14.666667)
 
 [node name="Snake" type="Node2D" unique_id=587825186]
 script = ExtResource("1_c61hx")
+metadata/_edit_vertical_guides_ = [340.0]
 
-[node name="Background" type="Sprite2D" parent="." unique_id=1618816784]
+[node name="Background" type="Sprite2D" parent="." unique_id=2043294224]
 position = Vector2(640, 360)
 texture = ExtResource("2_korl2")
 
@@ -56,7 +61,7 @@ position = Vector2(-10, 0)
 tile_map_data = PackedByteArray("AAAqAAAAAwACAAAAAAAqAAEAAwACAAEAAAAqAAIAAwACAAEAAAAqAAMAAwACAAEAAAAqAAQAAwACAAEAAAAqAAUAAwACAAEAAAAqAAYAAwACAAEAAAAqAAcAAwACAAEAAAAqAAgAAwACAAEAAAAqAAkAAwACAAEAAAAqAAoAAwACAAEAAAAqAAsAAwACAAEAAAAqAAwAAwACAAEAAAAqAA0AAwACAAEAAAAqAA4AAwACAAEAAAAqAA8AAwACAAEAAAAqABAAAwACAAEAAAAqABEAAwACAAEAAAAqABIAAwACAAEAAAAqABMAAwACAAEAAAAqABQAAwACAAEAAAAqABUAAwACAAEAAAAqABYAAwACAAEAAAAqABcAAwACAAIAAAA=")
 tile_set = SubResource("TileSet_rx551")
 
-[node name="MarginContainer" type="MarginContainer" parent="UI" unique_id=1619421115]
+[node name="Scores" type="MarginContainer" parent="UI" unique_id=1619421115]
 offset_right = 340.0
 offset_bottom = 720.0
 theme_override_constants/margin_left = 50
@@ -64,11 +69,11 @@ theme_override_constants/margin_top = 80
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 260
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer" unique_id=348648709]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Scores" unique_id=348648709]
 layout_mode = 2
 theme_override_constants/separation = 40
 
-[node name="Score" type="NinePatchRect" parent="UI/MarginContainer/VBoxContainer" unique_id=2052076550]
+[node name="Score" type="NinePatchRect" parent="UI/Scores/VBoxContainer" unique_id=2052076550]
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("3_8d484")
@@ -78,7 +83,7 @@ patch_margin_top = 7
 patch_margin_right = 7
 patch_margin_bottom = 7
 
-[node name="ScoreLabel" type="Label" parent="UI/MarginContainer/VBoxContainer/Score" unique_id=67795578]
+[node name="ScoreLabel" type="Label" parent="UI/Scores/VBoxContainer/Score" unique_id=67795578]
 z_index = 100
 layout_mode = 0
 offset_right = 240.0
@@ -90,7 +95,7 @@ text = "SCORE:
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MaxScore" type="NinePatchRect" parent="UI/MarginContainer/VBoxContainer" unique_id=26470692]
+[node name="MaxScore" type="NinePatchRect" parent="UI/Scores/VBoxContainer" unique_id=26470692]
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("3_8d484")
@@ -100,7 +105,7 @@ patch_margin_top = 7
 patch_margin_right = 7
 patch_margin_bottom = 7
 
-[node name="MaxScoreLabel" type="Label" parent="UI/MarginContainer/VBoxContainer/MaxScore" unique_id=537953592]
+[node name="MaxScoreLabel" type="Label" parent="UI/Scores/VBoxContainer/MaxScore" unique_id=537953592]
 z_index = 100
 layout_mode = 0
 offset_right = 240.0
@@ -112,7 +117,7 @@ text = "MAX SCORE:
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Time" type="NinePatchRect" parent="UI/MarginContainer/VBoxContainer" unique_id=2076397898]
+[node name="Time" type="NinePatchRect" parent="UI/Scores/VBoxContainer" unique_id=2076397898]
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("3_8d484")
@@ -122,7 +127,7 @@ patch_margin_top = 7
 patch_margin_right = 7
 patch_margin_bottom = 7
 
-[node name="TimeLabel" type="Label" parent="UI/MarginContainer/VBoxContainer/Time" unique_id=524177997]
+[node name="TimeLabel" type="Label" parent="UI/Scores/VBoxContainer/Time" unique_id=524177997]
 layout_mode = 0
 offset_right = 240.0
 offset_bottom = 100.0
@@ -133,10 +138,45 @@ text = "Time Spent:
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="YouDied" type="MarginContainer" parent="UI" unique_id=893108756]
+offset_left = 340.0
+offset_top = 60.0
+offset_right = 940.0
+offset_bottom = 660.0
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 250
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 250
+
+[node name="YouDiedLabel" type="Label" parent="UI/YouDied" unique_id=1354548105]
+visible = false
+layout_mode = 2
+theme = ExtResource("4_erhk5")
+theme_override_colors/font_color = Color(0.09019608, 0.59607846, 0.18039216, 1)
+theme_override_font_sizes/font_size = 32
+text = "You Died"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="MoveTimer" type="Timer" parent="." unique_id=702191861]
 wait_time = 0.1
 
 [node name="TimeKeeperTimer" type="Timer" parent="." unique_id=1812810575]
 
+[node name="AppleSpawner" type="Node2D" parent="." unique_id=183393893]
+
+[node name="Apple" type="Area2D" parent="." unique_id=1929525957]
+unique_name_in_owner = true
+
+[node name="AppleSprite" type="Sprite2D" parent="Apple" unique_id=470846349]
+unique_name_in_owner = true
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_2u3q6")
+
+[node name="AppleCollision" type="CollisionShape2D" parent="Apple" unique_id=453577699]
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_2u3q6")
+
 [connection signal="timeout" from="MoveTimer" to="." method="_on_move_timer_timeout"]
 [connection signal="timeout" from="TimeKeeperTimer" to="." method="_on_time_keeper_timer_timeout"]
+[connection signal="area_shape_entered" from="Apple" to="." method="_on_red_apple_area_shape_entered"]
