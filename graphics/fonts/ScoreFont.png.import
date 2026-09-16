@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5rvnnasbutm"
-path="res://.godot/imported/Arcade_Floor_Wall_Tileset.png-41296eed87aa98ed080ec40036e0afee.ctex"
+uid="uid://bsr4cqj67j5ne"
+path="res://.godot/imported/ScoreFont.png-24219e1e21201574e4d6c9853a654670.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/tilesets/Arcade_Floor_Wall_Tileset.png"
-dest_files=["res://.godot/imported/Arcade_Floor_Wall_Tileset.png-41296eed87aa98ed080ec40036e0afee.ctex"]
+source_file="res://graphics/fonts/ScoreFont.png"
+dest_files=["res://.godot/imported/ScoreFont.png-24219e1e21201574e4d6c9853a654670.ctex"]
 
 [params]
 

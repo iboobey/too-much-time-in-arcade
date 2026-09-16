@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5rvnnasbutm"
-path="res://.godot/imported/Arcade_Floor_Wall_Tileset.png-41296eed87aa98ed080ec40036e0afee.ctex"
+uid="uid://djdnpug3b8gkb"
+path="res://.godot/imported/YouWon!.png-c1ed4ea99cee2c46c7105449fc787dcc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/tilesets/Arcade_Floor_Wall_Tileset.png"
-dest_files=["res://.godot/imported/Arcade_Floor_Wall_Tileset.png-41296eed87aa98ed080ec40036e0afee.ctex"]
+source_file="res://graphics/titleoptionswinscenes/YouWon!.png"
+dest_files=["res://.godot/imported/YouWon!.png-c1ed4ea99cee2c46c7105449fc787dcc.ctex"]
 
 [params]
 

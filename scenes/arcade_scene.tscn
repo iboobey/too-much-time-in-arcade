@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://bb0ytnds2n53f" path="res://scripts/arcade_scene.gd" id="1_g722h"]
 [ext_resource type="Texture2D" uid="uid://5rvnnasbutm" path="res://graphics/tilesets/Arcade_Floor_Wall_Tileset.png" id="3_decei"]
 [ext_resource type="PackedScene" uid="uid://mpiuvtpngfod" path="res://player/player.tscn" id="3_u8up3"]
+[ext_resource type="Texture2D" uid="uid://bsr4cqj67j5ne" path="res://graphics/fonts/ScoreFont.png" id="4_bfymx"]
 [ext_resource type="PackedScene" uid="uid://b7p45egiiwirr" path="res://scenes/arcade_consoles/console_1.tscn" id="4_decei"]
+[ext_resource type="Theme" uid="uid://bnwynn04fl26l" path="res://graphics/themes/Platformer.tres" id="4_t1ngq"]
 [ext_resource type="PackedScene" uid="uid://bvotelskv5kfa" path="res://scenes/arcade_consoles/console_2.tscn" id="5_ut00t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fgvqq"]
@@ -129,6 +131,41 @@ texture = ExtResource("3_decei")
 18:11/0 = 0
 20:11/0 = 0
 20:12/0 = 0
+20:1/0 = 0
+19:1/0 = 0
+18:1/0 = 0
+17:1/0 = 0
+16:1/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+20:0/0 = 0
+24:2/0 = 0
+23:2/0 = 0
+22:2/0 = 0
+22:1/0 = 0
+22:0/0 = 0
+23:0/0 = 0
+24:0/0 = 0
+24:1/0 = 0
+21:2/0 = 0
+21:1/0 = 0
+21:0/0 = 0
+23:1/0 = 0
+25:1/0 = 0
+26:1/0 = 0
+27:1/0 = 0
+19:2/0 = 0
+19:3/0 = 0
+21:3/0 = 0
+22:3/0 = 0
+23:3/0 = 0
+24:3/0 = 0
+19:4/0 = 0
+20:4/0 = 0
+19:5/0 = 0
+20:5/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_rpcry"]
 sources/0 = SubResource("TileSetAtlasSource_fgvqq")
@@ -256,6 +293,40 @@ texture = ExtResource("3_decei")
 18:11/0 = 0
 20:11/0 = 0
 20:12/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+20:0/0 = 0
+21:0/0 = 0
+22:0/0 = 0
+23:0/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+20:1/0 = 0
+21:1/0 = 0
+22:1/0 = 0
+23:1/0 = 0
+24:1/0 = 0
+25:1/0 = 0
+26:1/0 = 0
+27:1/0 = 0
+19:2/0 = 0
+21:2/0 = 0
+22:2/0 = 0
+23:2/0 = 0
+24:2/0 = 0
+19:3/0 = 0
+19:4/0 = 0
+19:5/0 = 0
+21:3/0 = 0
+22:3/0 = 0
+23:3/0 = 0
+24:3/0 = 0
+20:4/0 = 0
+20:5/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_fgvqq"]
 sources/0 = SubResource("TileSetAtlasSource_t1ngq")
@@ -559,7 +630,7 @@ texture = ExtResource("3_decei")
 18:2/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_decei"]
-physics_layer_0/collision_layer = 2
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_u8up3")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ut00t"]
@@ -977,9 +1048,87 @@ texture = ExtResource("3_decei")
 [sub_resource type="TileSet" id="TileSet_ut00t"]
 sources/0 = SubResource("TileSetAtlasSource_decei")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1ngq"]
+atlas = ExtResource("4_bfymx")
+region = Rect2(63, 0, 7, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgvqq"]
+atlas = ExtResource("4_bfymx")
+region = Rect2(0, 0, 7, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpcry"]
+atlas = ExtResource("4_bfymx")
+region = Rect2(7, 0, 7, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16e0h"]
+atlas = ExtResource("4_bfymx")
+region = Rect2(14, 0, 7, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ywgl"]
+atlas = ExtResource("4_bfymx")
+region = Rect2(21, 0, 7, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fkur"]
+atlas = ExtResource("4_bfymx")
+region = Rect2(28, 0, 7, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_raij4"]
+atlas = ExtResource("4_bfymx")
+region = Rect2(35, 0, 7, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wodrw"]
+atlas = ExtResource("4_bfymx")
+region = Rect2(42, 0, 7, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bobbe"]
+atlas = ExtResource("4_bfymx")
+region = Rect2(49, 0, 7, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3b3o"]
+atlas = ExtResource("4_bfymx")
+region = Rect2(56, 0, 7, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xyi3f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1ngq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgvqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rpcry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16e0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ywgl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fkur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_raij4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wodrw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bobbe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3b3o")
+}],
+"loop": 1,
+"name": &"0-9",
+"speed": 5.0
+}]
+
 [sub_resource type="Gradient" id="Gradient_u8up3"]
-offsets = PackedFloat32Array(0, 0.7348485)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0.15765765, 0.3063063, 0.4234234, 0.5045045, 0.6711712, 0.8873874)
+colors = PackedColorArray(1, 1, 1, 1, 0.5877193, 0.5877193, 0.5877193, 1, 0.2684644, 0.2684644, 0.2684644, 1, 0.13667281, 0.13667281, 0.13667281, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_decei"]
 gradient = SubResource("Gradient_u8up3")
@@ -998,10 +1147,18 @@ b = Vector2(-39, 0)
 a = Vector2(38, -16)
 b = Vector2(-39, -16)
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_rx551"]
+a = Vector2(-73, -4)
+b = Vector2(-73, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1ngq"]
+size = Vector2(60, 20)
+
 [node name="Arcade" type="Node2D" unique_id=1528780165]
 script = ExtResource("1_g722h")
 
 [node name="Player" parent="." unique_id=1632771296 instance=ExtResource("3_u8up3")]
+z_index = 10
 
 [node name="Tilemaps" type="Node2D" parent="." unique_id=255921363]
 
@@ -1013,7 +1170,13 @@ tile_set = SubResource("TileSet_rpcry")
 
 [node name="Deco1" type="TileMapLayer" parent="Tilemaps" unique_id=1641393377]
 z_index = 1
-tile_map_data = PackedByteArray("AADx//7/AAANAAEAAADy//7/AAAOAAEAAAD3//7/AAANAAEAAAD4//7/AAAOAAEAAAD5//7/AAANAAIAAAD6//7/AAAOAAIAAAD1//7/AAANAAIAAAD2//7/AAAOAAIAAADz//7/AAANAAIAAAD0//7/AAAOAAIAAAD7//7/AAANAAEAAAD8//7/AAAOAAEAAAADAP7/AAANAAEAAAAEAP7/AAAOAAEAAAAFAP7/AAANAAEAAAAGAP7/AAAOAAEAAAAMAP7/AAAOAAEAAAANAP7/AAANAAEAAAAKAP7/AAAOAAIAAAALAP7/AAANAAEAAAAHAP7/AAANAAIAAAAIAP7/AAAOAAIAAAAJAP7/AAANAAIAAAAOAP7/AAAOAAEAAAA=")
+tile_map_data = PackedByteArray("AADx//7/AAANAAEAAADy//7/AAAOAAEAAAD3//7/AAANAAEAAAD4//7/AAAOAAEAAAD5//7/AAANAAIAAAD6//7/AAAOAAIAAAD1//7/AAANAAIAAAD2//7/AAAOAAIAAADz//7/AAANAAIAAAD0//7/AAAOAAIAAAD7//7/AAANAAEAAAD8//7/AAAOAAEAAAAFAP7/AAANAAEAAAAGAP7/AAAOAAEAAAAMAP7/AAAOAAEAAAANAP7/AAANAAEAAAAKAP7/AAAOAAIAAAALAP7/AAANAAEAAAAHAP7/AAANAAIAAAAIAP7/AAAOAAIAAAAJAP7/AAANAAIAAAAOAP7/AAAOAAEAAAADAP7/AAANAAEAAAAEAP7/AAAOAAEAAAA=")
+tile_set = SubResource("TileSet_fgvqq")
+
+[node name="Deco3" type="TileMapLayer" parent="Tilemaps" unique_id=392895180]
+z_index = 1
+position = Vector2(0, -5)
+tile_map_data = PackedByteArray("AAD7/wAAAAATAAMAAAD7/wEAAAATAAQAAAD7/wIAAAATAAQAAAD7/wMAAAATAAUAAAAJAAAAAAAQAAEAAAAKAAAAAAARAAEAAAALAAAAAAASAAEAAAAMAAAAAAATAAEAAAANAAAAAAAUAAEAAAD7////AAATAAIAAAAJAP//AAAQAAAAAAAKAP//AAARAAAAAAALAP//AAASAAAAAAAMAP//AAATAAAAAAANAP//AAAUAAAAAAA=")
 tile_set = SubResource("TileSet_fgvqq")
 
 [node name="Wall_Side" type="TileMapLayer" parent="Tilemaps" unique_id=1392423868]
@@ -1041,18 +1204,81 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -435.0
-offset_top = -230.0
+offset_top = -228.0
 offset_right = 426.0
-offset_bottom = 228.0
+offset_bottom = 230.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 color = Color(0.061369084, 0.0613691, 0.06136907, 1)
 
-[node name="Ligths" type="Node2D" parent="." unique_id=1618124166]
+[node name="Label" type="Label" parent="Tilemaps" unique_id=1739715987]
+z_index = 1
+offset_left = 160.0
+offset_top = -6.0
+offset_right = 320.0
+offset_bottom = 16.499998
+scale = Vector2(0.3, 0.3)
+theme = ExtResource("4_t1ngq")
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 12
+text = "Coming Soon"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="PointLight2D" type="PointLight2D" parent="Ligths" unique_id=316435837]
+[node name="Score" type="Node2D" parent="." unique_id=1132868991]
+
+[node name="ScoreSign" type="TileMapLayer" parent="Score" unique_id=819567996]
+z_index = 1
+position = Vector2(8, -3)
+tile_map_data = PackedByteArray("AAD+//z/AAAZAAEAAAD///z/AAAaAAEAAAAAAPz/AAAbAAEAAAA=")
+tile_set = SubResource("TileSet_rpcry")
+
+[node name="ScoreBoard" type="NinePatchRect" parent="Score" unique_id=1202654338]
+offset_left = -24.0
+offset_top = -51.0
+offset_right = 22.0
+offset_bottom = -28.0
+texture = ExtResource("3_decei")
+region_rect = Rect2(347, 43, 39, 21)
+patch_margin_left = 12
+patch_margin_top = 10
+patch_margin_right = 12
+patch_margin_bottom = 10
+
+[node name="ScoreLabel" type="Node2D" parent="Score" unique_id=807123081]
+scale = Vector2(1.25, 1.25)
+
+[node name="ScoreHundredsDigit" type="AnimatedSprite2D" parent="Score/ScoreLabel" unique_id=1296050200]
+position = Vector2(-12.8, -36.8)
+sprite_frames = SubResource("SpriteFrames_xyi3f")
+animation = &"0-9"
+offset = Vector2(3, 5)
+
+[node name="ScoreTensDigit" type="AnimatedSprite2D" parent="Score/ScoreLabel" unique_id=84211344]
+position = Vector2(-0.79999995, -32)
+sprite_frames = SubResource("SpriteFrames_xyi3f")
+animation = &"0-9"
+
+[node name="ScoreUnitDigit" type="AnimatedSprite2D" parent="Score/ScoreLabel" unique_id=1188447149]
+position = Vector2(8, -32)
+sprite_frames = SubResource("SpriteFrames_xyi3f")
+animation = &"0-9"
+
+[node name="ScoreLight" type="PointLight2D" parent="Score" unique_id=316435837]
+visible = false
+position = Vector2(-1, -39)
+scale = Vector2(1.6330154, 1.6330154)
+color = Color(1, 0.82, 0.82, 1)
+energy = 3.0
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_decei")
+
+[node name="Lights" type="Node2D" parent="." unique_id=1618124166]
+visible = false
+
+[node name="PointLight2D" type="PointLight2D" parent="Lights" unique_id=1334505056]
 position = Vector2(-55.000004, -18)
 scale = Vector2(1.6128007, 1.6128007)
 color = Color(1, 0.85, 0.100000024, 1)
@@ -1060,7 +1286,7 @@ energy = 1.75
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_decei")
 
-[node name="PointLight2D2" type="PointLight2D" parent="Ligths" unique_id=139575871]
+[node name="PointLight2D2" type="PointLight2D" parent="Lights" unique_id=139575871]
 position = Vector2(-230.99998, -18)
 scale = Vector2(1.6128007, 1.6128007)
 color = Color(1, 0.85, 0.100000024, 1)
@@ -1068,7 +1294,7 @@ energy = 1.75
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_decei")
 
-[node name="PointLight2D3" type="PointLight2D" parent="Ligths" unique_id=1248056586]
+[node name="PointLight2D3" type="PointLight2D" parent="Lights" unique_id=1248056586]
 position = Vector2(153, -18)
 scale = Vector2(1.6128007, 1.6128007)
 color = Color(1, 0.85, 0.100000024, 1)
@@ -1076,7 +1302,7 @@ energy = 1.75
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_decei")
 
-[node name="PointLight2D4" type="PointLight2D" parent="Ligths" unique_id=1496939611]
+[node name="PointLight2D4" type="PointLight2D" parent="Lights" unique_id=1496939611]
 position = Vector2(233.00002, -18)
 scale = Vector2(1.6128007, 1.6128007)
 color = Color(1, 0.85, 0.100000024, 1)
@@ -1099,6 +1325,13 @@ shape = SubResource("SegmentShape2D_decei")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Borders" unique_id=770749447]
 shape = SubResource("SegmentShape2D_ut00t")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Borders" unique_id=1146068766]
+shape = SubResource("SegmentShape2D_rx551")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Borders" unique_id=1782455879]
+position = Vector2(184, 1)
+shape = SubResource("RectangleShape2D_t1ngq")
 
 [node name="Consoles" type="Node2D" parent="." unique_id=864066441]
 

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Too Much Time In Arcade"
-run/main_scene="uid://skkn20sotfxd"
+run/main_scene="uid://ovnbuimm0oaa"
 config/features=PackedStringArray("4.8", "Forward Plus")
 config/icon="res://icon.svg"
 
