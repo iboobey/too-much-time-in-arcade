@@ -34,3 +34,6 @@ Button/fonts/font = ExtResource("1_iwfee")
 Button/styles/hover = SubResource("StyleBoxTexture_c4bon")
 Button/styles/normal = SubResource("StyleBoxTexture_ibvtj")
 Button/styles/pressed = SubResource("StyleBoxTexture_x321a")
+RichTextLabel/constants/outline_size = 16
+RichTextLabel/font_sizes/normal_font_size = 56
+RichTextLabel/fonts/normal_font = ExtResource("1_iwfee")

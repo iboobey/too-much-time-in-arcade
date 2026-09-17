@@ -1276,7 +1276,6 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_decei")
 
 [node name="Lights" type="Node2D" parent="." unique_id=1618124166]
-visible = false
 
 [node name="PointLight2D" type="PointLight2D" parent="Lights" unique_id=1334505056]
 position = Vector2(-55.000004, -18)

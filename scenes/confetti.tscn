@@ -1,0 +1,179 @@
+[gd_scene format=3 uid="uid://crs2gratwnuim"]
+
+[ext_resource type="Script" uid="uid://g7fxy31mj10j" path="res://scripts/confetti.gd" id="1_xjk0n"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xejpt"]
+particle_flag_rotate_y = true
+particle_flag_disable_z = true
+direction = Vector3(0.8, -1, 0)
+spread = 35.0
+initial_velocity_min = 250.0
+initial_velocity_max = 300.0
+angular_velocity_min = 0.9999839
+angular_velocity_max = 4.999984
+gravity = Vector3(0, 60, 0)
+scale_min = 13.0
+scale_max = 18.0
+color = Color(0.99999994, 0.5446084, 0.29725438, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_du648"]
+particle_flag_rotate_y = true
+particle_flag_disable_z = true
+direction = Vector3(0.8, -1, 0)
+spread = 35.0
+initial_velocity_min = 250.0
+initial_velocity_max = 300.0
+angular_velocity_min = 0.9999839
+angular_velocity_max = 4.999984
+gravity = Vector3(0, 60, 0)
+scale_min = 13.0
+scale_max = 18.0
+color = Color(0.82, 0.28864005, 0.1558, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xjk0n"]
+particle_flag_rotate_y = true
+particle_flag_disable_z = true
+direction = Vector3(0.8, -1, 0)
+spread = 35.0
+initial_velocity_min = 250.0
+initial_velocity_max = 300.0
+angular_velocity_min = 0.9999839
+angular_velocity_max = 4.999984
+gravity = Vector3(0, 60, 0)
+scale_min = 13.0
+scale_max = 18.0
+color = Color(0.1385018, 0.5090367, 0.6264464, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2hbhx"]
+particle_flag_rotate_y = true
+particle_flag_disable_z = true
+direction = Vector3(0.8, -1, 0)
+spread = 35.0
+initial_velocity_min = 250.0
+initial_velocity_max = 300.0
+angular_velocity_min = 0.9999839
+angular_velocity_max = 4.999984
+gravity = Vector3(0, 60, 0)
+scale_min = 13.0
+scale_max = 18.0
+color = Color(0.3290667, 0.64, 0.288, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e8opl"]
+particle_flag_rotate_y = true
+particle_flag_disable_z = true
+direction = Vector3(0.8, -1, 0)
+spread = 35.0
+initial_velocity_min = 250.0
+initial_velocity_max = 300.0
+angular_velocity_min = 0.9999839
+angular_velocity_max = 4.999984
+gravity = Vector3(0, 60, 0)
+scale_min = 13.0
+scale_max = 18.0
+color = Color(0.61292, 0.21559997, 0.77, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_v30ou"]
+particle_flag_rotate_y = true
+particle_flag_disable_z = true
+direction = Vector3(0.8, -1, 0)
+spread = 35.0
+initial_velocity_min = 250.0
+initial_velocity_max = 300.0
+angular_velocity_min = 0.9999839
+angular_velocity_max = 4.999984
+gravity = Vector3(0, 60, 0)
+scale_min = 13.0
+scale_max = 18.0
+color = Color(0.98300004, 0.49, 1, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_k3xkt"]
+particle_flag_rotate_y = true
+particle_flag_disable_z = true
+direction = Vector3(0.8, -1, 0)
+spread = 35.0
+initial_velocity_min = 250.0
+initial_velocity_max = 300.0
+angular_velocity_min = 0.9999839
+angular_velocity_max = 4.999984
+gravity = Vector3(0, 60, 0)
+scale_min = 13.0
+scale_max = 18.0
+color = Color(1, 1, 0.3, 1)
+
+[node name="Confetti" type="Node2D" unique_id=419199044]
+script = ExtResource("1_xjk0n")
+
+[node name="Orange" type="GPUParticles2D" parent="." unique_id=51875891]
+emitting = false
+amount = 24
+lifetime = 6.0
+one_shot = true
+explosiveness = 0.6
+randomness = 0.2
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_xejpt")
+
+[node name="Red" type="GPUParticles2D" parent="." unique_id=1188744031]
+emitting = false
+amount = 24
+lifetime = 6.0
+one_shot = true
+explosiveness = 0.6
+randomness = 0.2
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_du648")
+
+[node name="Blue" type="GPUParticles2D" parent="." unique_id=1296102374]
+emitting = false
+amount = 20
+lifetime = 6.0
+one_shot = true
+explosiveness = 0.6
+randomness = 0.2
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_xjk0n")
+
+[node name="Green" type="GPUParticles2D" parent="." unique_id=46426588]
+emitting = false
+amount = 16
+lifetime = 6.0
+one_shot = true
+explosiveness = 0.6
+randomness = 0.2
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_2hbhx")
+
+[node name="Purple" type="GPUParticles2D" parent="." unique_id=39468137]
+emitting = false
+amount = 6
+lifetime = 6.0
+one_shot = true
+explosiveness = 0.6
+randomness = 0.2
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_e8opl")
+
+[node name="Pink" type="GPUParticles2D" parent="." unique_id=285374233]
+emitting = false
+amount = 6
+lifetime = 6.0
+one_shot = true
+explosiveness = 0.6
+randomness = 0.2
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_v30ou")
+
+[node name="Yellow" type="GPUParticles2D" parent="." unique_id=377725069]
+emitting = false
+amount = 24
+lifetime = 6.0
+one_shot = true
+explosiveness = 0.6
+randomness = 0.2
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_k3xkt")
+
+[node name="PopTimer" type="Timer" parent="." unique_id=611023482]
+wait_time = 10.0
+
+[connection signal="timeout" from="PopTimer" to="." method="_on_pop_timer_timeout"]
