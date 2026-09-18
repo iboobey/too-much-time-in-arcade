@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b7p45egiiwirr" path="res://scenes/arcade_consoles/console_1.tscn" id="4_decei"]
 [ext_resource type="Theme" uid="uid://bnwynn04fl26l" path="res://graphics/themes/Platformer.tres" id="4_t1ngq"]
 [ext_resource type="PackedScene" uid="uid://bvotelskv5kfa" path="res://scenes/arcade_consoles/console_2.tscn" id="5_ut00t"]
+[ext_resource type="PackedScene" uid="uid://dxh7now0su202" path="res://scenes/arcade_consoles/console_3.tscn" id="8_fgvqq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fgvqq"]
 texture = ExtResource("3_decei")
@@ -1339,3 +1340,6 @@ position = Vector2(74, -5)
 
 [node name="Console2" parent="Consoles" unique_id=1518644078 instance=ExtResource("5_ut00t")]
 position = Vector2(119, -5)
+
+[node name="Console3" parent="." unique_id=2025414171 instance=ExtResource("8_fgvqq")]
+position = Vector2(76, 46)
