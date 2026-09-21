@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://b64je8pxgdrkh"]
 
-[ext_resource type="Script" uid="uid://bqy644axut8iw" path="res://scenes/arcade_games/snake/snake.gd" id="1_c61hx"]
+[ext_resource type="Script" uid="uid://bqy644axut8iw" path="res://scripts/arcade_games/snake/snake.gd" id="1_c61hx"]
 [ext_resource type="Texture2D" uid="uid://bfyiw2s4kyq0k" path="res://graphics/gamesprites/snakesprites/SnakeBackground.png" id="2_korl2"]
 [ext_resource type="Texture2D" uid="uid://bi4k5vrro0sxc" path="res://graphics/gamesprites/snakesprites/SnakeGUI.png" id="3_8d484"]
 [ext_resource type="Theme" uid="uid://cuqv2xaljwg2i" path="res://graphics/themes/Snake.tres" id="4_erhk5"]

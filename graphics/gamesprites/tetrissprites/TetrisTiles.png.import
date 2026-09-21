@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgwr5rjsaw5u8"
-path="res://.godot/imported/Shorts_Blue_Walk.png-84c2f8afc9ffcfc7696bbd451f9f2ec7.ctex"
+uid="uid://b5k0355kmdcbi"
+path="res://.godot/imported/TetrisTiles.png-ed80e7878a6c8e678163fb33305a6888.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/playersprites/walking/Shorts_Blue_Walk.png"
-dest_files=["res://.godot/imported/Shorts_Blue_Walk.png-84c2f8afc9ffcfc7696bbd451f9f2ec7.ctex"]
+source_file="res://graphics/gamesprites/tetrissprites/TetrisTiles.png"
+dest_files=["res://.godot/imported/TetrisTiles.png-ed80e7878a6c8e678163fb33305a6888.ctex"]
 
 [params]
 
