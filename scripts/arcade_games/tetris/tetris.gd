@@ -2,6 +2,8 @@ extends TileMapLayer
 
 #tetris tiles "tetrominoes"
 
+@onready var bg_tile_map: TileMapLayer = $"../BGTileMap"
+
 var i_0 := [Vector2i(0,1), Vector2i(1,1), Vector2i(2,1), Vector2i(3,1)]
 var i_90 := [Vector2i(2,0), Vector2i(2,1), Vector2i(2,2), Vector2i(2,3)]
 var i_180 := [Vector2i(0,2), Vector2i(1,2), Vector2i(2,2), Vector2i(3,2)]
@@ -134,19 +136,14 @@ func draw_piece(piece, pos, atlas):
 
 
 func move_piece(dir):
-	if can_move(dir):
+	if can_move(dir + GAME_OFFSET):
 		clear_piece()
 		current_pos += dir
 		draw_piece(active_piece, current_pos, piece_atlas)
 
 
 func is_free(pos):
-	var source_id := get_cell_source_id(pos)
-	if source_id == -1:
-		return
-	var atlas_coords := get_cell_atlas_coords(pos)
-	if atlas_coords == Vector2i(7,0):
-		return -1
+	return bg_tile_map.get_cell_source_id(pos) == -1
 
 
 func can_move(dir):
