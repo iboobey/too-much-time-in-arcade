@@ -16,7 +16,7 @@ func action_on_interact():
 	
 	$ConsoleSprite.texture = load("res://graphics/consolesprites/Console3_On.png")
 	await get_tree().create_timer(0.5).timeout
-	#get_tree().change_scene_to_file()
+	get_tree().change_scene_to_file("res://scenes/arcade_games/tetris/tetris.tscn")
 
 
 func _process(_delta: float) -> void:

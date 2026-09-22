@@ -1,0 +1,38 @@
+[gd_resource type="Theme" format=3 uid="uid://esjypmff8v5i"]
+
+[ext_resource type="Texture2D" uid="uid://ihf1bfwfekl6" path="res://graphics/gamesprites/tetrissprites/TetrisGUI.png" id="1_anowg"]
+[ext_resource type="FontFile" uid="uid://b5qt7mlemekrv" path="res://graphics/fonts/PressStart2P-Regular.ttf" id="1_kpe8x"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rx551"]
+texture = ExtResource("1_anowg")
+texture_margin_left = 56.0
+texture_margin_top = 32.0
+texture_margin_right = 56.0
+texture_margin_bottom = 44.0
+region_rect = Rect2(276, 64, 192, 76)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ibvtj"]
+texture = ExtResource("1_anowg")
+texture_margin_left = 56.0
+texture_margin_top = 32.0
+texture_margin_right = 55.302334
+texture_margin_bottom = 44.0
+region_rect = Rect2(20, 64, 192, 76)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c4bon"]
+texture = ExtResource("1_anowg")
+texture_margin_left = 56.0
+texture_margin_top = 32.0
+texture_margin_right = 56.0
+texture_margin_bottom = 36.0
+region_rect = Rect2(276, 192, 192, 68)
+
+[resource]
+Button/font_sizes/font_size = 20
+Button/fonts/font = ExtResource("1_kpe8x")
+Button/styles/hover = SubResource("StyleBoxTexture_rx551")
+Button/styles/normal = SubResource("StyleBoxTexture_ibvtj")
+Button/styles/pressed = SubResource("StyleBoxTexture_c4bon")
+Label/constants/line_spacing = 8
+Label/font_sizes/font_size = 14
+Label/fonts/font = ExtResource("1_kpe8x")

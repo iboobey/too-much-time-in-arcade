@@ -1148,10 +1148,6 @@ b = Vector2(-39, 0)
 a = Vector2(38, -16)
 b = Vector2(-39, -16)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_rx551"]
-a = Vector2(-73, -4)
-b = Vector2(-73, 62)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t1ngq"]
 size = Vector2(60, 20)
 
@@ -1177,7 +1173,7 @@ tile_set = SubResource("TileSet_fgvqq")
 [node name="Deco3" type="TileMapLayer" parent="Tilemaps" unique_id=392895180]
 z_index = 1
 position = Vector2(0, -5)
-tile_map_data = PackedByteArray("AAD7/wAAAAATAAMAAAD7/wEAAAATAAQAAAD7/wIAAAATAAQAAAD7/wMAAAATAAUAAAAJAAAAAAAQAAEAAAAKAAAAAAARAAEAAAALAAAAAAASAAEAAAAMAAAAAAATAAEAAAANAAAAAAAUAAEAAAD7////AAATAAIAAAAJAP//AAAQAAAAAAAKAP//AAARAAAAAAALAP//AAASAAAAAAAMAP//AAATAAAAAAANAP//AAAUAAAAAAA=")
+tile_map_data = PackedByteArray("AAAJAAAAAAAQAAEAAAAKAAAAAAARAAEAAAALAAAAAAASAAEAAAAMAAAAAAATAAEAAAANAAAAAAAUAAEAAAAJAP//AAAQAAAAAAAKAP//AAARAAAAAAALAP//AAASAAAAAAAMAP//AAATAAAAAAANAP//AAAUAAAAAAA=")
 tile_set = SubResource("TileSet_fgvqq")
 
 [node name="Wall_Side" type="TileMapLayer" parent="Tilemaps" unique_id=1392423868]
@@ -1326,20 +1322,17 @@ shape = SubResource("SegmentShape2D_decei")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Borders" unique_id=770749447]
 shape = SubResource("SegmentShape2D_ut00t")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Borders" unique_id=1146068766]
-shape = SubResource("SegmentShape2D_rx551")
-
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Borders" unique_id=1782455879]
 position = Vector2(184, 1)
 shape = SubResource("RectangleShape2D_t1ngq")
 
 [node name="Consoles" type="Node2D" parent="." unique_id=864066441]
 
+[node name="Console3" parent="Consoles" unique_id=2025414171 instance=ExtResource("8_fgvqq")]
+position = Vector2(-96, -5)
+
 [node name="Console1" parent="Consoles" unique_id=526672248 instance=ExtResource("4_decei")]
 position = Vector2(74, -5)
 
 [node name="Console2" parent="Consoles" unique_id=1518644078 instance=ExtResource("5_ut00t")]
 position = Vector2(119, -5)
-
-[node name="Console3" parent="." unique_id=2025414171 instance=ExtResource("8_fgvqq")]
-position = Vector2(76, 46)
