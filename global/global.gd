@@ -4,6 +4,7 @@ extends Node
 var platformer_score : int = 0
 var snake_score : int = 0
 var tetris_score : int = 0
+var old_tetris_score : int = 0
 
 var total_points_gathered : int
 var goal = 400

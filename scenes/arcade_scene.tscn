@@ -8,6 +8,7 @@
 [ext_resource type="Theme" uid="uid://bnwynn04fl26l" path="res://graphics/themes/Platformer.tres" id="4_t1ngq"]
 [ext_resource type="PackedScene" uid="uid://bvotelskv5kfa" path="res://scenes/arcade_consoles/console_2.tscn" id="5_ut00t"]
 [ext_resource type="PackedScene" uid="uid://dxh7now0su202" path="res://scenes/arcade_consoles/console_3.tscn" id="8_fgvqq"]
+[ext_resource type="PackedScene" uid="uid://de3pplk2gnp3h" path="res://scenes/arcade_consoles/console_4.tscn" id="9_rpcry"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fgvqq"]
 texture = ExtResource("3_decei")
@@ -1328,11 +1329,14 @@ shape = SubResource("RectangleShape2D_t1ngq")
 
 [node name="Consoles" type="Node2D" parent="." unique_id=864066441]
 
-[node name="Console3" parent="Consoles" unique_id=2025414171 instance=ExtResource("8_fgvqq")]
-position = Vector2(-96, -5)
-
 [node name="Console1" parent="Consoles" unique_id=526672248 instance=ExtResource("4_decei")]
 position = Vector2(74, -5)
 
 [node name="Console2" parent="Consoles" unique_id=1518644078 instance=ExtResource("5_ut00t")]
 position = Vector2(119, -5)
+
+[node name="Console3" parent="Consoles" unique_id=2025414171 instance=ExtResource("8_fgvqq")]
+position = Vector2(-96, -5)
+
+[node name="Console4" parent="Consoles" unique_id=1151178569 instance=ExtResource("9_rpcry")]
+position = Vector2(-145, -4)
