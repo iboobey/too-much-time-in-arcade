@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqkmk1y8ewnln"
-path="res://.godot/imported/PRLX_BG.png-95a1c424afcbc699a9c69273d3c094c8.ctex"
+uid="uid://b4hmpv3ph2184"
+path="res://.godot/imported/Dino.png-63a7dcd868fc96f27fbdf58acfe5a15f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/gamesprites/dinorunsprites/PRLX_BG.png"
-dest_files=["res://.godot/imported/PRLX_BG.png-95a1c424afcbc699a9c69273d3c094c8.ctex"]
+source_file="res://graphics/gamesprites/dinorunsprites/Dino.png"
+dest_files=["res://.godot/imported/Dino.png-63a7dcd868fc96f27fbdf58acfe5a15f.ctex"]
 
 [params]
 

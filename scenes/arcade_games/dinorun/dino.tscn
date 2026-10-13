@@ -1,0 +1,165 @@
+[gd_scene format=3 uid="uid://cnaxf1pjeeu7k"]
+
+[ext_resource type="Script" uid="uid://c2dhnvdh1d60r" path="res://scenes/arcade_games/dinorun/dino.gd" id="1_lsqxn"]
+[ext_resource type="Texture2D" uid="uid://b4hmpv3ph2184" path="res://graphics/gamesprites/dinorunsprites/Dino.png" id="1_wds8t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckvpy"]
+atlas = ExtResource("1_wds8t")
+region = Rect2(0, 48, 48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7qmp"]
+atlas = ExtResource("1_wds8t")
+region = Rect2(48, 48, 48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_voh56"]
+atlas = ExtResource("1_wds8t")
+region = Rect2(96, 48, 48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10xnq"]
+atlas = ExtResource("1_wds8t")
+region = Rect2(144, 48, 48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hj1go"]
+atlas = ExtResource("1_wds8t")
+region = Rect2(192, 48, 48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mc3kp"]
+atlas = ExtResource("1_wds8t")
+region = Rect2(240, 48, 48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qunt4"]
+atlas = ExtResource("1_wds8t")
+region = Rect2(0, 24, 48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kd7d"]
+atlas = ExtResource("1_wds8t")
+region = Rect2(48, 24, 48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wds8t"]
+atlas = ExtResource("1_wds8t")
+region = Rect2(0, 72, 48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijyfr"]
+atlas = ExtResource("1_wds8t")
+region = Rect2(0, 0, 48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdwqt"]
+atlas = ExtResource("1_wds8t")
+region = Rect2(48, 0, 48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnrkb"]
+atlas = ExtResource("1_wds8t")
+region = Rect2(96, 0, 48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6kxjb"]
+atlas = ExtResource("1_wds8t")
+region = Rect2(144, 0, 48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ocja"]
+atlas = ExtResource("1_wds8t")
+region = Rect2(192, 0, 48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yiicn"]
+atlas = ExtResource("1_wds8t")
+region = Rect2(240, 0, 48, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dhfat"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckvpy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7qmp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_voh56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10xnq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hj1go")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mc3kp")
+}],
+"loop": 1,
+"name": &"crouch",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qunt4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kd7d")
+}],
+"loop": 2,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wds8t")
+}],
+"loop": 1,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijyfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdwqt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gnrkb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6kxjb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ocja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yiicn")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 9.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rx551"]
+radius = 5.75
+height = 16.364975
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibvtj"]
+size = Vector2(11, 20)
+
+[node name="Dino" type="CharacterBody2D" unique_id=1795194803]
+scale = Vector2(8, 8)
+script = ExtResource("1_lsqxn")
+
+[node name="DinoSprites" type="AnimatedSprite2D" parent="." unique_id=797168424]
+position = Vector2(36.375, 70.625)
+sprite_frames = SubResource("SpriteFrames_dhfat")
+animation = &"idle"
+autoplay = "run"
+
+[node name="CrouchCollision" type="CollisionShape2D" parent="." unique_id=697642163]
+position = Vector2(24.125, 73)
+rotation = 0.60171807
+shape = SubResource("CapsuleShape2D_rx551")
+debug_color = Color(0, 0.068817295, 0.70196074, 0.41960785)
+
+[node name="RunCollision" type="CollisionShape2D" parent="." unique_id=26372716]
+position = Vector2(24.875, 70.625)
+shape = SubResource("RectangleShape2D_ibvtj")
+debug_color = Color(0, 0.89375, 0.85584295, 0.41960785)
+
+[node name="JumpTimer" type="Timer" parent="." unique_id=107190654]
+unique_name_in_owner = true
+wait_time = 3.0
+one_shot = true

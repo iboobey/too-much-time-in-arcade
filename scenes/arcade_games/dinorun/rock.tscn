@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://by0tlfsogeukl"]
+
+[ext_resource type="Texture2D" uid="uid://btonqwd2ycxsn" path="res://graphics/gamesprites/dinorunsprites/Obstacles.png" id="1_228ir"]
+
+[node name="Rock" type="Area2D" unique_id=208740202]
+scale = Vector2(8, 8)
+
+[node name="RockSprite" type="Sprite2D" parent="." unique_id=1091415861]
+texture = ExtResource("1_228ir")
+region_enabled = true
+region_rect = Rect2(30, 10, 23, 12)
+
+[node name="RockCollision" type="CollisionPolygon2D" parent="." unique_id=665656086]
+polygon = PackedVector2Array(-11.625, 5.625, -8.375, -3.875, 0.375, -5.875, 7.25, -2.5, 11.375, 3.875, 7, 6)

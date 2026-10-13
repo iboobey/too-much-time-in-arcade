@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bs1g474hgw725"]
+
+[ext_resource type="Texture2D" uid="uid://dlu7lsmoe7mno" path="res://graphics/gamesprites/dinorunsprites/Birds.png" id="1_d4bi3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_li3qv"]
+atlas = ExtResource("1_d4bi3")
+region = Rect2(0, 16, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rn2h5"]
+atlas = ExtResource("1_d4bi3")
+region = Rect2(0, 48, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxqyx"]
+atlas = ExtResource("1_d4bi3")
+region = Rect2(32, 16, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gadqh"]
+atlas = ExtResource("1_d4bi3")
+region = Rect2(0, 48, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kosuv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_li3qv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rn2h5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxqyx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gadqh")
+}],
+"loop": 1,
+"name": &"fly",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3srgu"]
+size = Vector2(25, 8)
+
+[node name="Crow" type="Area2D" unique_id=1929956473]
+scale = Vector2(8, 8)
+
+[node name="CrowSprite" type="AnimatedSprite2D" parent="." unique_id=932960263]
+sprite_frames = SubResource("SpriteFrames_kosuv")
+animation = &"fly"
+frame_progress = 0.50203544
+
+[node name="CrowCollision" type="CollisionShape2D" parent="." unique_id=1187778927]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_3srgu")

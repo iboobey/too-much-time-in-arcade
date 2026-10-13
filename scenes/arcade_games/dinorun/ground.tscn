@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cpuye48ixggjx"]
+
+[ext_resource type="Texture2D" uid="uid://y3syntvkldt2" path="res://graphics/gamesprites/dinorunsprites/parallax/Ground.png" id="1_yh8r4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7tip"]
+size = Vector2(160, 6.5)
+
+[node name="Ground" type="StaticBody2D" unique_id=173237913]
+scale = Vector2(16, 16)
+
+[node name="GroundSprite" type="Sprite2D" parent="." unique_id=224581778]
+texture = ExtResource("1_yh8r4")
+centered = false
+
+[node name="GroundSprite2" type="Sprite2D" parent="." unique_id=1367989516]
+position = Vector2(80, 0)
+texture = ExtResource("1_yh8r4")
+centered = false
+
+[node name="GroundCollision" type="CollisionShape2D" parent="." unique_id=509070036]
+position = Vector2(80, 41.75)
+shape = SubResource("RectangleShape2D_t7tip")

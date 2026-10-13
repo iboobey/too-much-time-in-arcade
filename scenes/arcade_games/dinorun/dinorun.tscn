@@ -1,52 +1,14 @@
 [gd_scene format=3 uid="uid://cbxf7iu0bru54"]
 
-[ext_resource type="Texture2D" uid="uid://bqkmk1y8ewnln" path="res://graphics/gamesprites/dinorunsprites/PRLX_BG.png" id="1_8600h"]
-[ext_resource type="Texture2D" uid="uid://c4b72f6pit6x8" path="res://graphics/gamesprites/dinorunsprites/PRLX_4.png" id="2_rra5c"]
-[ext_resource type="Texture2D" uid="uid://beheftodm3gmm" path="res://graphics/gamesprites/dinorunsprites/PRLX_3.png" id="3_ckvpy"]
-[ext_resource type="Texture2D" uid="uid://bno1rhkgesdkq" path="res://graphics/gamesprites/dinorunsprites/PRLX_2.png" id="4_r7qmp"]
-[ext_resource type="Texture2D" uid="uid://y1tthhbsc7b1" path="res://graphics/gamesprites/dinorunsprites/PRLX_1.png" id="5_voh56"]
+[ext_resource type="Script" uid="uid://okfkxlxlewk5" path="res://scripts/arcade_games/dinorun/dinorun.gd" id="1_pogth"]
+[ext_resource type="PackedScene" uid="uid://diylvoqkn3pan" path="res://scenes/arcade_games/dinorun/parallax.tscn" id="1_sdb2k"]
+[ext_resource type="PackedScene" uid="uid://cnaxf1pjeeu7k" path="res://scenes/arcade_games/dinorun/dino.tscn" id="6_rra5c"]
 
 [node name="DinoRun" type="Node2D" unique_id=1006758310]
+script = ExtResource("1_pogth")
 
-[node name="Parallax" type="Node2D" parent="." unique_id=793003325]
-scale = Vector2(16, 16)
+[node name="Parallax" parent="." unique_id=1692221080 instance=ExtResource("1_sdb2k")]
 
-[node name="PRLX_BG" type="Parallax2D" parent="Parallax" unique_id=449130235]
-repeat_size = Vector2(80, 0)
-autoscroll = Vector2(-11, 0)
-
-[node name="PRLX_BG" type="Sprite2D" parent="Parallax/PRLX_BG" unique_id=611621764]
-texture = ExtResource("1_8600h")
-centered = false
-
-[node name="PRLX_4" type="Parallax2D" parent="Parallax" unique_id=20873048]
-repeat_size = Vector2(80, 0)
-autoscroll = Vector2(-12, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Parallax/PRLX_4" unique_id=1300211270]
-texture = ExtResource("2_rra5c")
-centered = false
-
-[node name="PRLX_3" type="Parallax2D" parent="Parallax" unique_id=525864734]
-repeat_size = Vector2(80, 0)
-autoscroll = Vector2(-13, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Parallax/PRLX_3" unique_id=1048644885]
-texture = ExtResource("3_ckvpy")
-centered = false
-
-[node name="PRLX_2" type="Parallax2D" parent="Parallax" unique_id=706769865]
-repeat_size = Vector2(80, 0)
-autoscroll = Vector2(-14, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Parallax/PRLX_2" unique_id=1741319477]
-texture = ExtResource("4_r7qmp")
-centered = false
-
-[node name="PRLX_1" type="Parallax2D" parent="Parallax" unique_id=1758532551]
-repeat_size = Vector2(80, 0)
-autoscroll = Vector2(-15, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Parallax/PRLX_1" unique_id=1296133885]
-texture = ExtResource("5_voh56")
-centered = false
+[node name="Dino" parent="." unique_id=1795194803 instance=ExtResource("6_rra5c")]
+unique_name_in_owner = true
+position = Vector2(-1, -29)
