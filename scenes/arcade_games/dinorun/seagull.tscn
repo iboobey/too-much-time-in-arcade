@@ -47,8 +47,11 @@ scale = Vector2(8, 8)
 [node name="SeagullSprite" type="AnimatedSprite2D" parent="." unique_id=81653881]
 sprite_frames = SubResource("SpriteFrames_2sl8v")
 animation = &"fly"
+frame = 2
+frame_progress = 0.025105152
 
 [node name="SeagullCollision" type="CollisionShape2D" parent="." unique_id=201608146]
+visible = false
 position = Vector2(-0.5000001, -0.9999999)
 scale = Vector2(0.91354233, 0.91354233)
 shape = SubResource("RectangleShape2D_y8ca5")

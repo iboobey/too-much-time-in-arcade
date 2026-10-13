@@ -11,4 +11,4 @@ script = ExtResource("1_pogth")
 
 [node name="Dino" parent="." unique_id=1795194803 instance=ExtResource("6_rra5c")]
 unique_name_in_owner = true
-position = Vector2(-1, -29)
+position = Vector2(-102, -352)

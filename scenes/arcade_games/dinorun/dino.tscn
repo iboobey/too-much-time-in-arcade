@@ -86,7 +86,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"crouch",
-"speed": 10.0
+"speed": 9.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -131,33 +131,37 @@ animations = [{
 "speed": 9.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibvtj"]
+size = Vector2(11, 20)
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rx551"]
 radius = 5.75
 height = 16.364975
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibvtj"]
-size = Vector2(11, 20)
-
 [node name="Dino" type="CharacterBody2D" unique_id=1795194803]
-scale = Vector2(8, 8)
+scale = Vector2(12, 12)
 script = ExtResource("1_lsqxn")
 
 [node name="DinoSprites" type="AnimatedSprite2D" parent="." unique_id=797168424]
+unique_name_in_owner = true
 position = Vector2(36.375, 70.625)
 sprite_frames = SubResource("SpriteFrames_dhfat")
-animation = &"idle"
+animation = &"jump"
 autoplay = "run"
 
-[node name="CrouchCollision" type="CollisionShape2D" parent="." unique_id=697642163]
-position = Vector2(24.125, 73)
-rotation = 0.60171807
-shape = SubResource("CapsuleShape2D_rx551")
-debug_color = Color(0, 0.068817295, 0.70196074, 0.41960785)
-
 [node name="RunCollision" type="CollisionShape2D" parent="." unique_id=26372716]
+unique_name_in_owner = true
 position = Vector2(24.875, 70.625)
 shape = SubResource("RectangleShape2D_ibvtj")
 debug_color = Color(0, 0.89375, 0.85584295, 0.41960785)
+
+[node name="CrouchCollision" type="CollisionShape2D" parent="." unique_id=697642163]
+unique_name_in_owner = true
+position = Vector2(24.125, 73)
+rotation = 0.60171807
+shape = SubResource("CapsuleShape2D_rx551")
+disabled = true
+debug_color = Color(0, 0.068817295, 0.70196074, 0.41960785)
 
 [node name="JumpTimer" type="Timer" parent="." unique_id=107190654]
 unique_name_in_owner = true

@@ -55,6 +55,7 @@ texture = ExtResource("5_unix0")
 centered = false
 
 [node name="PRLX_Ground" type="Parallax2D" parent="." unique_id=310605013]
+z_index = 2
 repeat_size = Vector2(80, 0)
 autoscroll = Vector2(-15, 0)
 
