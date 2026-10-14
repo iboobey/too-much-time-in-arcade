@@ -146,8 +146,8 @@ script = ExtResource("1_lsqxn")
 unique_name_in_owner = true
 position = Vector2(36.375, 70.625)
 sprite_frames = SubResource("SpriteFrames_dhfat")
-animation = &"jump"
-autoplay = "run"
+animation = &"idle"
+autoplay = "idle"
 
 [node name="RunCollision" type="CollisionShape2D" parent="." unique_id=26372716]
 unique_name_in_owner = true

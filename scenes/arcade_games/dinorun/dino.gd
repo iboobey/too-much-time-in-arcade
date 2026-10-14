@@ -1,25 +1,41 @@
 extends CharacterBody2D
 
+@export var speed_up_jump_factor : int = -450
+@export var speed_up_gravity_factor : int = 300
+
+
+@export var start : bool = false
+var start_anim : bool = false
 @onready var jump_timer: Timer = %JumpTimer
 
-const jump_velocity : float = -450
-const gravity : float = 300
-const fall_gravity : float = gravity * 2
+var jump_velocity : float = -450
+var gravity : float = 300
+var fall_gravity : float = gravity * 2
 
 var is_crouching : bool = false
 var is_jumping : bool = false
 
 func _process(delta: float) -> void:
-	jump()
-	apply_gravity(delta)
-	crouch()
-	move_and_slide()
 	
-	if is_on_floor():
-		is_jumping = false
-		if is_crouching:
-			%DinoSprites.play("crouch")
-		else: %DinoSprites.play("run")
+	print(gravity)
+	
+	gravity = speed_up_gravity_factor
+	jump_velocity = speed_up_jump_factor
+	
+	if start:
+		if not start_anim:
+			%DinoSprites.play("run")
+			start_anim = true
+		jump()
+		apply_gravity(delta)
+		crouch()
+		move_and_slide()
+		
+		if is_on_floor():
+			is_jumping = false
+			if is_crouching:
+				%DinoSprites.play("crouch")
+			else: %DinoSprites.play("run")
 
 
 func jump():

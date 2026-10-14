@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://diylvoqkn3pan"]
 
 [ext_resource type="Texture2D" uid="uid://bqkmk1y8ewnln" path="res://graphics/gamesprites/dinorunsprites/parallax/PRLX_BG.png" id="1_jbogk"]
+[ext_resource type="Script" uid="uid://cp1chls03d4vb" path="res://scenes/arcade_games/dinorun/parallax.gd" id="1_qbjg6"]
 [ext_resource type="Texture2D" uid="uid://c4b72f6pit6x8" path="res://graphics/gamesprites/dinorunsprites/parallax/PRLX_4.png" id="2_p23a6"]
 [ext_resource type="Texture2D" uid="uid://beheftodm3gmm" path="res://graphics/gamesprites/dinorunsprites/parallax/PRLX_3.png" id="3_qbjg6"]
 [ext_resource type="Texture2D" uid="uid://bno1rhkgesdkq" path="res://graphics/gamesprites/dinorunsprites/parallax/PRLX_2.png" id="4_ctgjr"]
@@ -13,58 +14,73 @@ size = Vector2(95.5, 6.5)
 [node name="Parallax" type="Node2D" unique_id=1692221080]
 z_index = -1
 scale = Vector2(16, 16)
+script = ExtResource("1_qbjg6")
 
 [node name="PRLX_BG" type="Parallax2D" parent="." unique_id=716259005]
+unique_name_in_owner = true
 repeat_size = Vector2(80, 0)
-autoscroll = Vector2(-11, 0)
 
 [node name="PRLX_BG" type="Sprite2D" parent="PRLX_BG" unique_id=2012619357]
 texture = ExtResource("1_jbogk")
 centered = false
 
 [node name="PRLX_4" type="Parallax2D" parent="." unique_id=547832448]
+unique_name_in_owner = true
 repeat_size = Vector2(80, 0)
-autoscroll = Vector2(-12, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="PRLX_4" unique_id=1830655703]
 texture = ExtResource("2_p23a6")
 centered = false
 
 [node name="PRLX_3" type="Parallax2D" parent="." unique_id=220933887]
+unique_name_in_owner = true
 repeat_size = Vector2(80, 0)
-autoscroll = Vector2(-13, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="PRLX_3" unique_id=1653616444]
 texture = ExtResource("3_qbjg6")
 centered = false
 
 [node name="PRLX_2" type="Parallax2D" parent="." unique_id=148843164]
+unique_name_in_owner = true
 repeat_size = Vector2(80, 0)
-autoscroll = Vector2(-14, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="PRLX_2" unique_id=394526930]
 texture = ExtResource("4_ctgjr")
 centered = false
 
 [node name="PRLX_1" type="Parallax2D" parent="." unique_id=1527619536]
+unique_name_in_owner = true
 repeat_size = Vector2(80, 0)
-autoscroll = Vector2(-15, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="PRLX_1" unique_id=2066179285]
 texture = ExtResource("5_unix0")
 centered = false
 
 [node name="PRLX_Ground" type="Parallax2D" parent="." unique_id=310605013]
+unique_name_in_owner = true
 z_index = 2
 repeat_size = Vector2(80, 0)
-autoscroll = Vector2(-15, 0)
-
-[node name="GroundSprite" type="Sprite2D" parent="PRLX_Ground" unique_id=1443581439]
-texture = ExtResource("6_p23a6")
-centered = false
 
 [node name="Ground" type="StaticBody2D" parent="PRLX_Ground" unique_id=1984804259]
 
 [node name="GroundCollision" type="CollisionShape2D" parent="PRLX_Ground/Ground" unique_id=1420178181]
 position = Vector2(43.75, 41.75)
 shape = SubResource("RectangleShape2D_qbjg6")
+
+[node name="GroundSprite3" type="Sprite2D" parent="PRLX_Ground" unique_id=44419020]
+modulate = Color(0.52, 0.52, 0.52, 1)
+z_index = -2
+position = Vector2(-0.3125, -1)
+texture = ExtResource("6_p23a6")
+centered = false
+
+[node name="GroundSprite2" type="Sprite2D" parent="PRLX_Ground" unique_id=230134910]
+modulate = Color(0.73, 0.73, 0.73, 1)
+z_index = -2
+position = Vector2(-1.4375, -1.3125)
+texture = ExtResource("6_p23a6")
+centered = false
+
+[node name="GroundSprite" type="Sprite2D" parent="PRLX_Ground" unique_id=1557466678]
+texture = ExtResource("6_p23a6")
+centered = false

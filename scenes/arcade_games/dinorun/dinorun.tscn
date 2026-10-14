@@ -2,13 +2,71 @@
 
 [ext_resource type="Script" uid="uid://okfkxlxlewk5" path="res://scripts/arcade_games/dinorun/dinorun.gd" id="1_pogth"]
 [ext_resource type="PackedScene" uid="uid://diylvoqkn3pan" path="res://scenes/arcade_games/dinorun/parallax.tscn" id="1_sdb2k"]
+[ext_resource type="Theme" uid="uid://4jyg2u6sqlqk" path="res://graphics/themes/DinoRun.tres" id="4_pogth"]
 [ext_resource type="PackedScene" uid="uid://cnaxf1pjeeu7k" path="res://scenes/arcade_games/dinorun/dino.tscn" id="6_rra5c"]
 
 [node name="DinoRun" type="Node2D" unique_id=1006758310]
 script = ExtResource("1_pogth")
 
 [node name="Parallax" parent="." unique_id=1692221080 instance=ExtResource("1_sdb2k")]
+unique_name_in_owner = true
 
 [node name="Dino" parent="." unique_id=1795194803 instance=ExtResource("6_rra5c")]
 unique_name_in_owner = true
 position = Vector2(-102, -352)
+speed_up_jump_factor = 1
+
+[node name="ScoreTimer" type="Timer" parent="." unique_id=1716550919]
+unique_name_in_owner = true
+wait_time = 2.0
+
+[node name="SpeedUpTimer" type="Timer" parent="." unique_id=6212483]
+unique_name_in_owner = true
+wait_time = 60.0
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=772962633]
+
+[node name="ScoreMargin" type="MarginContainer" parent="UI" unique_id=1928389549]
+offset_right = 1280.0
+offset_bottom = 104.0
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="ScoreHBox" type="HBoxContainer" parent="UI/ScoreMargin" unique_id=471769078]
+layout_mode = 2
+size_flags_horizontal = 17
+
+[node name="ScoreLabel" type="Label" parent="UI/ScoreMargin/ScoreHBox" unique_id=648971160]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_pogth")
+text = "Score:"
+
+[node name="HighScoreLabel" type="Label" parent="UI/ScoreMargin/ScoreHBox" unique_id=1094744598]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_pogth")
+text = "High Score:"
+
+[node name="StartMargin" type="MarginContainer" parent="UI" unique_id=1337536238]
+offset_right = 1280.0
+offset_bottom = 720.0
+theme_override_constants/margin_left = 448
+theme_override_constants/margin_top = 256
+theme_override_constants/margin_right = 448
+theme_override_constants/margin_bottom = 256
+
+[node name="StartButton" type="Button" parent="UI/StartMargin" unique_id=1509762074]
+unique_name_in_owner = true
+layout_mode = 2
+text = "start"
+
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
+[connection signal="timeout" from="SpeedUpTimer" to="." method="_on_speed_up_timer_timeout"]
+[connection signal="pressed" from="UI/StartMargin/StartButton" to="." method="_on_start_button_pressed"]
