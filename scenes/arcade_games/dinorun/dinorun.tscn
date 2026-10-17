@@ -3,7 +3,11 @@
 [ext_resource type="Script" uid="uid://okfkxlxlewk5" path="res://scripts/arcade_games/dinorun/dinorun.gd" id="1_pogth"]
 [ext_resource type="PackedScene" uid="uid://diylvoqkn3pan" path="res://scenes/arcade_games/dinorun/parallax.tscn" id="1_sdb2k"]
 [ext_resource type="Theme" uid="uid://4jyg2u6sqlqk" path="res://graphics/themes/DinoRun.tres" id="4_pogth"]
+[ext_resource type="Texture2D" uid="uid://dlqurnfqi3bww" path="res://graphics/gamesprites/dinorunsprites/DinoRunGUI.png" id="5_8600h"]
 [ext_resource type="PackedScene" uid="uid://cnaxf1pjeeu7k" path="res://scenes/arcade_games/dinorun/dino.tscn" id="6_rra5c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8600h"]
+size = Vector2(400, 730)
 
 [node name="DinoRun" type="Node2D" unique_id=1006758310]
 script = ExtResource("1_pogth")
@@ -14,7 +18,6 @@ unique_name_in_owner = true
 [node name="Dino" parent="." unique_id=1795194803 instance=ExtResource("6_rra5c")]
 unique_name_in_owner = true
 position = Vector2(-102, -352)
-speed_up_jump_factor = 1
 
 [node name="ScoreTimer" type="Timer" parent="." unique_id=1716550919]
 unique_name_in_owner = true
@@ -54,19 +57,66 @@ size_flags_horizontal = 3
 theme = ExtResource("4_pogth")
 text = "High Score:"
 
-[node name="StartMargin" type="MarginContainer" parent="UI" unique_id=1337536238]
-offset_right = 1280.0
-offset_bottom = 720.0
-theme_override_constants/margin_left = 448
-theme_override_constants/margin_top = 256
-theme_override_constants/margin_right = 448
-theme_override_constants/margin_bottom = 256
+[node name="StartMargin" type="MarginContainer" parent="UI" unique_id=689719506]
+unique_name_in_owner = true
+offset_right = 213.333
+offset_bottom = 120.0
+scale = Vector2(6, 6)
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 32
 
-[node name="StartButton" type="Button" parent="UI/StartMargin" unique_id=1509762074]
+[node name="StartNinePatchRect" type="NinePatchRect" parent="UI/StartMargin" unique_id=1561585316]
+layout_mode = 2
+texture = ExtResource("5_8600h")
+region_rect = Rect2(4, 4, 40, 40)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="StartLabel" type="Label" parent="UI/StartMargin/StartNinePatchRect" unique_id=924587307]
+layout_mode = 0
+offset_left = 4.999997
+offset_top = 9.666666
+offset_right = 454.10175
+offset_bottom = 57.666664
+scale = Vector2(0.167, 0.167)
+theme = ExtResource("4_pogth")
+theme_override_font_sizes/font_size = 48
+text = "START?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButtonMargin" type="MarginContainer" parent="UI/StartMargin/StartNinePatchRect" unique_id=1337536238]
+layout_mode = 0
+offset_right = 508.982
+offset_bottom = 335.32935
+scale = Vector2(0.167, 0.167)
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 48
+
+[node name="StartButton" type="Button" parent="UI/StartMargin/StartNinePatchRect/StartButtonMargin" unique_id=1509762074]
 unique_name_in_owner = true
 layout_mode = 2
-text = "start"
+theme = ExtResource("4_pogth")
+text = "YES!"
+
+[node name="DeleteArea" type="Area2D" parent="." unique_id=884677437]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeleteArea" unique_id=1649382036]
+position = Vector2(-844, 355)
+shape = SubResource("RectangleShape2D_8600h")
+
+[node name="ObstacleTimer" type="Timer" parent="." unique_id=1451973488]
+unique_name_in_owner = true
+one_shot = true
 
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
 [connection signal="timeout" from="SpeedUpTimer" to="." method="_on_speed_up_timer_timeout"]
-[connection signal="pressed" from="UI/StartMargin/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="UI/StartMargin/StartNinePatchRect/StartButtonMargin/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="area_entered" from="DeleteArea" to="." method="_on_delete_area_area_entered"]
+[connection signal="timeout" from="ObstacleTimer" to="." method="_on_obstacle_timer_timeout"]

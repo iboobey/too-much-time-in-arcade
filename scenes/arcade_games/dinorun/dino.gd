@@ -1,15 +1,14 @@
 extends CharacterBody2D
 
-@export var speed_up_jump_factor : int = -450
-@export var speed_up_gravity_factor : int = 300
-
+@export var speed_up_jump_factor : int = 0
+@export var speed_up_gravity_factor : int = 0
 
 @export var start : bool = false
 var start_anim : bool = false
 @onready var jump_timer: Timer = %JumpTimer
 
-var jump_velocity : float = -450
-var gravity : float = 300
+var jump_velocity : float = -750
+var gravity : float = 600
 var fall_gravity : float = gravity * 2
 
 var is_crouching : bool = false
@@ -17,10 +16,7 @@ var is_jumping : bool = false
 
 func _process(delta: float) -> void:
 	
-	print(gravity)
-	
-	gravity = speed_up_gravity_factor
-	jump_velocity = speed_up_jump_factor
+	fall_gravity = gravity * 2 * (1 + speed_up_gravity_factor * 0.015)
 	
 	if start:
 		if not start_anim:

@@ -3,12 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://btonqwd2ycxsn" path="res://graphics/gamesprites/dinorunsprites/Obstacles.png" id="1_a83uj"]
 
 [node name="Stump" type="Area2D" unique_id=120556020]
-scale = Vector2(8, 8)
+scale = Vector2(16, 16)
 
 [node name="StumpSprite" type="Sprite2D" parent="." unique_id=2013712405]
+position = Vector2(0, -6)
 texture = ExtResource("1_a83uj")
 region_enabled = true
 region_rect = Rect2(2, 10, 22, 12)
 
 [node name="StumpCollision" type="CollisionPolygon2D" parent="." unique_id=481805062]
+position = Vector2(0, -6)
 polygon = PackedVector2Array(-11, 6, -6, -5, 5, -6, 11, 6)

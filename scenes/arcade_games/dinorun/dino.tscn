@@ -165,5 +165,4 @@ debug_color = Color(0, 0.068817295, 0.70196074, 0.41960785)
 
 [node name="JumpTimer" type="Timer" parent="." unique_id=107190654]
 unique_name_in_owner = true
-wait_time = 3.0
 one_shot = true
