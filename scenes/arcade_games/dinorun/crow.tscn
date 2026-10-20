@@ -47,6 +47,7 @@ scale = Vector2(8, 8)
 [node name="CrowSprite" type="AnimatedSprite2D" parent="." unique_id=932960263]
 sprite_frames = SubResource("SpriteFrames_kosuv")
 animation = &"fly"
+autoplay = "fly"
 frame_progress = 0.50203544
 
 [node name="CrowCollision" type="CollisionShape2D" parent="." unique_id=1187778927]

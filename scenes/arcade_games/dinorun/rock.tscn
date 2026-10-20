@@ -1,11 +1,9 @@
 [gd_scene format=3 uid="uid://by0tlfsogeukl"]
 
 [ext_resource type="Texture2D" uid="uid://btonqwd2ycxsn" path="res://graphics/gamesprites/dinorunsprites/Obstacles.png" id="1_228ir"]
-[ext_resource type="Script" uid="uid://hx3xmxhmxhcw" path="res://scenes/arcade_games/dinorun/rock.gd" id="1_vuom5"]
 
 [node name="Rock" type="Area2D" unique_id=208740202]
 scale = Vector2(16, 16)
-script = ExtResource("1_vuom5")
 
 [node name="RockSprite" type="Sprite2D" parent="." unique_id=1091415861]
 position = Vector2(0.5, -4)

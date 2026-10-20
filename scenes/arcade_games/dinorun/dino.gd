@@ -14,11 +14,17 @@ var fall_gravity : float = gravity * 2
 var is_crouching : bool = false
 var is_jumping : bool = false
 
+var is_dead : bool = false
+
+var last_jump : Vector2 = Vector2(80, -160)
+var last_fall : Vector2 = Vector2(20, 30)
+
 func _process(delta: float) -> void:
 	
 	fall_gravity = gravity * 2 * (1 + speed_up_gravity_factor * 0.015)
 	
 	if start:
+		
 		if not start_anim:
 			%DinoSprites.play("run")
 			start_anim = true
@@ -62,7 +68,9 @@ func crouch():
 		is_crouching = true
 		
 		%RunCollision.disabled = true
+		%RunHurtCollision.disabled = true
 		%CrouchCollision.disabled = false
+		%CrouchHurtCollision.disabled = false
 		
 		%DinoSprites.play("crouch")
 	
@@ -70,7 +78,39 @@ func crouch():
 		is_crouching = false
 		
 		%RunCollision.disabled = false
+		%RunHurtCollision.disabled = false
 		%CrouchCollision.disabled = true
+		%CrouchHurtCollision.disabled = true
 		
 		%DinoSprites.play("run")
+
+
+func _on_hurt_collision_area_entered(_area: Area2D) -> void:
+	is_dead = true
+	dying()
+
+
+func dying():
+	%RunCollision.set_deferred("disabled", true)
+	%CrouchCollision.set_deferred("disabled", true)
+	%RunHurtCollision.set_deferred("disabled", true)
+	%CrouchHurtCollision.set_deferred("disabled", true)
 	
+	var jump_tween = get_parent().create_tween()
+	
+	z_index = 9
+	
+	last_jump = last_jump*2 + global_position
+	
+	jump_tween.tween_property(self, "global_position", last_jump, 1)
+	
+	await get_tree().create_timer(1).timeout
+	
+	var fall_tween = get_parent().create_tween()
+	
+	last_fall = last_fall*2 + global_position
+	
+	fall_tween.tween_property(self, "global_position", last_fall, 0.15)
+	
+	await get_tree().create_timer(1).timeout
+	get_tree().change_scene_to_file("res://scenes/arcade_games/dinorun/dino_run_end_screen.tscn")

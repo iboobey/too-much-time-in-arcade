@@ -11,6 +11,7 @@ size = Vector2(400, 730)
 
 [node name="DinoRun" type="Node2D" unique_id=1006758310]
 script = ExtResource("1_pogth")
+metadata/_edit_horizontal_guides_ = [616.0, 496.0]
 
 [node name="Parallax" parent="." unique_id=1692221080 instance=ExtResource("1_sdb2k")]
 unique_name_in_owner = true

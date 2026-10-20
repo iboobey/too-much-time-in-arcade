@@ -166,3 +166,21 @@ debug_color = Color(0, 0.068817295, 0.70196074, 0.41960785)
 [node name="JumpTimer" type="Timer" parent="." unique_id=107190654]
 unique_name_in_owner = true
 one_shot = true
+
+[node name="HurtCollision" type="Area2D" parent="." unique_id=1171913369]
+
+[node name="RunHurtCollision" type="CollisionShape2D" parent="HurtCollision" unique_id=769277217]
+unique_name_in_owner = true
+position = Vector2(24.875, 70.625)
+shape = SubResource("RectangleShape2D_ibvtj")
+debug_color = Color(0, 0.89375, 0.85584295, 0.41960785)
+
+[node name="CrouchHurtCollision" type="CollisionShape2D" parent="HurtCollision" unique_id=396661343]
+unique_name_in_owner = true
+position = Vector2(24.125, 73)
+rotation = 0.60171807
+shape = SubResource("CapsuleShape2D_rx551")
+disabled = true
+debug_color = Color(0, 0.068817295, 0.70196074, 0.41960785)
+
+[connection signal="area_entered" from="HurtCollision" to="." method="_on_hurt_collision_area_entered"]

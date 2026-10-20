@@ -1336,7 +1336,7 @@ position = Vector2(74, -5)
 position = Vector2(119, -5)
 
 [node name="Console3" parent="Consoles" unique_id=2025414171 instance=ExtResource("8_fgvqq")]
-position = Vector2(-96, -5)
+position = Vector2(-149, -6)
 
 [node name="Console4" parent="Consoles" unique_id=1151178569 instance=ExtResource("9_rpcry")]
-position = Vector2(-145, -4)
+position = Vector2(-100, -6)
