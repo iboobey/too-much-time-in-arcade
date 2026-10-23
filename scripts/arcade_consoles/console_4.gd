@@ -20,7 +20,7 @@ func _process(_delta: float) -> void:
 
 
 func action_on_interact():
-	
+	%AudioStreamPlayer2D.play(0)
 	$ConsoleSprite.texture = load("res://graphics/consolesprites/Console4_On.png")
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.67).timeout
 	get_tree().change_scene_to_file("res://scenes/arcade_games/tetris/tetris.tscn")

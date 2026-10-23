@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bgxij4nnoa6yb" path="res://scripts/arcade_consoles/console_2.gd" id="1_yy5sv"]
 [ext_resource type="Texture2D" uid="uid://fivp7eaksce3" path="res://graphics/consolesprites/Console2.png" id="2_yy5sv"]
 [ext_resource type="FontFile" uid="uid://b5qt7mlemekrv" path="res://graphics/fonts/PressStart2P-Regular.ttf" id="3_gxjpw"]
+[ext_resource type="AudioStream" uid="uid://by4fmmg2jqbog" path="res://sounds/consoleon.wav" id="5_gxjpw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d0u6o"]
 radius = 20.0
@@ -54,3 +55,7 @@ text = "[E] To Play"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=409860021]
+unique_name_in_owner = true
+stream = ExtResource("5_gxjpw")

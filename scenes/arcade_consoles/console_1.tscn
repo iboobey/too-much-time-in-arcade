@@ -4,6 +4,7 @@
 [ext_resource type="FontFile" uid="uid://b5qt7mlemekrv" path="res://graphics/fonts/PressStart2P-Regular.ttf" id="3_1v7pr"]
 [ext_resource type="Texture2D" uid="uid://nfg2meix1by1" path="res://graphics/consolesprites/Console1.png" id="3_6qla7"]
 [ext_resource type="PackedScene" uid="uid://dhn7832do114r" path="res://interactions/interactable.tscn" id="3_jwn1j"]
+[ext_resource type="AudioStream" uid="uid://by4fmmg2jqbog" path="res://sounds/consoleon.wav" id="5_1unxn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jwn1j"]
 radius = 20.024984
@@ -56,3 +57,7 @@ text = "[E] To Play"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=248315122]
+unique_name_in_owner = true
+stream = ExtResource("5_1unxn")

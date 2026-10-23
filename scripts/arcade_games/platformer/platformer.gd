@@ -66,5 +66,8 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 
 
 func _on_death_area_body_entered(body: Node2D) -> void:
+	%LoseAudioPlayer2D.global_position = player.global_position
+	%LoseAudioPlayer2D.play()
+	await get_tree().create_timer(2.66).timeout
 	if body == player:
 		get_tree().call_deferred("change_scene_to_file","res://scenes/arcade_games/platformer/platformer_end_screen.tscn")

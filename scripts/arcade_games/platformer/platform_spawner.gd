@@ -7,8 +7,8 @@ extends Node2D
 @onready var speed = player.speed
 var safety_factor = .65
 var last_trigger_y := 0.0
-const trigger_distance := 300.0
-const trigger_offset := 200.0
+const trigger_distance := 500.0
+const trigger_offset := 400.0
 var trigger_amount : int = 0
 
 var normal_platform : PackedScene = preload("res://scenes/arcade_games/platformer/normal_platform.tscn")
@@ -28,6 +28,7 @@ func _ready() -> void:
 	spawn_set(trigger_amount)
 	last_trigger_y = player.global_position.y 
 
+
 func _process(_delta):
 	var up_distance : float = last_trigger_y - player.global_position.y
 	if up_distance >= trigger_distance:
@@ -35,10 +36,14 @@ func _process(_delta):
 		last_trigger_y -= trigger_distance
 		spawn_set(trigger_amount)
 		spawn_set(trigger_amount)
+		
+		%MilestoneAudioPlayer2D.global_position = player.global_position
+		%MilestoneAudioPlayer2D.play()
 
 
 func max_jump_height():
 	return (jump_velocity * jump_velocity) / (2 * gravity)
+
 
 func total_jump_time():
 	var time_jump = abs(jump_velocity) / gravity
@@ -46,14 +51,14 @@ func total_jump_time():
 	var time_air = time_jump + time_fall
 	return time_air
 
+
 func max_jump_distance():
 	var max_speed = total_jump_time() * speed  
 	return max_speed
 
 
-
 func spawn_set(trigger_amount_,):
-	var platform_amount = 20 
+	var platform_amount = 36
 	
 	
 	var last_y = 0 + trigger_amount_ * (trigger_distance + trigger_offset)
@@ -77,9 +82,6 @@ func spawn_set(trigger_amount_,):
 		
 		
 		add_child(instance)
-		
-
-
 
 
 func _on_start_area_area_entered(area: Area2D) -> void:

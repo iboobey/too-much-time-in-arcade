@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://3ptf6if14q7k" path="res://scripts/arcade_games/tetris/tetris.gd" id="1_ixrrw"]
 [ext_resource type="Texture2D" uid="uid://b5k0355kmdcbi" path="res://graphics/gamesprites/tetrissprites/TetrisTiles.png" id="1_wc7u8"]
 [ext_resource type="Theme" uid="uid://esjypmff8v5i" path="res://graphics/themes/Tetris.tres" id="3_4ifls"]
+[ext_resource type="AudioStream" uid="uid://ddc3fqh4c1bn4" path="res://sounds/tetris_teromino_placement.wav" id="5_ml8r0"]
+[ext_resource type="AudioStream" uid="uid://dr2dfd4n3f0vq" path="res://sounds/tetris_row_fill.wav" id="6_6avk3"]
+[ext_resource type="AudioStream" uid="uid://cng1oyma6jmgr" path="res://sounds/lose.wav" id="7_6avk3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_57ybk"]
 texture = ExtResource("1_dnq3g")
@@ -768,8 +771,8 @@ texture = ExtResource("1_wc7u8")
 sources/0 = SubResource("TileSetAtlasSource_ixrrw")
 
 [node name="Tetris" type="Node2D" unique_id=517537827]
-metadata/_edit_vertical_guides_ = [1024.0]
-metadata/_edit_horizontal_guides_ = [576.0]
+metadata/_edit_vertical_guides_ = [1024.0, 512.0]
+metadata/_edit_horizontal_guides_ = [576.0, 288.0]
 
 [node name="BG" type="Node2D" parent="." unique_id=607199970]
 z_index = 1
@@ -882,3 +885,17 @@ text = "Broken:
 1234"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="LandAudioPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=5693124]
+unique_name_in_owner = true
+position = Vector2(512, 288)
+stream = ExtResource("5_ml8r0")
+
+[node name="RowAudioPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=392373025]
+unique_name_in_owner = true
+position = Vector2(512, 288)
+stream = ExtResource("6_6avk3")
+
+[node name="LoseAudioPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=543667582]
+unique_name_in_owner = true
+stream = ExtResource("7_6avk3")

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://diylvoqkn3pan"]
 
 [ext_resource type="Texture2D" uid="uid://bqkmk1y8ewnln" path="res://graphics/gamesprites/dinorunsprites/parallax/PRLX_BG.png" id="1_jbogk"]
-[ext_resource type="Script" uid="uid://cp1chls03d4vb" path="res://scenes/arcade_games/dinorun/parallax.gd" id="1_qbjg6"]
+[ext_resource type="Script" uid="uid://cp1chls03d4vb" path="res://scripts/arcade_games/dinorun/parallax.gd" id="1_qbjg6"]
 [ext_resource type="Texture2D" uid="uid://c4b72f6pit6x8" path="res://graphics/gamesprites/dinorunsprites/parallax/PRLX_4.png" id="2_p23a6"]
 [ext_resource type="Texture2D" uid="uid://beheftodm3gmm" path="res://graphics/gamesprites/dinorunsprites/parallax/PRLX_3.png" id="3_qbjg6"]
 [ext_resource type="Texture2D" uid="uid://bno1rhkgesdkq" path="res://graphics/gamesprites/dinorunsprites/parallax/PRLX_2.png" id="4_ctgjr"]

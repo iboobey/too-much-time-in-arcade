@@ -24,7 +24,7 @@ var o := [o_0, o_90, o_180, o_270]
 
 var z_0 := [Vector2i(0,0), Vector2i(1,0), Vector2i(1,1), Vector2i(2,1)]
 var z_90 := [Vector2i(2,0), Vector2i(1,1), Vector2i(2,1), Vector2i(1,2)]
-var z_180 := [Vector2i(0,1), Vector2i(1,1), Vector2i(1,2), Vector2i(2,1)]
+var z_180 := [Vector2i(0,1), Vector2i(1,1), Vector2i(1,2), Vector2i(2,2)]
 var z_270 := [Vector2i(1,0), Vector2i(0,1), Vector2i(1,1), Vector2i(0,2)]
 var z := [z_0, z_90, z_180, z_270]
 
@@ -111,6 +111,8 @@ func create_piece():
 	active_piece = piece_type[rotation_index]
 	
 	if check_game_over():
+		%LoseAudioPlayer2D.play()
+		await get_tree().create_timer(2.66).timeout
 		get_tree().change_scene_to_file("res://scenes/arcade_games/tetris/tetris_end_screen.tscn")
 		return
 	draw_piece(active_piece, current_pos, piece_atlas)
@@ -169,7 +171,6 @@ func move_piece(dir):
 			create_piece()
 
 
-
 func is_free(pos):
 	return bg_tile_map.get_cell_source_id(pos) == -1
 
@@ -205,6 +206,7 @@ func land_piece():
 	for k in active_piece:
 		erase_cell(current_pos + k + GAME_OFFSET)
 		bg_tile_map.set_cell(current_pos + k + GAME_OFFSET, tile_id, piece_atlas, 0)
+	%LandAudioPlayer2D.play()
 
 
 func  clear_panel():
@@ -223,6 +225,7 @@ func check_rows():
 		
 		if count == COLS:
 			shift_rows(row)
+			%RowAudioPlayer2D.play()
 			score += reward
 			broken_layer += 1
 			speed += ACCELERATION
@@ -254,6 +257,7 @@ func check_game_over() -> bool:
 			return true
 			
 	return false
+
 
 func update_label():
 	$"../Control/ScoreMargin/ScoreLabel".text = "Score:

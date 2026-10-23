@@ -13,9 +13,9 @@ func _ready() -> void:
 
 
 func action_on_interact():
-	
+	%AudioStreamPlayer2D.play(0)
 	$ConsoleSprite.texture = load("res://graphics/consolesprites/Console2_On.png")
-	await get_tree().create_timer(.5).timeout
+	await get_tree().create_timer(.67).timeout
 	get_tree().change_scene_to_file("res://scenes/arcade_games/snake/snake.tscn")
 
 

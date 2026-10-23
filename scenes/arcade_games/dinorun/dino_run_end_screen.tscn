@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dkniqd4vocdrd"]
 
 [ext_resource type="Texture2D" uid="uid://dlqurnfqi3bww" path="res://graphics/gamesprites/dinorunsprites/DinoRunGUI.png" id="1_ghv81"]
-[ext_resource type="Script" uid="uid://bqo8mi30dky46" path="res://scenes/arcade_games/dinorun/dino_run_end_screen.gd" id="1_vgal3"]
+[ext_resource type="Script" uid="uid://bqo8mi30dky46" path="res://scripts/arcade_games/dinorun/dino_run_end_screen.gd" id="1_vgal3"]
 [ext_resource type="Theme" uid="uid://4jyg2u6sqlqk" path="res://graphics/themes/DinoRun.tres" id="2_vgal3"]
 
 [node name="DinoRunEndScreen" type="Node2D" unique_id=407723398]

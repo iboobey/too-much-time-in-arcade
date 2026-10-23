@@ -44,11 +44,11 @@ var right = Vector2(1,0)
 var direction : Vector2
 var can_move: bool
 
+var lose_audio_played : bool = false
 
 var apple_pos_list : Array = []
 var apple_list : Array = []
 var apple_regen : bool = true
-
 
 var map_x_offset := 340
 var map_y_offset := 60
@@ -71,8 +71,6 @@ func _process(_delta: float) -> void:
 		Global.snake_score = score
 	
 	update_label()
-	
-
 
 
 func new_game():
@@ -176,9 +174,13 @@ func move_apple():
 
 
 func end_game():
+	if lose_audio_played == false:
+		lose_audio_played = true
+		%LoseAudioPlayer2D.global_position = Vector2(640,360)
+		%LoseAudioPlayer2D.play()
 	
 	you_died_label.visible = true
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(2.66).timeout
 	get_tree().change_scene_to_file("res://scenes/arcade_games/snake/snake_end_screen.tscn")
 
 
@@ -202,5 +204,7 @@ func update_label():
 
 func _on_red_apple_area_shape_entered(_area_rid: RID, _area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	score += 1
+	%AppleAudioPlayer2D.global_position = Vector2(640,360)
+	%AppleAudioPlayer2D.play()
 	add_segment(old_data[-1])
 	move_apple()
