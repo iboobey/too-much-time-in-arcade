@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://djdnpug3b8gkb" path="res://graphics/titleoptionswinscenes/YouWon!.png" id="2_erk2x"]
 [ext_resource type="PackedScene" uid="uid://crs2gratwnuim" path="res://scenes/confetti.tscn" id="3_2l6cc"]
 [ext_resource type="Theme" uid="uid://d02xnpbr41vip" path="res://graphics/themes/MainGUI.tres" id="5_0lrm4"]
+[ext_resource type="AudioStream" uid="uid://belj067gb337m" path="res://sounds/soundeffects/win.wav" id="6_6s1kg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wv5lq"]
 texture = ExtResource("1_wv5lq")
@@ -486,5 +487,9 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 theme = ExtResource("5_0lrm4")
 text = "QUIT"
+
+[node name="WinAudioPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1568805481]
+stream = ExtResource("6_6s1kg")
+autoplay = true
 
 [connection signal="pressed" from="Button/MarginButton/Button" to="." method="_on_button_pressed"]

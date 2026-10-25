@@ -7,7 +7,7 @@ var tetris_score : int = 0
 var old_tetris_score : int = 0
 var dino_run_score : int = 0
 var total_points_gathered : int
-var goal = 400
+var goal = 600
 
 var main_theme : bool =  true
 
@@ -16,4 +16,5 @@ var game_won : bool = false
 func _process(_delta):
 	total_points_gathered = platformer_score + snake_score + tetris_score + dino_run_score
 	if total_points_gathered >= goal:
+		main_theme = false
 		game_won = true
