@@ -41,6 +41,15 @@ func _process(delta: float) -> void:
 		move_obstacles(delta, ground_x_speed)
 		move_birds(delta, ground_x_speed)
 	
+	if %Dino.is_dead:
+		%Dino.is_dead = false
+		%ThemeAudioPlayer2D.stop()
+		%DinoDeathAudioPlayer2D.play()
+		await get_tree().create_timer(0.1).timeout
+		%LoseAudioPlayer2D.play()
+		await get_tree().create_timer(2.66).timeout
+		get_tree().change_scene_to_file("res://scenes/arcade_games/dinorun/dino_run_end_screen.tscn")
+	
 	update_label()
 
 

@@ -13,7 +13,8 @@ func _ready() -> void:
 
 
 func action_on_interact():
-	%AudioStreamPlayer2D.play(0)
+	Global.main_theme = false
+	%AudioStreamPlayer2D.play()
 	$ConsoleSprite.texture = load("res://graphics/consolesprites/Console3_On.png")
 	await get_tree().create_timer(0.67).timeout
 	get_tree().change_scene_to_file("res://scenes/arcade_games/dinorun/dinorun.tscn")

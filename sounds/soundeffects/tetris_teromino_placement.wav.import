@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ddc3fqh4c1bn4"
-path="res://.godot/imported/tetris_teromino_placement.wav-71953871ca63e6e409d2863656dcded8.sample"
+path="res://.godot/imported/tetris_teromino_placement.wav-5b7e2ad2f162d1fe69bd0ab3fc3af241.sample"
 
 [deps]
 
-source_file="res://sounds/tetris_teromino_placement.wav"
-dest_files=["res://.godot/imported/tetris_teromino_placement.wav-71953871ca63e6e409d2863656dcded8.sample"]
+source_file="res://sounds/soundeffects/tetris_teromino_placement.wav"
+dest_files=["res://.godot/imported/tetris_teromino_placement.wav-5b7e2ad2f162d1fe69bd0ab3fc3af241.sample"]
 
 [params]
 

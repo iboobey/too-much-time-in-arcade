@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dm6ugndg0tfx4"
-path="res://.godot/imported/snake_apple_eaten.wav-f64eece7ac43a66b44a6f5bf0c2f31b6.sample"
+path="res://.godot/imported/snake_apple_eaten.wav-89a50de0aa0fe4cffc3cf0710ae210cd.sample"
 
 [deps]
 
-source_file="res://sounds/snake_apple_eaten.wav"
-dest_files=["res://.godot/imported/snake_apple_eaten.wav-f64eece7ac43a66b44a6f5bf0c2f31b6.sample"]
+source_file="res://sounds/soundeffects/snake_apple_eaten.wav"
+dest_files=["res://.godot/imported/snake_apple_eaten.wav-89a50de0aa0fe4cffc3cf0710ae210cd.sample"]
 
 [params]
 

@@ -30,6 +30,8 @@ func _ready() -> void:
 
 func _process(_delta):
 	
+	%MilestoneAudioPlayer2D.global_position = player.global_position
+	
 	death_area_movement()
 	
 	var scored_y = (-(floori(player.global_position.y) + 17) / 5.0) - 0.2
@@ -44,10 +46,15 @@ func _process(_delta):
 		Global.platformer_score = score
 	
 	
+	if scored_y < 0:
+		player_y_level_label.text = "Player Y
+	Level:
+	" + "DEAD"
 	
-	player_y_level_label.text = "Player Y
-Level:
-" + str(scored_y)
+	else:
+		player_y_level_label.text = "Player Y
+	Level:
+	" + str(scored_y)
 	
 	max_points_label.text = "Max
 Points:
@@ -67,6 +74,7 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 
 func _on_death_area_body_entered(body: Node2D) -> void:
 	%LoseAudioPlayer2D.global_position = player.global_position
+	%ThemeAudioPlayer2D.stop()
 	%LoseAudioPlayer2D.play()
 	await get_tree().create_timer(2.66).timeout
 	if body == player:

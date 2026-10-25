@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://c2dhnvdh1d60r" path="res://scripts/arcade_games/dinorun/dino.gd" id="1_lsqxn"]
 [ext_resource type="Texture2D" uid="uid://b4hmpv3ph2184" path="res://graphics/gamesprites/dinorunsprites/Dino.png" id="1_wds8t"]
-[ext_resource type="AudioStream" uid="uid://dy3ktbrasqt7k" path="res://sounds/dinorun_death.wav" id="3_hwtmc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ckvpy"]
 atlas = ExtResource("1_wds8t")
@@ -183,9 +182,5 @@ rotation = 0.60171807
 shape = SubResource("CapsuleShape2D_rx551")
 disabled = true
 debug_color = Color(0, 0.068817295, 0.70196074, 0.41960785)
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1479377322]
-unique_name_in_owner = true
-stream = ExtResource("3_hwtmc")
 
 [connection signal="area_entered" from="HurtCollision" to="." method="_on_hurt_collision_area_entered"]

@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://by4fmmg2jqbog"
-path="res://.godot/imported/consoleon.wav-ae1840543ba36c0bf2568ad343c9b9b2.sample"
+uid="uid://cng1oyma6jmgr"
+path="res://.godot/imported/lose.wav-b2b654b4f1bcfc4cb1cb9e2c84cf6860.sample"
 
 [deps]
 
-source_file="res://sounds/consoleon.wav"
-dest_files=["res://.godot/imported/consoleon.wav-ae1840543ba36c0bf2568ad343c9b9b2.sample"]
+source_file="res://sounds/soundeffects/lose.wav"
+dest_files=["res://.godot/imported/lose.wav-b2b654b4f1bcfc4cb1cb9e2c84cf6860.sample"]
 
 [params]
 

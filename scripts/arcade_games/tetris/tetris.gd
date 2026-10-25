@@ -51,12 +51,12 @@ var shapes_full := shapes.duplicate()
 
 
 
-const COLS : int = 11
+const COLS : int = 13
 const ROWS : int = 16
 
 const DIRECTIONS := [Vector2i.LEFT, Vector2i.RIGHT, Vector2i.DOWN]
-const GAME_OFFSET : Vector2i = Vector2i(12,0)
-const START_POS : Vector2i =  GAME_OFFSET - Vector2i(8,-1)
+const GAME_OFFSET : Vector2i = Vector2i(10,0)
+const START_POS : Vector2i =  GAME_OFFSET - Vector2i(5,-1)
 var current_pos : Vector2i
 var steps : Array
 const STEPS_REQUIRED : int = 50
@@ -111,13 +111,14 @@ func create_piece():
 	active_piece = piece_type[rotation_index]
 	
 	if check_game_over():
+		%ThemeAudioPlayer2D.stop()
 		%LoseAudioPlayer2D.play()
 		await get_tree().create_timer(2.66).timeout
 		get_tree().change_scene_to_file("res://scenes/arcade_games/tetris/tetris_end_screen.tscn")
 		return
 	draw_piece(active_piece, current_pos, piece_atlas)
 	
-	draw_piece(next_piece_type[0], Vector2i(15,3), next_piece_atlas)
+	draw_piece(next_piece_type[0], Vector2i(17,3), next_piece_atlas)
 
 
 func clear_piece():
@@ -209,7 +210,7 @@ func land_piece():
 	%LandAudioPlayer2D.play()
 
 
-func  clear_panel():
+func clear_panel():
 	for m in range(26, 31):
 		for n in range(3, 6):
 			erase_cell(Vector2i(m, n))

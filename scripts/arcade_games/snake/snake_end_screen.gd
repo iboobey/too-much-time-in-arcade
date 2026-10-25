@@ -13,4 +13,5 @@ func _on_button_pressed() -> void:
 
 
 func _on_exit_pressed() -> void:
+	Global.main_theme = true
 	get_tree().change_scene_to_file("res://scenes/arcade_scene.tscn")

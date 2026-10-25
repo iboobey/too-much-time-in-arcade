@@ -9,6 +9,8 @@ var dino_run_score : int = 0
 var total_points_gathered : int
 var goal = 400
 
+var main_theme : bool =  true
+
 var game_won : bool = false
 
 func _process(_delta):

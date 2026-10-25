@@ -66,7 +66,7 @@ func  _ready() -> void:
 
 func _process(_delta: float) -> void:
 	move()
-	
+	snake[0].modulate = Color(0.332, 0.69, 0.269, 1.0)
 	if score > Global.snake_score :
 		Global.snake_score = score
 	
@@ -176,7 +176,7 @@ func move_apple():
 func end_game():
 	if lose_audio_played == false:
 		lose_audio_played = true
-		%LoseAudioPlayer2D.global_position = Vector2(640,360)
+		%ThemeAudioPlayer2D.stop()
 		%LoseAudioPlayer2D.play()
 	
 	you_died_label.visible = true
@@ -204,7 +204,6 @@ func update_label():
 
 func _on_red_apple_area_shape_entered(_area_rid: RID, _area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	score += 1
-	%AppleAudioPlayer2D.global_position = Vector2(640,360)
 	%AppleAudioPlayer2D.play()
 	add_segment(old_data[-1])
 	move_apple()

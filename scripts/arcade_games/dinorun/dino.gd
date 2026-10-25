@@ -16,6 +16,7 @@ var is_jumping : bool = false
 
 var is_dead : bool = false
 
+
 var last_jump : Vector2 = Vector2(80, -160)
 var last_fall : Vector2 = Vector2(20, 30)
 
@@ -87,26 +88,16 @@ func crouch():
 
 func _on_hurt_collision_area_entered(_area: Area2D) -> void:
 	is_dead = true
-	dying()
+	dino_dying()
 
 
-func dying():
-	%AudioStreamPlayer2D.play(0)
-	await get_tree().create_timer(0.22).timeout
+func dino_dying():
 	%RunCollision.set_deferred("disabled", true)
 	%CrouchCollision.set_deferred("disabled", true)
 	%RunHurtCollision.set_deferred("disabled", true)
 	%CrouchHurtCollision.set_deferred("disabled", true)
 	
-	#var jump_tween = get_parent().create_tween()
-	
 	z_index = 9
-	
-	#last_jump = last_jump*2 + global_position
-	
-	#jump_tween.tween_property(self, "global_position", last_jump, 0.5)
-	
-	#await get_tree().create_timer(1).timeout
 	
 	var fall_tween = get_parent().create_tween()
 	
@@ -114,5 +105,3 @@ func dying():
 	
 	fall_tween.tween_property(self, "global_position", last_fall, 0.15)
 	
-	await get_tree().create_timer(1).timeout
-	get_tree().change_scene_to_file("res://scenes/arcade_games/dinorun/dino_run_end_screen.tscn")

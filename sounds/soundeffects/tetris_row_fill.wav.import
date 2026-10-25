@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dr2dfd4n3f0vq"
-path="res://.godot/imported/tetris_row_fill.wav-c9cbf614e10fcfddea1c50611b233672.sample"
+path="res://.godot/imported/tetris_row_fill.wav-80e0027ea393d05daa1d8bc53fc54cba.sample"
 
 [deps]
 
-source_file="res://sounds/tetris_row_fill.wav"
-dest_files=["res://.godot/imported/tetris_row_fill.wav-c9cbf614e10fcfddea1c50611b233672.sample"]
+source_file="res://sounds/soundeffects/tetris_row_fill.wav"
+dest_files=["res://.godot/imported/tetris_row_fill.wav-80e0027ea393d05daa1d8bc53fc54cba.sample"]
 
 [params]
 
