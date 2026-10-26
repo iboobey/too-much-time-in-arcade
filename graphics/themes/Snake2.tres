@@ -1,0 +1,29 @@
+[gd_resource type="Theme" format=3 uid="uid://d286g48kykl0g"]
+
+[ext_resource type="Texture2D" uid="uid://bi4k5vrro0sxc" path="res://graphics/gamesprites/snakesprites/SnakeGUI.png" id="1_ejosk"]
+[ext_resource type="FontFile" uid="uid://b5qt7mlemekrv" path="res://graphics/fonts/PressStart2P-Regular.ttf" id="1_v5jk7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v5jk7"]
+texture = ExtResource("1_ejosk")
+region_rect = Rect2(449, 23, 192, 90)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gwfms"]
+texture = ExtResource("1_ejosk")
+region_rect = Rect2(449, 23, 192, 90)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gguj7"]
+texture = ExtResource("1_ejosk")
+region_rect = Rect2(221, 23, 192, 90)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ejosk"]
+texture = ExtResource("1_ejosk")
+region_rect = Rect2(449, 137, 192, 84)
+
+[resource]
+Button/constants/outline_size = 36
+Button/font_sizes/font_size = 96
+Button/fonts/font = ExtResource("1_v5jk7")
+Button/styles/focus = SubResource("StyleBoxTexture_v5jk7")
+Button/styles/hover = SubResource("StyleBoxTexture_gwfms")
+Button/styles/normal = SubResource("StyleBoxTexture_gguj7")
+Button/styles/pressed = SubResource("StyleBoxTexture_ejosk")

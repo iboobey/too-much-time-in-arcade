@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bi4k5vrro0sxc" path="res://graphics/gamesprites/snakesprites/SnakeGUI.png" id="3_8d484"]
 [ext_resource type="Theme" uid="uid://cuqv2xaljwg2i" path="res://graphics/themes/Snake.tres" id="4_erhk5"]
 [ext_resource type="Texture2D" uid="uid://i4yiq3rhwquy" path="res://graphics/gamesprites/snakesprites/Apples/RedApple.png" id="5_2u3q6"]
+[ext_resource type="Theme" uid="uid://d286g48kykl0g" path="res://graphics/themes/Snake2.tres" id="5_6jogl"]
 [ext_resource type="AudioStream" uid="uid://dm6ugndg0tfx4" path="res://sounds/soundeffects/snake_apple_eaten.wav" id="6_4gled"]
 [ext_resource type="AudioStream" uid="uid://cng1oyma6jmgr" path="res://sounds/soundeffects/lose.wav" id="7_qbdry"]
 [ext_resource type="AudioStream" uid="uid://dts8tl5od3c40" path="res://sounds/themes/Snake_Theme.ogg" id="8_qbdry"]
@@ -77,28 +78,6 @@ theme_override_constants/margin_bottom = 260
 layout_mode = 2
 theme_override_constants/separation = 40
 
-[node name="Score" type="NinePatchRect" parent="UI/Scores/VBoxContainer" unique_id=2052076550]
-layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("3_8d484")
-region_rect = Rect2(9, 99, 72, 42)
-patch_margin_left = 7
-patch_margin_top = 7
-patch_margin_right = 7
-patch_margin_bottom = 7
-
-[node name="ScoreLabel" type="Label" parent="UI/Scores/VBoxContainer/Score" unique_id=67795578]
-z_index = 100
-layout_mode = 0
-offset_right = 240.0
-offset_bottom = 100.0
-theme = ExtResource("4_erhk5")
-text = "SCORE:
-
-123"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="MaxScore" type="NinePatchRect" parent="UI/Scores/VBoxContainer" unique_id=26470692]
 layout_mode = 2
 size_flags_vertical = 3
@@ -142,6 +121,28 @@ text = "Time Spent:
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Score" type="NinePatchRect" parent="UI/Scores/VBoxContainer" unique_id=2052076550]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_8d484")
+region_rect = Rect2(9, 99, 72, 42)
+patch_margin_left = 7
+patch_margin_top = 7
+patch_margin_right = 7
+patch_margin_bottom = 7
+
+[node name="ScoreLabel" type="Label" parent="UI/Scores/VBoxContainer/Score" unique_id=67795578]
+z_index = 100
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 100.0
+theme = ExtResource("4_erhk5")
+text = "SCORE:
+
+123"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="YouDied" type="MarginContainer" parent="UI" unique_id=893108756]
 offset_left = 340.0
 offset_top = 60.0
@@ -159,6 +160,66 @@ theme = ExtResource("4_erhk5")
 theme_override_colors/font_color = Color(0.09019608, 0.59607846, 0.18039216, 1)
 theme_override_font_sizes/font_size = 32
 text = "You Died"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpeedSelection" type="MarginContainer" parent="UI" unique_id=1950967165]
+unique_name_in_owner = true
+offset_left = 340.0
+offset_top = 60.0
+offset_right = 940.0
+offset_bottom = 660.0
+theme_override_constants/margin_left = 70
+theme_override_constants/margin_top = 225
+theme_override_constants/margin_right = 70
+theme_override_constants/margin_bottom = 225
+
+[node name="SpeedSelection" type="NinePatchRect" parent="UI/SpeedSelection" unique_id=395417798]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_8d484")
+region_rect = Rect2(9, 99, 72, 42)
+patch_margin_left = 7
+patch_margin_top = 7
+patch_margin_right = 7
+patch_margin_bottom = 7
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/SpeedSelection/SpeedSelection" unique_id=1194971343]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 75.0
+offset_right = 1798.0
+offset_bottom = 327.0
+scale = Vector2(0.25, 0.25)
+theme_override_constants/separation = 25
+
+[node name="Worm" type="Button" parent="UI/SpeedSelection/SpeedSelection/HBoxContainer" unique_id=240799913]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("5_6jogl")
+text = "Worm"
+
+[node name="Snake" type="Button" parent="UI/SpeedSelection/SpeedSelection/HBoxContainer" unique_id=781478748]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("5_6jogl")
+text = "Snake"
+
+[node name="Phyton" type="Button" parent="UI/SpeedSelection/SpeedSelection/HBoxContainer" unique_id=1729201499]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("5_6jogl")
+text = "π-ton"
+
+[node name="Label" type="Label" parent="UI/SpeedSelection/SpeedSelection" unique_id=1283934771]
+layout_mode = 0
+offset_right = 460.0
+offset_bottom = 75.0
+theme = ExtResource("4_erhk5")
+text = "Select Your Speed"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -198,6 +259,9 @@ stream = ExtResource("8_qbdry")
 volume_db = -20.0
 autoplay = true
 
+[connection signal="pressed" from="UI/SpeedSelection/SpeedSelection/HBoxContainer/Worm" to="." method="_on_worm_pressed"]
+[connection signal="pressed" from="UI/SpeedSelection/SpeedSelection/HBoxContainer/Snake" to="." method="_on_snake_pressed"]
+[connection signal="pressed" from="UI/SpeedSelection/SpeedSelection/HBoxContainer/Phyton" to="." method="_on_phyton_pressed"]
 [connection signal="timeout" from="MoveTimer" to="." method="_on_move_timer_timeout"]
 [connection signal="timeout" from="TimeKeeperTimer" to="." method="_on_time_keeper_timer_timeout"]
 [connection signal="area_shape_entered" from="Apple" to="." method="_on_red_apple_area_shape_entered"]

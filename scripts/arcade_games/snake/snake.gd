@@ -23,7 +23,7 @@ var apple_colors : Array = [RED_APPLE, GREEN_APPLE, YELLOW_APPLE, GOLDEN_APPLE]
 
 
 
-var score : int = 0
+var score : float = 0
 var time_passed : int = 0
 var game_started : bool = false
 
@@ -59,16 +59,21 @@ var border_down = map_y_offset + (cells * cell_size)
 var border_left = map_x_offset - cell_size
 var border_right = map_x_offset + (cells * cell_size)
 
+var speed_selected : bool = false
+var score_booster : float = 1
 
-func  _ready() -> void:
+func _ready() -> void:
 	new_game()
 
-
 func _process(_delta: float) -> void:
-	move()
-	snake[0].modulate = Color(0.332, 0.69, 0.269, 1.0)
+	if speed_selected:
+		move()
+	
+	
+	if snake.size() > 0:
+		snake[0].modulate = Color(0.332, 0.69, 0.269, 1.0)
 	if score > Global.snake_score :
-		Global.snake_score = score
+		Global.snake_score = floori(score)
 	
 	update_label()
 
@@ -203,7 +208,37 @@ func update_label():
 
 
 func _on_red_apple_area_shape_entered(_area_rid: RID, _area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
-	score += 1
+	score += 1 * score_booster
 	%AppleAudioPlayer2D.play()
 	add_segment(old_data[-1])
 	move_apple()
+
+
+func _on_worm_pressed() -> void:
+	score_booster = 0.5
+	%SpeedSelection.hide()
+	%Worm.disabled = true
+	speed_selected = true
+	%Snake.disabled = true
+	%Phyton.disabled = true
+	$MoveTimer.wait_time = 0.16
+
+
+func _on_snake_pressed() -> void:
+	score_booster = 1
+	speed_selected = true
+	%SpeedSelection.hide()
+	%Worm.disabled = true
+	%Snake.disabled = true
+	%Phyton.disabled = true
+	$MoveTimer.wait_time = 0.12
+
+
+func _on_phyton_pressed() -> void:
+	score_booster = 2
+	speed_selected = true
+	%SpeedSelection.hide()
+	%Worm.disabled = true
+	%Snake.disabled = true
+	%Phyton.disabled = true
+	$MoveTimer.wait_time = 0.08
