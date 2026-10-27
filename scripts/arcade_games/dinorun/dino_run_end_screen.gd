@@ -1,11 +1,21 @@
-extends Node2D
+extends Control
 
+const CONFETTI := preload("res://scenes/confetti.tscn")
 
 func _ready() -> void:
 	%HighScoreLabel.text = "High Score:
 
 " + str(Global.dino_run_score)
-
+	
+	if Global.dino_run_score > Global.old_dino_run_score:
+		var left_confetti = CONFETTI.instantiate()
+		var right_confetti = CONFETTI.instantiate()
+		left_confetti.global_position = Vector2(0,720)
+		add_child(left_confetti)
+		right_confetti.global_position = Vector2(1280,720)
+		right_confetti.rotation = -45
+		add_child(right_confetti)
+		Global.old_dino_run_score = Global.dino_run_score
 
 
 func _on_exit_button_pressed() -> void:

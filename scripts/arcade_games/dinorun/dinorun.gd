@@ -4,7 +4,7 @@ extends Node2D
 @onready var speed_up_timer: Timer = %SpeedUpTimer
 
 var ground_height : int = 616
-var sky_height : int = 310
+var sky_height : int = 330
 
 var speed_up_level_factor : int
 

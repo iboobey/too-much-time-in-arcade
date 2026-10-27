@@ -132,7 +132,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ibvtj"]
-size = Vector2(11, 20)
+size = Vector2(10.25, 19.95834)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rx551"]
 radius = 5.75
@@ -171,7 +171,7 @@ one_shot = true
 
 [node name="RunHurtCollision" type="CollisionShape2D" parent="HurtCollision" unique_id=769277217]
 unique_name_in_owner = true
-position = Vector2(24.875, 70.625)
+position = Vector2(24.875, 70.64584)
 shape = SubResource("RectangleShape2D_ibvtj")
 debug_color = Color(0, 0.89375, 0.85584295, 0.41960785)
 
