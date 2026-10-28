@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bmtn8grjgkrtg"]
+
+[ext_resource type="Script" uid="uid://hj6xh1gnajf6" path="res://scenes/arcade_games/flappybird/pipe.gd" id="1_f0ara"]
+[ext_resource type="Texture2D" uid="uid://chw4q1bcfdkfb" path="res://graphics/gamesprites/flappybirdsprites/Green_Pipe.png" id="2_f0ara"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f0ara"]
+size = Vector2(20, 220)
+
+[node name="Pipe" type="Area2D" unique_id=106885301]
+script = ExtResource("1_f0ara")
+
+[node name="LowerSprite" type="Sprite2D" parent="." unique_id=1983444037]
+unique_name_in_owner = true
+texture = ExtResource("2_f0ara")
+offset = Vector2(0, 405)
+
+[node name="UpperSprite" type="Sprite2D" parent="." unique_id=190125367]
+unique_name_in_owner = true
+texture = ExtResource("2_f0ara")
+offset = Vector2(0, -405)
+flip_v = true
+
+[node name="LowerCollision" type="CollisionPolygon2D" parent="." unique_id=1916982284]
+visible = false
+polygon = PackedVector2Array(-39, 100, -39, 136, -36, 136, -36, 660, 36, 660, 36, 136, 39, 136, 39, 100)
+
+[node name="UpperCollision" type="CollisionPolygon2D" parent="." unique_id=1526809812]
+visible = false
+polygon = PackedVector2Array(-39, -100, 39, -100, 39, -136, 36, -136, 36, -660, -36, -660, -36, -136, -39, -136)
+
+[node name="ScoreArea" type="Area2D" parent="." unique_id=527783335]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreArea" unique_id=2013881322]
+position = Vector2(59, 0)
+shape = SubResource("RectangleShape2D_f0ara")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="ScoreArea" to="." method="_on_score_area_body_entered"]

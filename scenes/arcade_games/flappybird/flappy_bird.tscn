@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://bb2np6kql28u2"]
+
+[ext_resource type="Script" uid="uid://wuck8fuhwwvn" path="res://scenes/arcade_games/flappybird/flappy_bird.gd" id="1_k37jo"]
+[ext_resource type="PackedScene" uid="uid://bmtn8grjgkrtg" path="res://scenes/arcade_games/flappybird/pipe.tscn" id="2_4whcq"]
+[ext_resource type="Texture2D" uid="uid://5rcvtlhmkmml" path="res://graphics/gamesprites/flappybirdsprites/BG.png" id="3_4whcq"]
+[ext_resource type="PackedScene" uid="uid://c6aunbg7m52u6" path="res://scenes/arcade_games/flappybird/bird.tscn" id="3_kwrpj"]
+[ext_resource type="PackedScene" uid="uid://e1kyv7hl513b" path="res://scenes/arcade_games/flappybird/ground.tscn" id="4_kwrpj"]
+[ext_resource type="Texture2D" uid="uid://ck3gtj35okkbr" path="res://graphics/gamesprites/flappybirdsprites/FlappyBirdGUI.png" id="6_vgnnh"]
+[ext_resource type="Theme" uid="uid://doiiik8sy6qdl" path="res://graphics/themes/FlappyBird.tres" id="7_ycq7t"]
+
+[node name="FlappyBird" type="Node2D" unique_id=595526108]
+script = ExtResource("1_k37jo")
+pipe_scene = ExtResource("2_4whcq")
+
+[node name="BG" type="Sprite2D" parent="." unique_id=1265469831]
+position = Vector2(640, 360)
+scale = Vector2(1, 0.9375)
+texture = ExtResource("3_4whcq")
+
+[node name="Bird" parent="." unique_id=678715510 instance=ExtResource("3_kwrpj")]
+unique_name_in_owner = true
+
+[node name="Ground" parent="." unique_id=1805833177 instance=ExtResource("4_kwrpj")]
+unique_name_in_owner = true
+z_index = 1
+
+[node name="PipeTimer" type="Timer" parent="." unique_id=28719033]
+unique_name_in_owner = true
+wait_time = 1.5
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1606780736]
+
+[node name="GUIBG" type="Control" parent="UI" unique_id=1119678070]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/GUIBG" unique_id=948941668]
+layout_mode = 0
+offset_right = 208.0
+offset_bottom = 720.0
+texture = ExtResource("6_vgnnh")
+region_rect = Rect2(0, 0, 48, 48)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="UI/GUIBG" unique_id=302817404]
+layout_mode = 0
+offset_left = 1072.0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("6_vgnnh")
+region_rect = Rect2(0, 0, 48, 48)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="ScoreMargin" type="MarginContainer" parent="UI" unique_id=942575677]
+offset_left = 8.0
+offset_top = 24.0
+offset_right = 200.0
+offset_bottom = 128.0
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="ScoreNinePatchRect" type="NinePatchRect" parent="UI/ScoreMargin" unique_id=1969678706]
+layout_mode = 2
+texture = ExtResource("6_vgnnh")
+region_rect = Rect2(48, 0, 48, 48)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="ScoreLabel" type="Label" parent="UI/ScoreMargin" unique_id=2101323212]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("7_ycq7t")
+text = "Score: 
+12345"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScoreMargin" type="MarginContainer" parent="UI" unique_id=528541813]
+offset_left = 8.0
+offset_top = 112.0
+offset_right = 200.0
+offset_bottom = 216.0
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="HighScoreNinePatchRect" type="NinePatchRect" parent="UI/HighScoreMargin" unique_id=1247430097]
+layout_mode = 2
+texture = ExtResource("6_vgnnh")
+region_rect = Rect2(48, 0, 48, 48)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="HighScoreLabel" type="Label" parent="UI/HighScoreMargin" unique_id=886054428]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("7_ycq7t")
+text = "High Score:
+12345"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PipeMargin" type="MarginContainer" parent="UI" unique_id=501828609]
+offset_left = 8.0
+offset_top = 200.0
+offset_right = 200.0
+offset_bottom = 304.0
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="PipeNinePatchRect" type="NinePatchRect" parent="UI/PipeMargin" unique_id=534923979]
+layout_mode = 2
+texture = ExtResource("6_vgnnh")
+region_rect = Rect2(48, 0, 48, 48)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="PipeLabel" type="Label" parent="UI/PipeMargin" unique_id=865684588]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("7_ycq7t")
+text = "Pipes:
+12345"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="hit" from="Ground" to="." method="_on_ground_hit"]
+[connection signal="timeout" from="PipeTimer" to="." method="_on_pipe_timer_timeout"]

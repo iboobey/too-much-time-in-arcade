@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://e1kyv7hl513b"]
+
+[ext_resource type="Script" uid="uid://cb7b7v8pqbyk8" path="res://scenes/arcade_games/flappybird/ground.gd" id="1_rfk8q"]
+[ext_resource type="Texture2D" uid="uid://c0ulxg3inb6ju" path="res://graphics/gamesprites/flappybirdsprites/Ground.png" id="2_rfk8q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_grefe"]
+size = Vector2(1728, 168)
+
+[node name="Ground" type="Area2D" unique_id=1805833177]
+script = ExtResource("1_rfk8q")
+
+[node name="GroundSprite2D" type="Sprite2D" parent="." unique_id=1616798962]
+position = Vector2(1072, 636)
+texture = ExtResource("2_rfk8q")
+
+[node name="GroundCollision" type="CollisionShape2D" parent="." unique_id=1524681897]
+position = Vector2(1072, 636)
+shape = SubResource("RectangleShape2D_grefe")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

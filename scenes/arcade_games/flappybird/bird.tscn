@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://c6aunbg7m52u6"]
+
+[ext_resource type="Script" uid="uid://clvghmjuhfes2" path="res://scenes/arcade_games/flappybird/bird.gd" id="1_bd3cr"]
+[ext_resource type="Texture2D" uid="uid://cfv1mbkdc8f3a" path="res://graphics/gamesprites/flappybirdsprites/Bird1.png" id="2_bd3cr"]
+[ext_resource type="Texture2D" uid="uid://dhic5qy3211ub" path="res://graphics/gamesprites/flappybirdsprites/Bird2.png" id="3_p7j7o"]
+[ext_resource type="Texture2D" uid="uid://cvldfqm8j0n23" path="res://graphics/gamesprites/flappybirdsprites/Bird3.png" id="4_wgx3v"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wgx3v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bd3cr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_p7j7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wgx3v")
+}],
+"loop": 1,
+"name": &"fly",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d5ptk"]
+radius = 18.0
+height = 46.0
+
+[node name="Bird" type="CharacterBody2D" unique_id=678715510]
+script = ExtResource("1_bd3cr")
+
+[node name="AnimatedBirdSprite2D" type="AnimatedSprite2D" parent="." unique_id=677272342]
+unique_name_in_owner = true
+position = Vector2(0, -11)
+sprite_frames = SubResource("SpriteFrames_wgx3v")
+animation = &"fly"
+
+[node name="BirdCollision" type="CollisionShape2D" parent="." unique_id=302427976]
+position = Vector2(0, -2)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_d5ptk")
