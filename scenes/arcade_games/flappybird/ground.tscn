@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://e1kyv7hl513b"]
 
-[ext_resource type="Script" uid="uid://cb7b7v8pqbyk8" path="res://scenes/arcade_games/flappybird/ground.gd" id="1_rfk8q"]
+[ext_resource type="Script" uid="uid://cb7b7v8pqbyk8" path="res://scripts/arcade_games/flappybird/ground.gd" id="1_rfk8q"]
 [ext_resource type="Texture2D" uid="uid://c0ulxg3inb6ju" path="res://graphics/gamesprites/flappybirdsprites/Ground.png" id="2_rfk8q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_grefe"]

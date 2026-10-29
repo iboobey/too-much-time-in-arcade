@@ -4,6 +4,7 @@ extends Node2D
 
 var game_running : bool
 var game_over : bool
+var lose_sound_played : bool = false
 var scroll
 var score : int = 0
 var scored_pipe : int = 0
@@ -93,6 +94,12 @@ func stop_game():
 	%Bird.flying = false
 	game_running = false
 	game_over = true
+	
+	if not lose_sound_played:
+		lose_sound_played = true
+		%LoseAudioPlayer2D.play()
+		await get_tree().create_timer(2.66).timeout
+		get_tree().change_scene_to_file("res://scenes/arcade_games/flappybird/flappy_bird_end_screen.tscn")
 
 
 func bird_hit():
@@ -113,7 +120,8 @@ func scored():
 func update_label():
 	%ScoreLabel.text = "Score: 
 " + str(score)
-	%HighScoreLabel.text = "High Score:
+	%HighScoreLabel.text = "High 
+Score:
 " + str(Global.flappy_bird_score)
 	%PipeLabel.text = "Pipes:
 " + str(scored_pipe)

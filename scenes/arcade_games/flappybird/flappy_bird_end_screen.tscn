@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://cpn5d8nj503w5"]
+
+[ext_resource type="Texture2D" uid="uid://ck3gtj35okkbr" path="res://graphics/gamesprites/flappybirdsprites/FlappyBirdGUI.png" id="1_3jl70"]
+[ext_resource type="Script" uid="uid://7mwkjwpvndop" path="res://scripts/arcade_games/flappybird/flappy_bird_end_screen.gd" id="1_8q1kf"]
+[ext_resource type="Theme" uid="uid://doiiik8sy6qdl" path="res://graphics/themes/FlappyBird.tres" id="2_yduo0"]
+
+[node name="FlappyBirdEndScreen" type="Control" unique_id=304475302]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8q1kf")
+
+[node name="BGMargin" type="MarginContainer" parent="." unique_id=1897059039]
+layout_mode = 0
+offset_right = 427.0
+offset_bottom = 240.0
+scale = Vector2(3, 3)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="BGMargin" unique_id=206061583]
+layout_mode = 2
+texture = ExtResource("1_3jl70")
+region_rect = Rect2(0, 0, 48, 48)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="HighScoreMargin" type="MarginContainer" parent="." unique_id=383508464]
+layout_mode = 0
+offset_right = 426.6667
+offset_bottom = 151.0
+scale = Vector2(3, 3)
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 30
+
+[node name="NinePatchRect" type="NinePatchRect" parent="HighScoreMargin" unique_id=1862295575]
+layout_mode = 2
+texture = ExtResource("1_3jl70")
+region_rect = Rect2(56, 8, 32, 32)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="HighScoreLabelMargin" type="MarginContainer" parent="." unique_id=141226649]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 453.0
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 30
+
+[node name="HighScoreLabel" type="Label" parent="HighScoreLabelMargin" unique_id=1171147800]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_yduo0")
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 44
+text = "High Score:
+
+12345"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonsMargin" type="MarginContainer" parent="." unique_id=1414299603]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+theme_override_constants/margin_left = 240
+theme_override_constants/margin_top = 460
+theme_override_constants/margin_right = 240
+theme_override_constants/margin_bottom = 140
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ButtonsMargin" unique_id=875410307]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="TryAgain" type="Button" parent="ButtonsMargin/HBoxContainer" unique_id=797604428]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_yduo0")
+text = "Try Again"
+
+[node name="Exit" type="Button" parent="ButtonsMargin/HBoxContainer" unique_id=1748611238]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_yduo0")
+text = "Exit"
+
+[connection signal="pressed" from="ButtonsMargin/HBoxContainer/TryAgain" to="." method="_on_try_again_pressed"]
+[connection signal="pressed" from="ButtonsMargin/HBoxContainer/Exit" to="." method="_on_exit_pressed"]

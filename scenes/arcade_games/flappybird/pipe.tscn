@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bmtn8grjgkrtg"]
 
-[ext_resource type="Script" uid="uid://hj6xh1gnajf6" path="res://scenes/arcade_games/flappybird/pipe.gd" id="1_f0ara"]
+[ext_resource type="Script" uid="uid://hj6xh1gnajf6" path="res://scripts/arcade_games/flappybird/pipe.gd" id="1_f0ara"]
 [ext_resource type="Texture2D" uid="uid://chw4q1bcfdkfb" path="res://graphics/gamesprites/flappybirdsprites/Green_Pipe.png" id="2_f0ara"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f0ara"]

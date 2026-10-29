@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c6aunbg7m52u6"]
 
-[ext_resource type="Script" uid="uid://clvghmjuhfes2" path="res://scenes/arcade_games/flappybird/bird.gd" id="1_bd3cr"]
+[ext_resource type="Script" uid="uid://clvghmjuhfes2" path="res://scripts/arcade_games/flappybird/bird.gd" id="1_bd3cr"]
 [ext_resource type="Texture2D" uid="uid://cfv1mbkdc8f3a" path="res://graphics/gamesprites/flappybirdsprites/Bird1.png" id="2_bd3cr"]
 [ext_resource type="Texture2D" uid="uid://dhic5qy3211ub" path="res://graphics/gamesprites/flappybirdsprites/Bird2.png" id="3_p7j7o"]
 [ext_resource type="Texture2D" uid="uid://cvldfqm8j0n23" path="res://graphics/gamesprites/flappybirdsprites/Bird3.png" id="4_wgx3v"]

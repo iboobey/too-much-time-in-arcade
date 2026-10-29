@@ -1,7 +1,42 @@
 [gd_resource type="Theme" format=3 uid="uid://doiiik8sy6qdl"]
 
 [ext_resource type="FontFile" uid="uid://b5qt7mlemekrv" path="res://graphics/fonts/PressStart2P-Regular.ttf" id="1_ngqkg"]
+[ext_resource type="Texture2D" uid="uid://ck3gtj35okkbr" path="res://graphics/gamesprites/flappybirdsprites/FlappyBirdGUI.png" id="2_olryr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c4bon"]
+texture = ExtResource("2_olryr")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(112, 99, 120, 45)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rx551"]
+texture = ExtResource("2_olryr")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(112, 6, 120, 45)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ibvtj"]
+texture = ExtResource("2_olryr")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 9.0
+region_rect = Rect2(112, 147, 120, 42)
 
 [resource]
-Label/font_sizes/font_size = 12
+Button/colors/font_outline_color = Color(0.21960784, 0.12941177, 0, 1)
+Button/constants/outline_size = 14
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_ngqkg")
+Button/styles/hover = SubResource("StyleBoxTexture_c4bon")
+Button/styles/normal = SubResource("StyleBoxTexture_rx551")
+Button/styles/pressed = SubResource("StyleBoxTexture_ibvtj")
+Label/colors/font_outline_color = Color(0.21875, 0.13125001, 0, 1)
+Label/constants/line_spacing = 6
+Label/constants/outline_size = 4
+Label/font_sizes/font_size = 16
 Label/fonts/font = ExtResource("1_ngqkg")
