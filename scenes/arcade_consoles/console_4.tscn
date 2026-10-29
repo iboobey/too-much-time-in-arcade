@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dhn7832do114r" path="res://interactions/interactable.tscn" id="1_mt4ig"]
 [ext_resource type="Texture2D" uid="uid://bxqah0uh2wvxh" path="res://graphics/consolesprites/Console4.png" id="2_37taq"]
 [ext_resource type="FontFile" uid="uid://b5qt7mlemekrv" path="res://graphics/fonts/PressStart2P-Regular.ttf" id="4_6oku2"]
-[ext_resource type="AudioStream" uid="uid://by4fmmg2jqbog" path="res://sounds/consoleon.wav" id="5_h3duy"]
+[ext_resource type="AudioStream" uid="uid://by4fmmg2jqbog" path="res://sounds/soundeffects/consoleon.wav" id="5_h3duy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_doodp"]
 radius = 19.104973
@@ -30,6 +30,7 @@ texture = ExtResource("2_37taq")
 shape = SubResource("RectangleShape2D_37taq")
 
 [node name="InteractingLabel" type="Node2D" parent="." unique_id=670805508]
+z_index = 15
 scale = Vector2(0.6, 0.6)
 
 [node name="InteractingLabel" type="Label" parent="InteractingLabel" unique_id=1022287200]
@@ -51,7 +52,8 @@ theme_override_constants/outline_size = 3
 theme_override_constants/shadow_outline_size = 9
 theme_override_fonts/font = ExtResource("4_6oku2")
 theme_override_font_sizes/font_size = 14
-text = "[E] To Play"
+text = "Tetrıs
+[E] To Play"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true

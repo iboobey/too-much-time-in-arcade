@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bgxij4nnoa6yb" path="res://scripts/arcade_consoles/console_2.gd" id="1_yy5sv"]
 [ext_resource type="Texture2D" uid="uid://fivp7eaksce3" path="res://graphics/consolesprites/Console2.png" id="2_yy5sv"]
 [ext_resource type="FontFile" uid="uid://b5qt7mlemekrv" path="res://graphics/fonts/PressStart2P-Regular.ttf" id="3_gxjpw"]
-[ext_resource type="AudioStream" uid="uid://by4fmmg2jqbog" path="res://sounds/consoleon.wav" id="5_gxjpw"]
+[ext_resource type="AudioStream" uid="uid://by4fmmg2jqbog" path="res://sounds/soundeffects/consoleon.wav" id="5_gxjpw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d0u6o"]
 radius = 20.0
@@ -30,6 +30,7 @@ texture = ExtResource("2_yy5sv")
 shape = SubResource("RectangleShape2D_snkn6")
 
 [node name="InteractingLabel" type="Node2D" parent="." unique_id=215583165]
+z_index = 15
 scale = Vector2(0.6, 0.6)
 
 [node name="InteractingLabel" type="Label" parent="InteractingLabel" unique_id=1522030085]
@@ -51,7 +52,8 @@ theme_override_constants/outline_size = 3
 theme_override_constants/shadow_outline_size = 9
 theme_override_fonts/font = ExtResource("3_gxjpw")
 theme_override_font_sizes/font_size = 14
-text = "[E] To Play"
+text = "Snake
+[E] To Play"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true

@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bvotelskv5kfa" path="res://scenes/arcade_consoles/console_2.tscn" id="5_ut00t"]
 [ext_resource type="PackedScene" uid="uid://dxh7now0su202" path="res://scenes/arcade_consoles/console_3.tscn" id="8_fgvqq"]
 [ext_resource type="PackedScene" uid="uid://de3pplk2gnp3h" path="res://scenes/arcade_consoles/console_4.tscn" id="9_rpcry"]
+[ext_resource type="PackedScene" uid="uid://cnl1gougepv85" path="res://scenes/arcade_consoles/console_5.tscn" id="10_16e0h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fgvqq"]
 texture = ExtResource("3_decei")
@@ -1336,7 +1337,10 @@ position = Vector2(74, -5)
 position = Vector2(119, -5)
 
 [node name="Console3" parent="Consoles" unique_id=2025414171 instance=ExtResource("8_fgvqq")]
-position = Vector2(-149, -6)
+position = Vector2(-118, -4)
 
 [node name="Console4" parent="Consoles" unique_id=1151178569 instance=ExtResource("9_rpcry")]
-position = Vector2(-100, -6)
+position = Vector2(-68, -4)
+
+[node name="Console5" parent="Consoles" unique_id=979846902 instance=ExtResource("10_16e0h")]
+position = Vector2(-171, -5)
