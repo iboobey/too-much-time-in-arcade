@@ -96,6 +96,7 @@ func stop_game():
 	game_over = true
 	
 	if not lose_sound_played:
+		%ThemeAudioPlayer2D.stop()
 		lose_sound_played = true
 		%LoseAudioPlayer2D.play()
 		await get_tree().create_timer(2.66).timeout
@@ -113,7 +114,8 @@ func _on_ground_hit() -> void:
 
 
 func scored():
-	score += 5
+	%ScoreAudioPlayer2D.play()
+	score += 3
 	scored_pipe += 1
 
 

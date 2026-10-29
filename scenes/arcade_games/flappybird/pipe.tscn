@@ -9,24 +9,24 @@ size = Vector2(20, 220)
 [node name="Pipe" type="Area2D" unique_id=106885301]
 script = ExtResource("1_f0ara")
 
-[node name="LowerSprite" type="Sprite2D" parent="." unique_id=1983444037]
-unique_name_in_owner = true
-texture = ExtResource("2_f0ara")
-offset = Vector2(0, 405)
+[node name="UpperCollision" type="CollisionPolygon2D" parent="." unique_id=1526809812]
+polygon = PackedVector2Array(-39, -100, 39, -100, 39, -136, 36, -136, 36, -660, -36, -660, -36, -136, -39, -136)
 
-[node name="UpperSprite" type="Sprite2D" parent="." unique_id=190125367]
+[node name="UpperSprite" type="Sprite2D" parent="UpperCollision" unique_id=190125367]
 unique_name_in_owner = true
 texture = ExtResource("2_f0ara")
-offset = Vector2(0, -405)
+offset = Vector2(0, -380)
 flip_v = true
 
 [node name="LowerCollision" type="CollisionPolygon2D" parent="." unique_id=1916982284]
-visible = false
+position = Vector2(0, 20)
 polygon = PackedVector2Array(-39, 100, -39, 136, -36, 136, -36, 660, 36, 660, 36, 136, 39, 136, 39, 100)
 
-[node name="UpperCollision" type="CollisionPolygon2D" parent="." unique_id=1526809812]
-visible = false
-polygon = PackedVector2Array(-39, -100, 39, -100, 39, -136, 36, -136, 36, -660, -36, -660, -36, -136, -39, -136)
+[node name="LowerSprite" type="Sprite2D" parent="LowerCollision" unique_id=1983444037]
+unique_name_in_owner = true
+position = Vector2(0, -20)
+texture = ExtResource("2_f0ara")
+offset = Vector2(0, 400)
 
 [node name="ScoreArea" type="Area2D" parent="." unique_id=527783335]
 

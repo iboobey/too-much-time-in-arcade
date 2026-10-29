@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://ck3gtj35okkbr" path="res://graphics/gamesprites/flappybirdsprites/FlappyBirdGUI.png" id="6_vgnnh"]
 [ext_resource type="Theme" uid="uid://doiiik8sy6qdl" path="res://graphics/themes/FlappyBird.tres" id="7_ycq7t"]
 [ext_resource type="AudioStream" uid="uid://cng1oyma6jmgr" path="res://sounds/soundeffects/lose.wav" id="8_otlmq"]
+[ext_resource type="AudioStream" uid="uid://do6kndbt3dydb" path="res://sounds/soundeffects/flappy_bird_scored.wav" id="9_l8apf"]
+[ext_resource type="AudioStream" uid="uid://wblp4t4cgem7" path="res://sounds/themes/Flappy_Bird_Theme.ogg" id="10_a8yb6"]
 
 [node name="FlappyBird" type="Node2D" unique_id=595526108]
 script = ExtResource("1_k37jo")
@@ -154,6 +156,15 @@ vertical_alignment = 1
 [node name="LoseAudioPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1576889558]
 unique_name_in_owner = true
 stream = ExtResource("8_otlmq")
+
+[node name="ScoreAudioPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1248258695]
+unique_name_in_owner = true
+stream = ExtResource("9_l8apf")
+
+[node name="ThemeAudioPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=35115130]
+unique_name_in_owner = true
+stream = ExtResource("10_a8yb6")
+autoplay = true
 
 [connection signal="hit" from="Ground" to="." method="_on_ground_hit"]
 [connection signal="timeout" from="PipeTimer" to="." method="_on_pipe_timer_timeout"]

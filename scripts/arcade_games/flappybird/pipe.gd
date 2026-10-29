@@ -29,3 +29,6 @@ func _ready() -> void:
 	%LowerSprite.texture = sprite
 	%UpperSprite.texture = sprite
 	
+	var random_y_offset : float = randf_range(-20,10)
+	
+	$UpperCollision.position.y += random_y_offset
