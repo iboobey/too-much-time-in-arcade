@@ -9,4 +9,5 @@ func _ready() -> void:
 
 
 func _on_button_pressed() -> void:
+	GlobalAudioPlayer.button_click()
 	get_tree().change_scene_to_file("res://scenes/arcade_scene.tscn")

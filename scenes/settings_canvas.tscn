@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bivb22g3rmhrq" path="res://graphics/titleoptionswinscenes/MainGUI.png" id="1_bflfl"]
 [ext_resource type="Script" uid="uid://b8ypr4skff38g" path="res://scripts/settings_canvas.gd" id="1_k78d2"]
 [ext_resource type="Theme" uid="uid://d02xnpbr41vip" path="res://graphics/themes/MainGUI.tres" id="2_8bamc"]
+[ext_resource type="Texture2D" uid="uid://df00xy0gkq4rq" path="res://graphics/titleoptionswinscenes/stardance/buku.png" id="5_nvrwo"]
+[ext_resource type="Texture2D" uid="uid://idahfus7uutg" path="res://graphics/titleoptionswinscenes/stardance/bean.png" id="6_sec0x"]
+[ext_resource type="Texture2D" uid="uid://by2loy2m4o4ew" path="res://graphics/titleoptionswinscenes/stardance/flag-standalone.png" id="7_sec0x"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_afvd2"]
 texture = ExtResource("1_bflfl")
@@ -28,7 +31,7 @@ region_rect = Rect2(112, 224, 32, 16)
 [node name="SettingsCanvas" type="CanvasLayer" unique_id=1039919324]
 script = ExtResource("1_k78d2")
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=341802056]
+[node name="SoundMargin" type="MarginContainer" parent="." unique_id=341802056]
 offset_right = 640.0
 offset_bottom = 360.0
 scale = Vector2(2, 2)
@@ -37,17 +40,17 @@ theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 340
 theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1905522060]
+[node name="VBoxContainer" type="VBoxContainer" parent="SoundMargin" unique_id=1905522060]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 6
 
-[node name="Control" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1403860825]
+[node name="Control" type="Control" parent="SoundMargin/VBoxContainer" unique_id=1403860825]
 custom_minimum_size = Vector2(48, 40)
 custom_maximum_size = Vector2(48, 40)
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/Control" unique_id=1442026473]
+[node name="Label2" type="Label" parent="SoundMargin/VBoxContainer/Control" unique_id=1442026473]
 layout_mode = 0
 offset_left = -63.5
 offset_top = -7.0
@@ -59,80 +62,80 @@ text = "SOUNDS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MainSoundsVBox" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1925557393]
+[node name="MainSoundsVBox" type="VBoxContainer" parent="SoundMargin/VBoxContainer" unique_id=1925557393]
 layout_mode = 2
 theme_override_constants/separation = 6
 
-[node name="AudioSlider" parent="MarginContainer/VBoxContainer/MainSoundsVBox" unique_id=488209278 instance=ExtResource("1_afvd2")]
+[node name="Main" parent="SoundMargin/VBoxContainer/MainSoundsVBox" unique_id=488209278 instance=ExtResource("1_afvd2")]
 layout_mode = 2
 size_flags_horizontal = 5
 bus_name = "Master"
-audio_name = "Main"
+audio_name = "Master"
 
-[node name="AudioSlider2" parent="MarginContainer/VBoxContainer/MainSoundsVBox" unique_id=1263977424 instance=ExtResource("1_afvd2")]
+[node name="SFX" parent="SoundMargin/VBoxContainer/MainSoundsVBox" unique_id=1263977424 instance=ExtResource("1_afvd2")]
 layout_mode = 2
 size_flags_horizontal = 5
-bus_name = "Master"
+bus_name = "SFX"
 audio_name = "SFX"
 
-[node name="AudioSlider3" parent="MarginContainer/VBoxContainer/MainSoundsVBox" unique_id=594807934 instance=ExtResource("1_afvd2")]
+[node name="Theme" parent="SoundMargin/VBoxContainer/MainSoundsVBox" unique_id=594807934 instance=ExtResource("1_afvd2")]
 layout_mode = 2
 size_flags_horizontal = 5
-bus_name = "Master"
+bus_name = "Theme"
 audio_name = "Theme"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1045261162]
+[node name="HBoxContainer" type="HBoxContainer" parent="SoundMargin/VBoxContainer" unique_id=1045261162]
 layout_mode = 2
 
-[node name="ThemeVBox" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=955408017]
+[node name="ThemeVBox" type="VBoxContainer" parent="SoundMargin/VBoxContainer" unique_id=955408017]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 theme_override_constants/separation = 6
 
-[node name="AudioSlider" parent="MarginContainer/VBoxContainer/ThemeVBox" unique_id=2069686259 instance=ExtResource("1_afvd2")]
+[node name="Arcade" parent="SoundMargin/VBoxContainer/ThemeVBox" unique_id=2069686259 instance=ExtResource("1_afvd2")]
 layout_mode = 2
 size_flags_horizontal = 5
-bus_name = "Master"
+bus_name = "Arcade"
 audio_name = "Arcade"
 
-[node name="AudioSlider2" parent="MarginContainer/VBoxContainer/ThemeVBox" unique_id=1414381255 instance=ExtResource("1_afvd2")]
+[node name="Platformer" parent="SoundMargin/VBoxContainer/ThemeVBox" unique_id=1414381255 instance=ExtResource("1_afvd2")]
 layout_mode = 2
 size_flags_horizontal = 5
-bus_name = "Master"
+bus_name = "Platformer"
 audio_name = "Platformer"
 
-[node name="AudioSlider3" parent="MarginContainer/VBoxContainer/ThemeVBox" unique_id=1505989761 instance=ExtResource("1_afvd2")]
+[node name="Snake" parent="SoundMargin/VBoxContainer/ThemeVBox" unique_id=1505989761 instance=ExtResource("1_afvd2")]
 layout_mode = 2
 size_flags_horizontal = 5
-bus_name = "Master"
+bus_name = "Snake"
 audio_name = "Snake"
 
-[node name="AudioSlider4" parent="MarginContainer/VBoxContainer/ThemeVBox" unique_id=1382652796 instance=ExtResource("1_afvd2")]
+[node name="Tetris" parent="SoundMargin/VBoxContainer/ThemeVBox" unique_id=1382652796 instance=ExtResource("1_afvd2")]
 layout_mode = 2
 size_flags_horizontal = 5
-bus_name = "Master"
+bus_name = "Tetris"
 audio_name = "Tetris"
 
-[node name="AudioSlider5" parent="MarginContainer/VBoxContainer/ThemeVBox" unique_id=13106772 instance=ExtResource("1_afvd2")]
+[node name="DinoRun" parent="SoundMargin/VBoxContainer/ThemeVBox" unique_id=13106772 instance=ExtResource("1_afvd2")]
 layout_mode = 2
 size_flags_horizontal = 5
-bus_name = "Master"
-audio_name = "Dinorun"
+bus_name = "DinoRun"
+audio_name = "DinoRun"
 
-[node name="AudioSlider6" parent="MarginContainer/VBoxContainer/ThemeVBox" unique_id=1456986082 instance=ExtResource("1_afvd2")]
+[node name="FlappyBird" parent="SoundMargin/VBoxContainer/ThemeVBox" unique_id=1456986082 instance=ExtResource("1_afvd2")]
 layout_mode = 2
 size_flags_horizontal = 5
-bus_name = "Master"
-audio_name = "Flappybird"
+bus_name = "FlappyBird"
+audio_name = "FlappyBird"
 
 [node name="ThemeDropdownButton" type="Button" parent="." unique_id=559528950]
 custom_minimum_size = Vector2(40, 20)
 custom_maximum_size = Vector2(40, 20)
 offset_left = 620.0
-offset_top = 203.0
+offset_top = 238.0
 offset_right = 660.0
-offset_bottom = 223.0
+offset_bottom = 258.0
 scale = Vector2(2, 2)
 size_flags_vertical = 3
 theme_override_styles/normal = SubResource("StyleBoxTexture_afvd2")
@@ -142,7 +145,7 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_8bamc")
 theme_override_styles/focus = SubResource("StyleBoxTexture_nvrwo")
 toggle_mode = true
 
-[node name="MarginContainer3" type="MarginContainer" parent="." unique_id=1681631760]
+[node name="TextMargin" type="MarginContainer" parent="." unique_id=1681631760]
 offset_left = 690.0
 offset_right = 1280.0
 offset_bottom = 720.0
@@ -152,27 +155,53 @@ theme_override_constants/margin_left = 100
 theme_override_constants/margin_right = 140
 theme_override_constants/margin_bottom = 340
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer3" unique_id=1443163840]
+[node name="RichTextLabel" type="RichTextLabel" parent="TextMargin" unique_id=1443163840]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 32
-text = "This game was made by iboo, for Stardance"
+text = "This game was made by iboo, for Stardance "
 vertical_alignment = 1
 justification_flags = 162
 
-[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=515925143]
+[node name="ReturnMargin" type="MarginContainer" parent="." unique_id=515925143]
 offset_left = 690.0
 offset_right = 1280.0
 offset_bottom = 720.0
 mouse_filter = 2
 theme_override_constants/margin_left = 80
-theme_override_constants/margin_top = 480
+theme_override_constants/margin_top = 485
 theme_override_constants/margin_right = 160
-theme_override_constants/margin_bottom = 140
+theme_override_constants/margin_bottom = 135
 
-[node name="ReturnButton" type="Button" parent="MarginContainer2" unique_id=1143100669]
+[node name="ReturnButton" type="Button" parent="ReturnMargin" unique_id=1143100669]
 layout_mode = 2
 theme = ExtResource("2_8bamc")
 text = "Return"
 
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=392511307]
+offset_left = 790.0
+offset_top = 278.0
+offset_right = 1050.0
+offset_bottom = 406.0
+scale = Vector2(0.7, 0.7)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1753940932]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=2123192601]
+layout_mode = 2
+texture = ExtResource("5_nvrwo")
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=2113061307]
+layout_mode = 2
+texture = ExtResource("6_sec0x")
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=1522813472]
+offset_left = 972.0
+offset_top = 303.0
+offset_right = 1498.0
+offset_bottom = 487.0
+scale = Vector2(0.265442, 0.265442)
+texture = ExtResource("7_sec0x")
+
 [connection signal="toggled" from="ThemeDropdownButton" to="." method="_on_theme_dropdown_button_toggled"]
-[connection signal="pressed" from="MarginContainer2/ReturnButton" to="." method="_on_return_button_pressed"]
+[connection signal="pressed" from="ReturnMargin/ReturnButton" to="." method="_on_return_button_pressed"]

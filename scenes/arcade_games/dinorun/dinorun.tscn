@@ -122,16 +122,18 @@ one_shot = true
 [node name="DinoDeathAudioPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=54485691]
 unique_name_in_owner = true
 stream = ExtResource("6_ckvpy")
+bus = &"SFX"
 
 [node name="ThemeAudioPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2058515386]
 unique_name_in_owner = true
 stream = ExtResource("7_r7qmp")
-volume_db = -1.5
 autoplay = true
+bus = &"DinoRun"
 
 [node name="LoseAudioPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1094917914]
 unique_name_in_owner = true
 stream = ExtResource("8_voh56")
+bus = &"SFX"
 
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
 [connection signal="timeout" from="SpeedUpTimer" to="." method="_on_speed_up_timer_timeout"]

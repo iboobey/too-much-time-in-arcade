@@ -19,9 +19,11 @@ func _ready() -> void:
 		Global.old_snake_score = Global.snake_score
 
 func _on_button_pressed() -> void:
+	GlobalAudioPlayer.button_click()
 	get_tree().change_scene_to_file("res://scenes/arcade_games/snake/snake.tscn")
 
 
 func _on_exit_pressed() -> void:
 	Global.main_theme = true
+	GlobalAudioPlayer.button_click()
 	get_tree().change_scene_to_file("res://scenes/arcade_scene.tscn")

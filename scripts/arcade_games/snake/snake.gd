@@ -215,6 +215,7 @@ func _on_red_apple_area_shape_entered(_area_rid: RID, _area: Area2D, _area_shape
 
 
 func _on_worm_pressed() -> void:
+	GlobalAudioPlayer.button_click()
 	score_booster = 0.5
 	%SpeedSelection.hide()
 	%Worm.disabled = true
@@ -225,6 +226,7 @@ func _on_worm_pressed() -> void:
 
 
 func _on_snake_pressed() -> void:
+	GlobalAudioPlayer.button_click()
 	score_booster = 1
 	speed_selected = true
 	%SpeedSelection.hide()
@@ -235,6 +237,7 @@ func _on_snake_pressed() -> void:
 
 
 func _on_phyton_pressed() -> void:
+	GlobalAudioPlayer.button_click()
 	score_booster = 2
 	speed_selected = true
 	%SpeedSelection.hide()

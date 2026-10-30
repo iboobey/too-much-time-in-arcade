@@ -31,6 +31,7 @@ func scoreboard():
 
 
 func game_won():
+	Global.main_theme = false
 	await tree.create_timer(0.4).timeout
 	lights.hide()
 	await tree.create_timer(0.6).timeout
@@ -48,4 +49,5 @@ func setting_button():
 
 
 func _on_settings_button_pressed() -> void:
+	GlobalAudioPlayer.button_click()
 	get_tree().change_scene_to_file("res://scenes/settings_scene.tscn")

@@ -26,8 +26,6 @@ var is_in_title : bool = true
 
 
 func _process(_delta): 
-	main_theme = false #delete for sound
-	
 	total_points_gathered = platformer_score + snake_score + tetris_score + dino_run_score + flappy_bird_score
 	if total_points_gathered >= goal:
 		main_theme = false

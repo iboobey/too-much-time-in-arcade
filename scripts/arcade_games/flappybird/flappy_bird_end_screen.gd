@@ -21,8 +21,10 @@ func _ready() -> void:
 
 
 func _on_try_again_pressed() -> void:
+	GlobalAudioPlayer.button_click()
 	get_tree().change_scene_to_file("res://scenes/arcade_games/flappybird/flappy_bird.tscn")
 
 func _on_exit_pressed() -> void:
 	Global.main_theme = true
+	GlobalAudioPlayer.button_click()
 	get_tree().change_scene_to_file("res://scenes/arcade_scene.tscn")

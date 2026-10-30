@@ -246,11 +246,13 @@ shape = SubResource("RectangleShape2D_2u3q6")
 unique_name_in_owner = true
 position = Vector2(640, 360)
 stream = ExtResource("6_4gled")
+bus = &"SFX"
 
 [node name="LoseAudioPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1521339543]
 unique_name_in_owner = true
 position = Vector2(640, 360)
 stream = ExtResource("7_qbdry")
+bus = &"SFX"
 
 [node name="ThemeAudioPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=384591194]
 unique_name_in_owner = true
@@ -258,6 +260,7 @@ position = Vector2(640, 360)
 stream = ExtResource("8_qbdry")
 volume_db = -20.0
 autoplay = true
+bus = &"Snake"
 
 [connection signal="pressed" from="UI/SpeedSelection/SpeedSelection/HBoxContainer/Worm" to="." method="_on_worm_pressed"]
 [connection signal="pressed" from="UI/SpeedSelection/SpeedSelection/HBoxContainer/Snake" to="." method="_on_snake_pressed"]

@@ -12,6 +12,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_return_pressed() -> void:
+	GlobalAudioPlayer.button_click()
 	if Global.is_in_title:
 		get_tree().change_scene_to_file("res://scenes/title_scene.tscn")
 	else:

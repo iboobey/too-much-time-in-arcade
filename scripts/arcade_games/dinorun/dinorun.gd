@@ -74,6 +74,7 @@ func _on_score_timer_timeout() -> void:
 
 
 func _on_start_button_pressed() -> void:
+	GlobalAudioPlayer.button_click()
 	game_start()
 
 
