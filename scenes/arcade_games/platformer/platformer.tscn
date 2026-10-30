@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://bxvmmsq7jmvl5" path="res://scripts/arcade_games/platformer/platform_spawner.gd" id="2_uvftm"]
 [ext_resource type="Texture2D" uid="uid://bx0855crgtdu7" path="res://graphics/gamesprites/platformersprites/Normal_Platform.png" id="4_uvftm"]
 [ext_resource type="Texture2D" uid="uid://dmuqce0efdjot" path="res://graphics/gamesprites/platformersprites/PlatformerGUI.png" id="5_i3m25"]
+[ext_resource type="Texture2D" uid="uid://cu2md7qslglyi" path="res://graphics/titleoptionswinscenes/minigametitles/Platformer.png" id="6_usgd3"]
 [ext_resource type="Theme" uid="uid://bnwynn04fl26l" path="res://graphics/themes/Platformer.tres" id="6_uvftm"]
 [ext_resource type="AudioStream" uid="uid://cng1oyma6jmgr" path="res://sounds/soundeffects/lose.wav" id="7_san3y"]
 [ext_resource type="AudioStream" uid="uid://c5x68pq7b4emm" path="res://sounds/soundeffects/platformer_milestone.wav" id="8_fss2v"]
@@ -203,6 +204,13 @@ patch_margin_bottom = 7
 layout_mode = 0
 offset_right = 149.0
 offset_bottom = 93.0
+
+[node name="TextureRect" type="TextureRect" parent="GUI" unique_id=404881455]
+offset_left = 416.0
+offset_top = 8.0
+offset_right = 962.0
+offset_bottom = 51.0
+texture = ExtResource("6_usgd3")
 
 [node name="Background" type="CanvasLayer" parent="." unique_id=210235908]
 layer = -99

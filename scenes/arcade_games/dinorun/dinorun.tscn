@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dlqurnfqi3bww" path="res://graphics/gamesprites/dinorunsprites/DinoRunGUI.png" id="5_8600h"]
 [ext_resource type="AudioStream" uid="uid://dy3ktbrasqt7k" path="res://sounds/soundeffects/dinorun_death.wav" id="6_ckvpy"]
 [ext_resource type="PackedScene" uid="uid://cnaxf1pjeeu7k" path="res://scenes/arcade_games/dinorun/dino.tscn" id="6_rra5c"]
+[ext_resource type="Texture2D" uid="uid://cqx5ad5k2jyw8" path="res://graphics/titleoptionswinscenes/minigametitles/DinoRun.png" id="6_voh56"]
 [ext_resource type="AudioStream" uid="uid://cbvgj0u8legnc" path="res://sounds/themes/Dino_Run_Theme.ogg" id="7_r7qmp"]
 [ext_resource type="AudioStream" uid="uid://cng1oyma6jmgr" path="res://sounds/soundeffects/lose.wav" id="8_voh56"]
 
@@ -67,7 +68,7 @@ offset_right = 213.333
 offset_bottom = 120.0
 scale = Vector2(6, 6)
 theme_override_constants/margin_left = 64
-theme_override_constants/margin_top = 32
+theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 64
 theme_override_constants/margin_bottom = 32
 
@@ -82,10 +83,10 @@ patch_margin_bottom = 16
 
 [node name="StartLabel" type="Label" parent="UI/StartMargin/StartNinePatchRect" unique_id=924587307]
 layout_mode = 0
-offset_left = 4.999997
-offset_top = 9.666666
-offset_right = 454.10175
-offset_bottom = 57.666664
+offset_left = 5.8332214
+offset_top = 37.16664
+offset_right = 454.93497
+offset_bottom = 85.16664
 scale = Vector2(0.167, 0.167)
 theme = ExtResource("4_pogth")
 theme_override_font_sizes/font_size = 48
@@ -95,8 +96,9 @@ vertical_alignment = 1
 
 [node name="StartButtonMargin" type="MarginContainer" parent="UI/StartMargin/StartNinePatchRect" unique_id=1337536238]
 layout_mode = 0
+offset_top = 22.666666
 offset_right = 508.982
-offset_bottom = 335.32935
+offset_bottom = 370.66666
 scale = Vector2(0.167, 0.167)
 theme_override_constants/margin_left = 64
 theme_override_constants/margin_top = 150
@@ -108,6 +110,15 @@ unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("4_pogth")
 text = "YES!"
+
+[node name="TextureRect" type="TextureRect" parent="UI/StartMargin/StartNinePatchRect" unique_id=1445791993]
+layout_mode = 0
+offset_left = 18.666668
+offset_top = 8.0
+offset_right = 202.66667
+offset_bottom = 108.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("6_voh56")
 
 [node name="DeleteArea" type="Area2D" parent="." unique_id=884677437]
 

@@ -44,6 +44,14 @@ func _input(event: InputEvent) -> void:
 					if %Bird.flying:
 						%Bird.flap()
 						check_top()
+		if event is InputEventMouseButton:
+			if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+				if not game_running:
+					start_game()
+				else:
+					if %Bird.flying:
+						%Bird.flap()
+						check_top()
 
 
 func start_game():

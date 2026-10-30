@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://i4yiq3rhwquy" path="res://graphics/gamesprites/snakesprites/Apples/RedApple.png" id="5_2u3q6"]
 [ext_resource type="Theme" uid="uid://d286g48kykl0g" path="res://graphics/themes/Snake2.tres" id="5_6jogl"]
 [ext_resource type="AudioStream" uid="uid://dm6ugndg0tfx4" path="res://sounds/soundeffects/snake_apple_eaten.wav" id="6_4gled"]
+[ext_resource type="Texture2D" uid="uid://c8auxfgp0d0ep" path="res://graphics/titleoptionswinscenes/minigametitles/Snake.png" id="6_v1k6i"]
 [ext_resource type="AudioStream" uid="uid://cng1oyma6jmgr" path="res://sounds/soundeffects/lose.wav" id="7_qbdry"]
 [ext_resource type="AudioStream" uid="uid://dts8tl5od3c40" path="res://sounds/themes/Snake_Theme.ogg" id="8_qbdry"]
 
@@ -222,6 +223,14 @@ theme = ExtResource("4_erhk5")
 text = "Select Your Speed"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UI" unique_id=2125756280]
+offset_left = 960.0
+offset_top = 48.000004
+offset_right = 1215.0
+offset_bottom = 91.0
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("6_v1k6i")
 
 [node name="MoveTimer" type="Timer" parent="." unique_id=702191861]
 wait_time = 0.1

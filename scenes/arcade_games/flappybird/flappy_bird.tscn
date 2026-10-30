@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ck3gtj35okkbr" path="res://graphics/gamesprites/flappybirdsprites/FlappyBirdGUI.png" id="6_vgnnh"]
 [ext_resource type="Theme" uid="uid://doiiik8sy6qdl" path="res://graphics/themes/FlappyBird.tres" id="7_ycq7t"]
 [ext_resource type="AudioStream" uid="uid://cng1oyma6jmgr" path="res://sounds/soundeffects/lose.wav" id="8_otlmq"]
+[ext_resource type="Texture2D" uid="uid://7jwmblatosf2" path="res://graphics/titleoptionswinscenes/minigametitles/FlappyBird.png" id="8_oulx7"]
 [ext_resource type="AudioStream" uid="uid://do6kndbt3dydb" path="res://sounds/soundeffects/flappy_bird_scored.wav" id="9_l8apf"]
 [ext_resource type="AudioStream" uid="uid://wblp4t4cgem7" path="res://sounds/themes/Flappy_Bird_Theme.ogg" id="10_a8yb6"]
 
@@ -152,6 +153,13 @@ text = "Pipes:
 12345"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UI" unique_id=335664580]
+offset_left = 224.0
+offset_top = 600.0
+offset_right = 539.0
+offset_bottom = 700.0
+texture = ExtResource("8_oulx7")
 
 [node name="LoseAudioPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1576889558]
 unique_name_in_owner = true
