@@ -23,7 +23,9 @@ var main_theme : bool =  true
 
 var game_won : bool = false
 
-func _process(_delta):
+func _process(_delta): #delete for sound
+	main_theme = false
+	
 	total_points_gathered = platformer_score + snake_score + tetris_score + dino_run_score + flappy_bird_score
 	if total_points_gathered >= goal:
 		main_theme = false

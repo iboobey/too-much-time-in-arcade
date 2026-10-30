@@ -2,6 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://bivb22g3rmhrq" path="res://graphics/titleoptionswinscenes/MainGUI.png" id="1_7uii6"]
 [ext_resource type="FontFile" uid="uid://b5qt7mlemekrv" path="res://graphics/fonts/PressStart2P-Regular.ttf" id="1_iwfee"]
+[ext_resource type="Texture2D" uid="uid://t53ddxg1ehuc" path="res://graphics/titleoptionswinscenes/grabbers/Grabber.png" id="3_8kdag"]
+[ext_resource type="Texture2D" uid="uid://bl50lsmildvtu" path="res://graphics/titleoptionswinscenes/grabbers/Grabber_Disabled.png" id="4_ax03m"]
+[ext_resource type="Texture2D" uid="uid://c2vmusgqld2lf" path="res://graphics/titleoptionswinscenes/grabbers/Grabber_Highlight.png" id="5_i03wi"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c4bon"]
 texture = ExtResource("1_7uii6")
@@ -27,6 +30,30 @@ texture_margin_right = 27.0
 texture_margin_bottom = 32.0
 region_rect = Rect2(424, 113, 160, 84)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tyfvt"]
+texture = ExtResource("1_7uii6")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(16, 176, 80, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iwfee"]
+texture = ExtResource("1_7uii6")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(16, 224, 80, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pl1l1"]
+texture = ExtResource("1_7uii6")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(16, 144, 80, 16)
+
 [resource]
 Button/constants/outline_size = 12
 Button/font_sizes/font_size = 28
@@ -34,6 +61,15 @@ Button/fonts/font = ExtResource("1_iwfee")
 Button/styles/hover = SubResource("StyleBoxTexture_c4bon")
 Button/styles/normal = SubResource("StyleBoxTexture_ibvtj")
 Button/styles/pressed = SubResource("StyleBoxTexture_x321a")
+HSlider/icons/grabber = ExtResource("3_8kdag")
+HSlider/icons/grabber_disabled = ExtResource("4_ax03m")
+HSlider/icons/grabber_highlight = ExtResource("5_i03wi")
+HSlider/styles/grabber_area = SubResource("StyleBoxTexture_tyfvt")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_iwfee")
+HSlider/styles/slider = SubResource("StyleBoxTexture_pl1l1")
+Label/constants/outline_size = 30
+Label/font_sizes/font_size = 80
+Label/fonts/font = ExtResource("1_iwfee")
 RichTextLabel/constants/outline_size = 16
 RichTextLabel/font_sizes/normal_font_size = 56
 RichTextLabel/fonts/normal_font = ExtResource("1_iwfee")

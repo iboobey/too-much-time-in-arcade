@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://16dtfm5ae6f5"]
+
+[ext_resource type="Theme" uid="uid://d02xnpbr41vip" path="res://graphics/themes/MainGUI.tres" id="1_jkcuc"]
+[ext_resource type="Script" uid="uid://cdja5cdv7ivdj" path="res://scripts/audio_slider.gd" id="2_21a2c"]
+[ext_resource type="Texture2D" uid="uid://bivb22g3rmhrq" path="res://graphics/titleoptionswinscenes/MainGUI.png" id="3_21a2c"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8bamc"]
+texture = ExtResource("3_21a2c")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(16, 176, 80, 16)
+
+[node name="AudioSlider" type="HSlider" unique_id=488209278]
+offset_left = 280.0
+offset_right = 459.33337
+offset_bottom = 41.666626
+scale = Vector2(3, 3)
+size_flags_horizontal = 4
+theme = ExtResource("1_jkcuc")
+max_value = 1.0
+step = 0.001
+script = ExtResource("2_21a2c")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2065507469]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -93.333336
+offset_top = -7.49998
+offset_right = 3.0517578e-05
+offset_bottom = 5.833355
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=1304991660]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8bamc")
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=1745259275]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 8
+text = "Name "
+horizontal_alignment = 1
+vertical_alignment = 1
