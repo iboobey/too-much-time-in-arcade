@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dxh7now0su202" path="res://scenes/arcade_consoles/console_3.tscn" id="8_fgvqq"]
 [ext_resource type="PackedScene" uid="uid://de3pplk2gnp3h" path="res://scenes/arcade_consoles/console_4.tscn" id="9_rpcry"]
 [ext_resource type="PackedScene" uid="uid://cnl1gougepv85" path="res://scenes/arcade_consoles/console_5.tscn" id="10_16e0h"]
+[ext_resource type="Texture2D" uid="uid://bivb22g3rmhrq" path="res://graphics/titleoptionswinscenes/MainGUI.png" id="11_5ywgl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fgvqq"]
 texture = ExtResource("3_decei")
@@ -1153,6 +1154,26 @@ b = Vector2(-39, -16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t1ngq"]
 size = Vector2(60, 20)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_83w5s"]
+texture = ExtResource("11_5ywgl")
+region_rect = Rect2(158, 142, 20, 20)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tori7"]
+texture = ExtResource("11_5ywgl")
+region_rect = Rect2(158, 174, 20, 20)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2xs06"]
+texture = ExtResource("11_5ywgl")
+region_rect = Rect2(158, 142, 20, 20)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d3okq"]
+texture = ExtResource("11_5ywgl")
+region_rect = Rect2(158, 206, 20, 20)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jg5mx"]
+texture = ExtResource("11_5ywgl")
+region_rect = Rect2(158, 142, 20, 20)
+
 [node name="Arcade" type="Node2D" unique_id=1528780165]
 script = ExtResource("1_g722h")
 
@@ -1344,3 +1365,21 @@ position = Vector2(-68, -4)
 
 [node name="Console5" parent="Consoles" unique_id=979846902 instance=ExtResource("10_16e0h")]
 position = Vector2(-171, -5)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=485322000]
+
+[node name="SettingsButton" type="Button" parent="CanvasLayer" unique_id=1995422353]
+unique_name_in_owner = true
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(8, 8)
+theme_override_styles/normal = SubResource("StyleBoxTexture_83w5s")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_tori7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2xs06")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_d3okq")
+theme_override_styles/focus = SubResource("StyleBoxTexture_jg5mx")
+toggle_mode = true
+
+[connection signal="pressed" from="CanvasLayer/SettingsButton" to="." method="_on_settings_button_pressed"]

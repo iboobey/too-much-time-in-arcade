@@ -11,6 +11,7 @@ extends Node2D
 var tree = Engine.get_main_loop()
 
 func _process(_delta):
+	setting_button()
 	scoreboard()
 	if Global.game_won == true:
 		game_won()
@@ -36,3 +37,15 @@ func game_won():
 	score_light.show()
 	await tree.create_timer(1.2).timeout
 	tree.change_scene_to_file("res://scenes/win_screen.tscn")
+
+
+func setting_button():
+	if Input.is_action_pressed("settings"):
+		%SettingsButton.button_pressed = true
+	if Input.is_action_just_released("settings"):
+		get_tree().change_scene_to_file("res://scenes/settings_scene.tscn")
+		%SettingsButton.button_pressed = false
+
+
+func _on_settings_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/settings_scene.tscn")

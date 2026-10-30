@@ -7,4 +7,5 @@
 stream = ExtResource("1_ep0b7")
 volume_db = -15.0
 autoplay = true
+bus = &"Theme"
 script = ExtResource("2_dolpf")

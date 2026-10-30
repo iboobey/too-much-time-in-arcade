@@ -7,7 +7,7 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_afvd2"]
 texture = ExtResource("1_bflfl")
-region_rect = Rect2(112, 208, 32, 16)
+region_rect = Rect2(112, 224, 32, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bflfl"]
 texture = ExtResource("1_bflfl")
@@ -15,15 +15,15 @@ region_rect = Rect2(112, 240, 32, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k78d2"]
 texture = ExtResource("1_bflfl")
-region_rect = Rect2(112, 208, 32, 16)
+region_rect = Rect2(112, 224, 32, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8bamc"]
 texture = ExtResource("1_bflfl")
-region_rect = Rect2(112, 176, 32, 16)
+region_rect = Rect2(112, 192, 32, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nvrwo"]
 texture = ExtResource("1_bflfl")
-region_rect = Rect2(112, 208, 32, 16)
+region_rect = Rect2(112, 224, 32, 16)
 
 [node name="SettingsCanvas" type="CanvasLayer" unique_id=1039919324]
 script = ExtResource("1_k78d2")
@@ -79,7 +79,7 @@ audio_name = "SFX"
 layout_mode = 2
 size_flags_horizontal = 5
 bus_name = "Master"
-audio_name = "Themes"
+audio_name = "Theme"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1045261162]
 layout_mode = 2
@@ -148,15 +148,16 @@ offset_right = 1280.0
 offset_bottom = 720.0
 mouse_filter = 2
 theme = ExtResource("2_8bamc")
-theme_override_constants/margin_left = 120
-theme_override_constants/margin_top = 120
-theme_override_constants/margin_right = 120
-theme_override_constants/margin_bottom = 320
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 140
+theme_override_constants/margin_bottom = 340
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer3" unique_id=1443163840]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 32
 text = "This game was made by iboo, for Stardance"
+vertical_alignment = 1
+justification_flags = 162
 
 [node name="MarginContainer2" type="MarginContainer" parent="." unique_id=515925143]
 offset_left = 690.0
